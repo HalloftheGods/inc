@@ -2,20 +2,16 @@
 # This file is distributed under the same license as the WordPress.com - Themes - Sketch package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2017-03-23 09:01:54+0000\n"
+"PO-Revision-Date: 2016-06-13 09:17:59+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: GlotPress/2.4.0-alpha\n"
+"X-Generator: GlotPress/2.1.0-alpha\n"
 "Language: fr\n"
 "Project-Id-Version: WordPress.com - Themes - Sketch\n"
 
-#: inc/wpcom-colors.php:24
-msgid "Main Accent"
-msgstr "Accent Principal"
-
-#: inc/jetpack.php:141
+#: inc/jetpack.php:144
 msgid "Older projects"
 msgstr "Projets suivants"
 
@@ -104,31 +100,31 @@ msgstr "Paysage (4:3)"
 msgid "Portfolio Thumbnail Aspect Ratio"
 msgstr "Aspect des vignettes de portfolio"
 
-#: header.php:31
+#: header.php:32
 msgid "Menu"
 msgstr "Menu"
 
-#: header.php:22
+#: header.php:23
 msgid "Skip to content"
 msgstr "Aller au contenu principal"
 
 #. Translators: If there are characters in your language that are not
 #. * supported by Lato, translate this to 'off'. Do not translate
 #. * into your own language.
-#: functions.php:165
+#: functions.php:157
 msgctxt "Lato font: on or off"
 msgid "on"
 msgstr "on"
 
-#: functions.php:116
+#: functions.php:108
 msgid "Sidebar"
 msgstr "Colonne latérale"
 
-#: functions.php:75
+#: functions.php:67
 msgid "Social Links"
 msgstr "Liens Sociaux"
 
-#: functions.php:74
+#: functions.php:66
 msgid "Primary Menu"
 msgstr "Menu principal"
 

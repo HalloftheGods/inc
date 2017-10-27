@@ -1,0 +1,50 @@
+<?php
+/**
+ * The template part for displaying results in search pages.
+ *
+ * Learn more: http://codex.wordpress.org/Template_Hierarchy
+ *
+ * @package Satori
+ */ ?>
+
+<article id="post-<?php the_ID(); ?>" <?php post_class( 'blog-post-standard-layout' ); ?>>
+	
+	<?php if ( has_post_thumbnail() ) : ?>
+		<a href="<?php the_permalink() ?>" class="post-loop-thumbnail">
+			
+			<?php the_post_thumbnail( 'satori_blog_img_side' ); ?>
+			
+		</a>
+	<?php endif; ?>
+	
+	<div class="post-loop-content">
+		
+		<header class="entry-header">
+			<?php the_title( sprintf( '<h1 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h1>' ); ?>
+
+			<?php if ( 'post' == get_post_type() ) : ?>
+			<div class="entry-meta">
+				<?php satori_posted_on(); ?>
+			</div><!-- .entry-meta -->
+			<?php endif; ?>
+		</header><!-- .entry-header -->
+
+		<div class="entry-content">
+			<?php the_excerpt(); ?>
+
+			<?php
+				wp_link_pages( array(
+					'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'satori' ),
+					'after'  => '</div>',
+				) );
+			?>
+		</div><!-- .entry-content -->
+
+		<footer class="entry-footer">
+			<?php satori_entry_footer(); ?>
+		</footer><!-- .entry-footer -->
+		
+	</div>
+	<div class="clearboth"></div>
+	
+</article><!-- #post-## -->

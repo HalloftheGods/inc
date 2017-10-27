@@ -1,0 +1,134 @@
+# Translation of FashStore in Dutch
+# This file is distributed under the same license as the FashStore package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2016-02-01 19:02:10+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: GlotPress/1.0-alpha-1100\n"
+"Project-Id-Version: FashStore\n"
+
+#. Description of the plugin/theme
+msgid "FashStore is a child theme of AccessPress Store, a modern WooCommerce WordPress theme. FashStore is WordPress fashion theme designed for creating robust and beautiful online store for selling fashion products like men’s clothing, women’s clothing, accessories, shoes etc. It has a deep integration with WooCommerce integration making it a complete store theme for fashion websites, indeed a complete fashion theme. Main features of FashStore are: Customizer based, Background and Color Configuration, YouTube Video Integration, Multiple Category Display Layout, Product and content search, Beautiful Product page, SEO optimized, Widgets ready etc. Official Support: https://accesspressthemes.com/support/ View Full demo: http://accesspressthemes.com/theme-demos/?theme=fashstore"
+msgstr ""
+
+#. Theme Name of the plugin/theme
+msgid "FashStore"
+msgstr ""
+
+#: inc/widgets/fashstore-products-slider.php:70
+msgid "Select Product Type"
+msgstr ""
+
+#: inc/widgets/fashstore-products-slider.php:85
+msgid "Select the number of Product to show"
+msgstr ""
+
+#: inc/widgets/fashstore-products-slider.php:114
+msgid "New!"
+msgstr "Nieuw!"
+
+#: inc/widgets/fashstore-products-slider.php:201
+#: woocommerce/content-feat-product.php:71 woocommerce/content-product.php:70
+msgid "Add to Wishlist"
+msgstr ""
+
+#: inc/widgets/fashstore-products-slider.php:31
+msgid "Latest Product"
+msgstr ""
+
+#: inc/widgets/fashstore-products-slider.php:32
+msgid "UpSell Product"
+msgstr ""
+
+#: inc/widgets/fashstore-products-slider.php:33
+msgid "Feature Product"
+msgstr ""
+
+#: inc/widgets/fashstore-products-slider.php:34
+msgid "On Sale Product"
+msgstr ""
+
+#: inc/widgets/fashstore-products-slider.php:64
+msgid "Title"
+msgstr "Titel"
+
+#: inc/widgets/fashstore-category-banner.php:53
+#: inc/widgets/fashstore-products-slider.php:56
+msgid "Select Product Category:"
+msgstr ""
+
+#: inc/widgets/fashstore-category-banner.php:61
+msgid "Select the Display Style (Image Alignment)"
+msgstr ""
+
+#: inc/widgets/fashstore-category-banner.php:68
+#: inc/widgets/fashstore-products-slider.php:77
+msgid "Select Product Category"
+msgstr ""
+
+#: inc/widgets/fashstore-products-slider.php:17
+msgid "AP: WooCommerce Product Slider"
+msgstr ""
+
+#: inc/widgets/fashstore-products-slider.php:18
+msgid "The Product Slide Choose your type for FashStore."
+msgstr ""
+
+#: inc/widgets/fashstore-products-slider.php:30
+msgid "Category"
+msgstr "Catogorie"
+
+#: header.php:108
+msgid "Welcome "
+msgstr ""
+
+#: header.php:114
+msgid "!"
+msgstr ""
+
+#: inc/widgets/fashstore-category-banner.php:17
+msgid "AP: WooCommerce Product Category Banner"
+msgstr ""
+
+#: inc/widgets/fashstore-category-banner.php:18
+msgid "This widgets show the Category Image its Description and Product of that Category for FashStore."
+msgstr ""
+
+#: inc/widgets/fashstore-category-banner.php:30
+msgid "Right Align With Category Image"
+msgstr ""
+
+#: inc/widgets/fashstore-category-banner.php:31
+msgid "Left Align With Category Image"
+msgstr ""
+
+#: header.php:38
+msgid "Wishlist"
+msgstr ""
+
+#: header.php:90
+msgid "Menu"
+msgstr "Menu"
+
+#: header.php:21
+msgid "Skip to content"
+msgstr "Ga direct naar de inhoud"
+
+#: functions.php:54
+msgid "View your shopping cart"
+msgstr "Bekijk winkelmand"
+
+#. Theme URI of the plugin/theme
+msgid "https://accesspressthemes.com/wordpress-themes/fashstore/"
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "AccessPress Themes"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://accesspressthemes.com/"
+msgstr ""

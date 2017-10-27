@@ -1,23 +1,14 @@
-# Translation of WordPress.com - Themes - Sketch in Japanese
-# This file is distributed under the same license as the WordPress.com - Themes - Sketch package.
+# Translation of Sketch in Japanese
+# This file is distributed under the same license as the Sketch package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2017-03-23 09:01:54+0000\n"
+"PO-Revision-Date: 2016-02-09 03:54:01+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: GlotPress/2.4.0-alpha\n"
-"Language: ja_JP\n"
-"Project-Id-Version: WordPress.com - Themes - Sketch\n"
-
-#: inc/wpcom-colors.php:24
-msgid "Main Accent"
-msgstr "メインアクセント"
-
-#: inc/jetpack.php:141
-msgid "Older projects"
-msgstr "過去のプロジェクト"
+"X-Generator: GlotPress/1.0-alpha-1100\n"
+"Project-Id-Version: Sketch\n"
 
 #. Author of the plugin/theme
 #: wp-content/themes/pub/sketch/style.css
@@ -25,14 +16,14 @@ msgid "Automattic"
 msgstr "Automattic"
 
 #. Template Name of the plugin/theme
-#: wp-content/themes/pub/sketch/portfolio-page.php
-msgid "Portfolio Page Template"
-msgstr "ポートフォリオページテンプレート"
-
-#. Template Name of the plugin/theme
 #: wp-content/themes/pub/sketch/fullwidth-page.php
 msgid "Full Width, No Sidebar"
 msgstr "全幅、サイドバーなし"
+
+#. Template Name of the plugin/theme
+#: wp-content/themes/pub/sketch/portfolio-page.php
+msgid "Portfolio Page Template"
+msgstr "ポートフォリオページテンプレート"
 
 #. Description of the plugin/theme
 #: wp-content/themes/pub/sketch/style.css
@@ -43,33 +34,33 @@ msgstr "クリーンなレスポンシブデザインを採用したテーマ。
 msgid "Search Results for: %s"
 msgstr "検索結果: %s"
 
-#: portfolio-page.php:90
-msgid "Ready to publish your first project? <a href=\"%1$s\">Get started here</a>."
-msgstr "最初のプロジェクトを公開する準備ができたら、<a href=\"%1$s\">こちらからスタート</a>してください。"
+#: inc/template-tags.php:217
+msgid "All %s posts"
+msgstr "すべての%s投稿"
 
 #: portfolio-page.php:84
 msgid "No Project Found"
 msgstr "プロジェクトが見つかりません"
 
-#: inc/template-tags.php:217
-msgid "All %s posts"
-msgstr "すべての%s投稿"
+#: portfolio-page.php:90
+msgid "Ready to publish your first project? <a href=\"%1$s\">Get started here</a>."
+msgstr "最初のプロジェクトを公開する準備ができたら、<a href=\"%1$s\">こちらからスタート</a>してください。"
 
 #: inc/template-tags.php:173
 msgid "More Projects"
 msgstr "プロジェクトをもっと見る"
 
-#: inc/template-tags.php:58
-msgid "Post navigation"
-msgstr "投稿ナビゲーション"
+#: inc/template-tags.php:31
+msgid "<span class=\"meta-nav\">Previous</span>"
+msgstr "<span class=\"meta-nav\">過去</span>"
 
 #: inc/template-tags.php:35
 msgid "<span class=\"meta-nav\">Next</span>"
 msgstr "<span class=\"meta-nav\">次</span>"
 
-#: inc/template-tags.php:31
-msgid "<span class=\"meta-nav\">Previous</span>"
-msgstr "<span class=\"meta-nav\">過去</span>"
+#: inc/template-tags.php:58
+msgid "Post navigation"
+msgstr "投稿ナビゲーション"
 
 #: inc/template-tags.php:27
 msgid "Posts navigation"
@@ -79,51 +70,55 @@ msgstr "投稿ナビゲーション"
 msgid "Page %s"
 msgstr "ページ %s"
 
-#: inc/customizer.php:40
-msgid "Hide title and content on Portfolio Page Template"
-msgstr "ポートフォリオページテンプレートでタイトルとコンテンツを非表示にする"
-
-#: inc/customizer.php:30
-msgid "Square (1:1)"
-msgstr "正方形 (1:1)"
-
 #: inc/customizer.php:29
-msgid "Portrait (3:4)"
-msgstr "縦長 (3:4)"
-
-#: inc/customizer.php:28
-msgid "Landscape (4:3)"
-msgstr "横長 (4:3)"
-
-#: inc/customizer.php:24
 msgid "Portfolio Thumbnail Aspect Ratio"
 msgstr "ポートフォリオサムネイル縦横比"
 
-#: header.php:31
+#: inc/customizer.php:33
+msgid "Landscape (4:3)"
+msgstr "横長 (4:3)"
+
+#: inc/customizer.php:34
+msgid "Portrait (3:4)"
+msgstr "縦長 (3:4)"
+
+#: inc/customizer.php:35
+msgid "Square (1:1)"
+msgstr "正方形 (1:1)"
+
+#: inc/customizer.php:45
+msgid "Hide title and content on Portfolio Page Template"
+msgstr "ポートフォリオページテンプレートでタイトルとコンテンツを非表示にする"
+
+#: inc/customizer.php:19
+msgid "Theme"
+msgstr "テーマ名"
+
+#: header.php:32
 msgid "Menu"
 msgstr "メニュー"
 
-#: header.php:22
+#: header.php:23
 msgid "Skip to content"
 msgstr "コンテンツへ移動"
 
 #. Translators: If there are characters in your language that are not
 #. * supported by Lato, translate this to 'off'. Do not translate
 #. * into your own language.
-#: functions.php:165
+#: functions.php:157
 msgctxt "Lato font: on or off"
 msgid "on"
 msgstr "on"
 
-#: functions.php:116
-msgid "Sidebar"
-msgstr "サイドバー"
-
-#: functions.php:75
+#: functions.php:67
 msgid "Social Links"
 msgstr "ソーシャルリンク"
 
-#: functions.php:74
+#: functions.php:108
+msgid "Sidebar"
+msgstr "サイドバー"
+
+#: functions.php:66
 msgid "Primary Menu"
 msgstr "メインメニュー"
 
@@ -160,14 +155,14 @@ msgstr "1件のコメント"
 msgid "Leave a comment"
 msgstr "コメントする"
 
-#: content-portfolio-single.php:23 content.php:33
-msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
-msgstr "続きを読む <span class=\"meta-nav\">&rarr;</span>"
-
 #: content-portfolio-single.php:16
 msgctxt "Used between list items, there is a space after the comma."
 msgid ", "
 msgstr ", "
+
+#: content-portfolio-single.php:23 content.php:33
+msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
+msgstr "続きを読む <span class=\"meta-nav\">&rarr;</span>"
 
 #: content-page.php:18 content-portfolio-single.php:26 content-single.php:22
 #: content.php:36 portfolio-page.php:28
@@ -200,14 +195,6 @@ msgstr "編集"
 #: comments.php:65
 msgid "Comments are closed."
 msgstr "コメントは停止中です。"
-
-#: comments.php:37 comments.php:55
-msgid "Newer Comments >"
-msgstr "新しいコメント >"
-
-#: comments.php:36 comments.php:54
-msgid "< Older Comments"
-msgstr "< 古いコメント"
 
 #: comments.php:35 comments.php:53
 msgid "Comment navigation"
@@ -285,10 +272,14 @@ msgstr "日別アーカイブ: %s"
 msgid "Author: %s"
 msgstr "作成者: %s"
 
-#: 404.php:19
-msgid "It looks like nothing was found at this location. Maybe try a search?"
-msgstr "こちらには何もありません。検索をお試しください。"
+#: archive-jetpack-portfolio.php:19
+msgid "Portfolio"
+msgstr "ポートフォリオ"
 
 #: 404.php:15
 msgid "Oops! That page can&rsquo;t be found."
 msgstr "お探しのページが見つかりません。"
+
+#: 404.php:19
+msgid "It looks like nothing was found at this location. Maybe try a search?"
+msgstr "こちらには何もありません。検索をお試しください。"

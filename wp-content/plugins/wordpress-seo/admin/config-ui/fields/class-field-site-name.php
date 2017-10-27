@@ -29,8 +29,7 @@ class WPSEO_Config_Field_Site_Name extends WPSEO_Config_Field {
 			$this->get_identifier(),
 			array( $this, 'get_data' ),
 			array( $this, 'set_data' )
-		);
-	}
+		);	}
 
 	/**
 	 * Get the data from the stored options.

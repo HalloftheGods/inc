@@ -1,0 +1,39 @@
+/*
+ Theme Name:   Hestia Child
+ Theme URI:      https://themeisle.com/themes/hestia/
+ Description:  Twenty Fifteen Child Theme
+ Author:         ThemeIsle
+ Author URI:     https://themeisle.com
+ Template:     hestia
+ Version:        1.1.48
+ License:        GNU General Public License v2 or later
+ License URI:    http://www.gnu.org/licenses/gpl-2.0.html
+ Text Domain:    hestia-child
+*/
+
+.navbar .navbar-brand img {
+	max-height: 50px;
+}
+.navbar .navbar-brand h1 {
+  margin: 0;
+  font-size: 35px;
+  line-height: 1.5em;
+  font-family: 'Dancing Script', cursive;
+  font-weight: bold;
+}
+.navbar .navbar-brand p {
+	margin-bottom: 0;
+  font-size: 35px;
+  line-height: 1.5em;
+  font-family: 'Dancing Script', cursive;
+  font-weight: bold;
+}
+
+.carousel h1.hestia-title,
+.carousel h2.title {
+	margin-bottom: 20px;
+	/* font-family: "Raleway", "Helvetica", "Arial", sans-serif; */
+  	font-family: 'Raleway', sans-serif;
+	font-size: 4.8em;
+	line-height: 1.15em;
+}
