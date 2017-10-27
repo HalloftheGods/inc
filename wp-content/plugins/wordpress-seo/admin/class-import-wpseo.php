@@ -165,36 +165,12 @@ class WPSEO_Import_WPSEO extends WPSEO_Import_External {
 			 * @var array
 			 */
 			$robot_values = array(
-				// In wpSEO: index, follow.
-				1 => array(
-					'index'  => 2,
-					'follow' => 0,
-				),
-				// In wpSEO: index, nofollow.
-				2 => array(
-					'index'  => 2,
-					'follow' => 1,
-				),
-				// In wpSEO: noindex.
-				3 => array(
-					'index'  => 1,
-					'follow' => 0,
-				),
-				// In wpSEO: noindex, follow.
-				4 => array(
-					'index'  => 1,
-					'follow' => 0,
-				),
-				// In wpSEO: noindex, nofollow.
-				5 => array(
-					'index'  => 1,
-					'follow' => 1,
-				),
-				// In wpSEO: index.
-				6 => array(
-					'index'  => 2,
-					'follow' => 0,
-				),
+				1 => array( 'index' => 2, 'follow' => 0 ), // In wpSEO: index, follow.
+				2 => array( 'index' => 2, 'follow' => 1 ), // In wpSEO: index, nofollow.
+				3 => array( 'index' => 1, 'follow' => 0 ), // In wpSEO: noindex.
+				4 => array( 'index' => 1, 'follow' => 0 ), // In wpSEO: noindex, follow.
+				5 => array( 'index' => 1, 'follow' => 1 ), // In wpSEO: noindex, nofollow.
+				6 => array( 'index' => 2, 'follow' => 0 ), // In wpSEO: index.
 			);
 		}
 
@@ -202,6 +178,6 @@ class WPSEO_Import_WPSEO extends WPSEO_Import_External {
 			return $robot_values[ $wpseo_robots ];
 		}
 
-		return $robot_values[1];
+		return array( 'index' => 2, 'follow' => 0 );
 	}
 }

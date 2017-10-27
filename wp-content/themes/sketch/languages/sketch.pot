@@ -1,14 +1,14 @@
-# Copyright (C) 2017 Automattic
+# Copyright (C) 2016 Automattic
 # This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""
 "Project-Id-Version: Sketch 1.2.1\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/support/theme/sketch\n"
-"POT-Creation-Date: 2017-03-23 09:01:50+00:00\n"
+"POT-Creation-Date: 2016-06-09 03:57:57+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2017-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2016-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 
@@ -184,31 +184,31 @@ msgstr ""
 msgid "Theme: %1$s by %2$s."
 msgstr ""
 
-#: functions.php:74
+#: functions.php:66
 msgid "Primary Menu"
 msgstr ""
 
-#: functions.php:75
+#: functions.php:67
 msgid "Social Links"
 msgstr ""
 
-#: functions.php:116
+#: functions.php:108
 msgid "Sidebar"
 msgstr ""
 
 #. Translators: If there are characters in your language that are not
 #. 	 * supported by Lato, translate this to 'off'. Do not translate
 #. 	 * into your own language.
-#: functions.php:165
+#: functions.php:157
 msgctxt "Lato font: on or off"
 msgid "on"
 msgstr ""
 
-#: header.php:22
+#: header.php:23
 msgid "Skip to content"
 msgstr ""
 
-#: header.php:31
+#: header.php:32
 msgid "Menu"
 msgstr ""
 
@@ -236,7 +236,7 @@ msgstr ""
 msgid "Page %s"
 msgstr ""
 
-#: inc/jetpack.php:141
+#: inc/jetpack.php:144
 msgid "Older projects"
 msgstr ""
 
@@ -278,10 +278,6 @@ msgstr ""
 
 #: inc/template-tags.php:217
 msgid "All %s posts"
-msgstr ""
-
-#: inc/wpcom-colors.php:24
-msgid "Main Accent"
 msgstr ""
 
 #: portfolio-page.php:84
@@ -332,4 +328,39 @@ msgstr ""
 #. Template Name of the plugin/theme
 #: wp-content/themes/pub/sketch/portfolio-page.php
 msgid "Portfolio Page Template"
+msgstr ""
+#: inc/plugin-enhancements.php:92
+msgid "The %1$s is necessary to use some of this theme&rsquo;s features, including: "
+msgstr ""
+
+#: inc/plugin-enhancements.php:93
+msgid "Jetpack plugin"
+msgstr ""
+
+#: inc/plugin-enhancements.php:180
+msgid "no specific module needed"
+msgstr ""
+
+#: inc/plugin-enhancements.php:181
+msgid "Custom Content Types module"
+msgstr ""
+
+#: inc/plugin-enhancements.php:253
+msgid "Please activate %1$s. %2$s"
+msgstr ""
+
+#: inc/plugin-enhancements.php:255
+msgid "Activate"
+msgstr ""
+
+#: inc/plugin-enhancements.php:263
+msgid "Please install %1$s. %2$s"
+msgstr ""
+
+#: inc/plugin-enhancements.php:265
+msgid "Install"
+msgstr ""
+
+#: inc/plugin-enhancements.php:290
+msgid "To use %1$s, please activate the Jetpack plugin&rsquo;s %2$s."
 msgstr ""

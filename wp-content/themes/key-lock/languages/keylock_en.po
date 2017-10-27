@@ -1,0 +1,185 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2016-10-15 21:10+0700\n"
+"PO-Revision-Date: 2016-10-15 21:11+0700\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.10\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-SearchPath-0: functions.php\n"
+"X-Poedit-SearchPath-1: archive.php\n"
+"X-Poedit-SearchPath-2: featured.php\n"
+"X-Poedit-SearchPath-3: footer.php\n"
+"X-Poedit-SearchPath-4: functions.php\n"
+"X-Poedit-SearchPath-5: header.php\n"
+"X-Poedit-SearchPath-6: index.php\n"
+"X-Poedit-SearchPath-7: search.php\n"
+"X-Poedit-SearchPath-8: searchform.php\n"
+"X-Poedit-SearchPath-9: single.php\n"
+"X-Poedit-SearchPath-10: style.css\n"
+"X-Poedit-SearchPath-11: 404.php\n"
+"X-Poedit-SearchPath-12: comments.php\n"
+"X-Poedit-SearchPath-13: editor-style.css\n"
+"X-Poedit-SearchPath-14: page.php\n"
+"X-Poedit-SearchPath-15: readme.txt\n"
+"X-Poedit-SearchPath-16: screenshot.png\n"
+"X-Poedit-SearchPath-17: sidebar.php\n"
+"X-Poedit-SearchPath-18: template-parts/content-single.php\n"
+"X-Poedit-SearchPath-19: template-parts/about-author.php\n"
+"X-Poedit-SearchPath-20: template-parts/content-none.php\n"
+"X-Poedit-SearchPath-21: template-parts/content-page.php\n"
+"X-Poedit-SearchPath-22: template-parts/content-search.php\n"
+"X-Poedit-SearchPath-23: template-parts/content.php\n"
+"X-Poedit-SearchPath-24: template-parts/related-post.php\n"
+"X-Poedit-SearchPath-25: inc/customizer.php\n"
+"X-Poedit-SearchPath-26: inc/extras.php\n"
+"X-Poedit-SearchPath-27: inc/template-tags.php\n"
+"X-Poedit-SearchPath-28: inc/custom-header.php\n"
+"X-Poedit-SearchPath-29: inc/jetpack.php\n"
+
+#: comments.php:80
+msgid "Write a Comment"
+msgstr ""
+
+#: comments.php:81
+#, php-format
+msgid "Write a Comment to %s"
+msgstr ""
+
+#: comments.php:82
+msgid "Cancel Comment"
+msgstr ""
+
+#: featured.php:18
+msgid "Read More"
+msgstr ""
+
+#: inc/customizer.php:26
+msgid "&mdash; Select &mdash;"
+msgstr ""
+
+#: inc/customizer.php:49
+msgid "Slider"
+msgstr ""
+
+#: inc/customizer.php:57
+msgid "Post"
+msgstr ""
+
+#: inc/customizer.php:65
+msgid "Layout"
+msgstr ""
+
+#: inc/customizer.php:73
+msgid "Social Media"
+msgstr ""
+
+#: inc/customizer.php:86
+msgid "Select Featured Category"
+msgstr ""
+
+#: inc/customizer.php:101
+msgid "Hide Slider"
+msgstr ""
+
+#: inc/customizer.php:117
+msgid "Hide Category"
+msgstr ""
+
+#: inc/customizer.php:133
+msgid "Hide Comment"
+msgstr ""
+
+#: inc/customizer.php:149
+msgid "Hide Tag"
+msgstr ""
+
+#: inc/customizer.php:165
+msgid "Hide Author Information"
+msgstr ""
+
+#: inc/customizer.php:181
+msgid "Hide Related Post"
+msgstr ""
+
+#: inc/customizer.php:197
+msgid "Sidebar"
+msgstr ""
+
+#: inc/customizer.php:201
+msgid "Right Sidebar"
+msgstr ""
+
+#: inc/customizer.php:201
+msgid "Left Sidebar"
+msgstr ""
+
+#: inc/customizer.php:214
+msgid "Column(s)"
+msgstr ""
+
+#: inc/customizer.php:218
+msgid "1 Column"
+msgstr ""
+
+#: inc/customizer.php:218
+msgid "2 Column"
+msgstr ""
+
+#: inc/customizer.php:231
+msgid "Twitter"
+msgstr ""
+
+#: inc/customizer.php:247
+msgid "Instagram"
+msgstr ""
+
+#: inc/customizer.php:263
+msgid "Linkedin"
+msgstr ""
+
+#: inc/template-tags.php:38
+#, php-format
+msgid "Page %d of %d"
+msgstr ""
+
+#: inc/template-tags.php:73
+msgid "Previous Post"
+msgstr ""
+
+#: inc/template-tags.php:83
+msgid "Next Post"
+msgstr ""
+
+#: searchform.php:2
+msgid "Search..."
+msgstr ""
+
+#: template-parts/content-none.php:20
+#, php-format
+msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+
+#: template-parts/content-search.php:28 template-parts/content.php:33
+#, php-format
+msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
+msgstr ""
+
+#: template-parts/content.php:44
+msgid "Next page"
+msgstr ""
+
+#: template-parts/content.php:45
+msgid "Previous page"
+msgstr ""
+
+#: template-parts/related-post.php:26
+msgid "Other Post You May Like"
+msgstr ""

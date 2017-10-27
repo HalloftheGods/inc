@@ -1,0 +1,22 @@
+@import url(https://fonts.googleapis.com/css?family=Noto+Sans);
+
+body#tinymce.wp-editor { 
+    font-size:14px; font-family: 'Noto Sans', sans-serif;
+	width:750px;
+}
+
+body#tinymce.wp-editor p{line-height:27px;}
+body#tinymce.wp-editor img{margin:10px;}
+
+body#tinymce.wp-editor h1,
+body#tinymce.wp-editor h2,
+body#tinymce.wp-editor h3,
+body#tinymce.wp-editor h4,
+body#tinymce.wp-editor h5,
+body#tinymce.wp-editor h6 {font-family: 'Patua One', cursive;}
+
+body#tinymce.wp-editor a {
+    color: #555555;
+	text-decoration:none;
+	font-weight:700;
+}

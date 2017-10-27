@@ -84,31 +84,7 @@ You can add links to a multitude of social services in the footer, using the fol
 
 == Changelog ==
 
-= 27 September 2017 =
-* Update version number in preparation for .org submission.
-
-= 31 May 2017 =
-* Swap footer credit and social menu order in footer.php - the social menu was originally last, so any links to WordPress.com were screwing up the regex used for the custom footer credits.
-
-= 27 March 2017 =
-* Fix RTL portfolio spacing.
-
-= 22 March 2017 =
-* add Custom Colors annotations directly to the theme
-* move fonts annotations directly into the theme
-
-= 6 March 2017 =
-* Add Featured Content and Portfolio support to Headstart annotation.
-
-= 9 February 2017 =
-* Fixes typo when adding check for is_wp_error() in cases when using get_the_tag_list() to avoid potential fatal errors.
-* Check for is_wp_error() in cases when using get_the_tag_list() to avoid potential fatal errors.
-
-= 17 January 2017 =
-* Add new grid-layout tag to stylesheet.
-
 = 7 July 2016 =
-* Update text domain for eventbrite template pages
 * Let WordPress manage the document title by adding theme support
 
 = 29 June 2016 =

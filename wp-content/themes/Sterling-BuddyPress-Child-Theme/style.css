@@ -1,0 +1,41 @@
+/*
+Theme Name:     Sterling BuddyPress Child Theme
+Theme URI:      http://themeforest.net/user/TrueThemes?ref=TrueThemes
+Description:    Child theme for Sterling 
+Author:         TrueThemes
+Author URI:     http://themeforest.net/user/TrueThemes?ref=TrueThemes
+Template:       Sterling
+Version:        1.0
+*/
+
+@import url("../Sterling/style.css");
+
+
+/* ------- Insert custom styles below this line ------- */
+
+#buddypress div.pagination{
+/**modify http://localhost:8888/Sterling/members/ pagination to prevent it overflowing Sterling content width**/
+width: 50% !important;
+}
+
+#buddypress div.dir-search {
+    float: right;
+    margin: 0px;
+}
+
+#buddypress div.dir-search label{
+    float:left;
+}
+
+#buddypress div.dir-search input[type="text"] {
+    font-size: 90%;
+    padding: 1px 10px;
+}
+
+#buddypress div.dir-search label input{
+    height:25px;
+}
+
+#buddypress div.dir-search input{
+    
+}
