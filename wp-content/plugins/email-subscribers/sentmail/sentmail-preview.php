@@ -35,10 +35,6 @@ if ($result != '1') {
 		<?php
 			$preview = array();
 			$preview = es_cls_sentmail::es_sentmail_select($did, 0, 0);
-			// $preview = str_replace("###NAME###", "Username", $preview);
-			$preview = str_replace("{{NAME}}", "Username", $preview);
-			// $preview = str_replace("###EMAIL###", "Useremail", $preview);
-			$preview = str_replace("{{EMAIL}}", "Useremail", $preview);
 
 			$es_email_type = get_option( 'ig_es_emailtype' );	// Not the ideal way. Email type can differ while previewing sent email.
 

@@ -4,7 +4,7 @@ Donate link: http://www.icegram.com/
 Tags:  subscription form, contact form, lead capture, mailchimp, wpforms, blog post, builder, CRM, CSS, custom form, custom forms, database, email, email services, free WordPress plugin, form, form maker, forms, forms plugin, HTML, JavaScript, Mailpoet, landing page, list, lead, leads, list builder, MailChimp, mailing list, marketing, plugins, webhooks, WordPress, WordPress database, forms, Icegram, form builder,subscription
 Requires at least: 4.0
 Tested up to: 4.8.1
-Stable tag: 0.24
+Stable tag: 0.25
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -100,6 +100,9 @@ Coming soon!
 7. Collect leads on your WordPress site
 
 == Upgrade Notice ==
+= 0.25 =
+Bug Fix release
+
 = 0.24 =
 Loader image wasn't displaying while submitting the form
 
@@ -171,6 +174,9 @@ Initial Release
 
 
 == Changelog ==
+= 0.25 =
+* Fix: Small bug fixes
+
 = 0.24 =
 * Fix: Loader image wasn't displaying while submitting the form
 

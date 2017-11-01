@@ -62,7 +62,7 @@ class es_cls_compose {
 						));
 		foreach ($es_template as $id) {
 			$es_post_thumbnail = get_the_post_thumbnail( $id );
-			$es_templ_thumbnail = ( !empty( $es_post_thumbnail ) ) ? get_the_post_thumbnail( $id, array('200','200') ) : '<img src="'.ES_URL.'images/es-custom-template.png" />';
+			$es_templ_thumbnail = ( !empty( $es_post_thumbnail ) ) ? get_the_post_thumbnail( $id, array('200','200') ) : '<img src="'.ES_URL.'images/envelope.png" />';
 			$tmpl = array(
 					'es_templ_id' => $id,
 					'es_templ_heading' =>  get_the_title($id),

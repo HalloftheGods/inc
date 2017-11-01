@@ -1,4 +1,0 @@
-[Sat, 07 Oct 2017 20:00:56 +0000] [https://sprouts.sacredkin.com/.*] Connecting to  ...
-[Sat, 07 Oct 2017 20:00:56 +0000] [https://sprouts.sacredkin.com/.*] PURGE /.* HTTP/1.1
-[Sat, 07 Oct 2017 20:00:56 +0000] [https://sprouts.sacredkin.com/.*] Host: sprouts.sacredkin.com
-[Sat, 07 Oct 2017 20:00:56 +0000] [https://sprouts.sacredkin.com/.*] Unable to send request: 0: php_network_getaddresses: getaddrinfo failed: Name or service not known.

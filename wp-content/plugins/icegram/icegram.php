@@ -3,7 +3,7 @@
  * Plugin Name: Icegram - Popups, Optins, CTAs & lot more...
  * Plugin URI: https://www.icegram.com/
  * Description: All in one solution to inspire, convert and engage your audiences. Action bars, Popup windows, Messengers, Toast notifications and more. Awesome themes and powerful rules.
- * Version: 1.10.10
+ * Version: 1.10.11
  * Author: icegram
  * Author URI: https://www.icegram.com/
  * Copyright (c) 2014-16 Icegram
@@ -34,7 +34,7 @@ class Icegram {
     
     function __construct() {
 
-        $this->version = "1.10.10";
+        $this->version = "1.10.11";
         $this->shortcode_instances = array();
         $this->mode = 'local';
         $this->plugin_url   = untrailingslashit( plugins_url( '/', __FILE__ ) );
@@ -151,16 +151,13 @@ class Icegram {
     public function add_admin_notices(){
         $screen = get_current_screen(); 
         if ( !in_array( $screen->id, array( 'ig_campaign', 'ig_message','edit-ig_message','edit-ig_campaign' ), true ) ) return;
-        $active_plugins =  get_option( 'active_plugins', array() );
-        include_once('ig-survey.php');
-    ?>
-    <?php
+        include_once('ig-offer.php');
     }
     public function dismiss_admin_notice(){
-        if(isset($_GET['dismiss_admin_notice']) && $_GET['dismiss_admin_notice'] == '1' && isset($_GET['option_name'])){
-            $option_name = sanitize_text_field($_GET['option_name']);
+        if(isset($_GET['ig_dismiss_admin_notice']) && $_GET['ig_dismiss_admin_notice'] == '1' && isset($_GET['ig_option_name'])){
+            $option_name = sanitize_text_field($_GET['ig_option_name']);
             update_option($option_name.'_icegram', true);
-            wp_safe_redirect($_SERVER['HTTP_REFERER']);
+            header("Location: https://www.icegram.com/pricing?utm_source=in-app&utm_medium=banner&utm_campaign=halloween2017");
             exit();
         }
     }

@@ -51,11 +51,6 @@ $template_type = get_post_meta( $did, 'es_template_type', true );
 					$preview = es_cls_compose::es_template_select($did);
 					$es_templ_body = $preview["es_templ_body"];
 
-					// $es_templ_body = str_replace("###NAME###", "Username", $es_templ_body);
-					$es_templ_body = str_replace("{{NAME}}", "Username", $es_templ_body);
-					// $es_templ_body = str_replace("###EMAIL###", "Useremail", $es_templ_body);
-					$es_templ_body = str_replace("{{EMAIL}}", "Useremail", $es_templ_body);
-
 					if ( $template_type == 'Post Notification' ) {
 						//Query recent published post in descending order
 						$args = array( 'numberposts' => '1', 'order' => 'DESC','post_status' => 'publish' );
@@ -66,18 +61,15 @@ $template_type = get_post_meta( $did, 'es_template_type', true );
 							$post_id = $recent['ID'];
 
 							$post_date = $recent['post_modified'];
-							// $es_templ_body = str_replace('###DATE###', $post_date, $es_templ_body);
 							$es_templ_body = str_replace('{{DATE}}', $post_date, $es_templ_body);
 
 							$post_title = $recent['post_title'];
-							// $es_templ_body = str_replace('###POSTTITLE###', $post_title, $es_templ_body);
 							$es_templ_body = str_replace('{{POSTTITLE}}', $post_title, $es_templ_body);
 
 							$post_link = get_permalink($post_id);
-							// $es_templ_body = str_replace('###POSTLINK###', $post_link, $es_templ_body);
 							$es_templ_body = str_replace('{{POSTLINK}}', $post_link, $es_templ_body);
 
-							// Size of ###POSTIMAGE###
+							// Size of {{POSTIMAGE}}
 							$post_thumbnail  = "";
 							$post_thumbnail_link  = "";
 							if ( (function_exists('has_post_thumbnail')) && (has_post_thumbnail($post_id)) ) {
@@ -98,7 +90,6 @@ $template_type = get_post_meta( $did, 'es_template_type', true );
 							if($post_thumbnail != "") {
 								$post_thumbnail_link = "<a href='".$post_link."' target='_blank'>".$post_thumbnail."</a>";
 							}
-							// $es_templ_body = str_replace('###POSTIMAGE###', $post_thumbnail_link, $es_templ_body);
 							$es_templ_body = str_replace('{{POSTIMAGE}}', $post_thumbnail_link, $es_templ_body);
 
 							// Get post excerpt
@@ -111,35 +102,29 @@ $template_type = get_post_meta( $did, 'es_template_type', true );
 								array_push($words, '...');
 								$the_excerpt = implode(' ', $words);
 							}
-							// $es_templ_body = str_replace('###POSTDESC###', $the_excerpt, $es_templ_body);
 							$es_templ_body = str_replace('{{POSTDESC}}', $the_excerpt, $es_templ_body);
 
 							$post_author_id = $recent['post_author'];
 							$post_author = get_the_author_meta( 'display_name' , $post_author_id );
-							// $es_templ_body = str_replace('###POSTAUTHOR###', $post_author, $es_templ_body);
 							$es_templ_body = str_replace('{{POSTAUTHOR}}', $post_author, $es_templ_body);
 
 							if($post_link != "") {
 								$post_link_with_title = "<a href='".$post_link."' target='_blank'>".$post_title."</a>";
-								// $es_templ_body = str_replace('###POSTLINK-WITHTITLE###', $post_link_with_title, $es_templ_body);
 								$es_templ_body = str_replace('{{POSTLINK-WITHTITLE}}', $post_link_with_title, $es_templ_body);
 
 								$post_link = "<a href='".$post_link."' target='_blank'>".$post_link."</a>";
 							}
-							// $es_templ_body = str_replace('###POSTLINK-ONLY###', $post_link, $es_templ_body);
 							$es_templ_body = str_replace('{{POSTLINK-ONLY}}', $post_link, $es_templ_body);
 
 							// Get full post
 							$post_full = $recent['post_content'];
 							$post_full = wpautop($post_full);
-							// $es_templ_body = str_replace('###POSTFULL###', $post_full, $es_templ_body);
 							$es_templ_body = str_replace('{{POSTFULL}}', $post_full, $es_templ_body);
 
 						}
 					}
 
 					$es_templ_body = es_cls_registerhook::es_process_template_body($es_templ_body, $did);
-					
 					echo stripslashes($es_templ_body);
 				?>
 			</div>

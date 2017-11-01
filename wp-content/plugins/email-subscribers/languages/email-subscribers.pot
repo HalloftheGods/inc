@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: Email Subscribers & Newsletters 3.4.0\n"
 "Report-Msgid-Bugs-To: https://www.icegram.com/contact/\n"
 "POT-Creation-Date: 2017-07-26 12:00:36+00:00\n"
-"POT-Revision-Date: Tue Oct 17 2017 17:40:17 GMT+0530 (IST)\n"
+"POT-Revision-Date: Tue Oct 31 2017 16:32:26 GMT+0530 (IST)\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Ratnakar Dubey <ratnakar.dubey@storeapps.org>\n"
 "Language-Team: StoreApps <support@storeapps.org>, Icegram <hello@icegram."
@@ -244,7 +244,7 @@ msgstr ""
 msgid "Icegram"
 msgstr ""
 
-#: ../email-subscribers.php:95
+#: ../email-subscribers.php:97
 msgctxt "timezone date format"
 msgid "Y-m-d H:i:s"
 msgstr ""
@@ -352,7 +352,7 @@ msgstr ""
 msgid "Medium Size"
 msgstr ""
 
-#: ../settings/settings-edit.php:123 ../classes/es-register.php:1233
+#: ../settings/settings-edit.php:123 ../classes/es-register.php:1232
 msgid "Thumbnail"
 msgstr ""
 
@@ -377,12 +377,12 @@ msgid ""
 msgstr ""
 
 #: ../settings/settings-edit.php:142 ../settings/settings-edit.php:217 ..
-#: /subscribers/view-subscriber-sync.php:107 ../classes/es-register.php:1483
+#: /subscribers/view-subscriber-sync.php:107 ../classes/es-register.php:1501
 msgid "YES"
 msgstr ""
 
 #: ../settings/settings-edit.php:143 ../settings/settings-edit.php:218 ..
-#: /subscribers/view-subscriber-sync.php:106 ../classes/es-register.php:1484
+#: /subscribers/view-subscriber-sync.php:106 ../classes/es-register.php:1502
 msgid "NO"
 msgstr ""
 
@@ -701,7 +701,7 @@ msgid ""
 "a slight variation on how your customer will view the email content."
 msgstr ""
 
-#: ../sentmail/sentmail-preview.php:57
+#: ../sentmail/sentmail-preview.php:53
 msgid "Back"
 msgstr ""
 
@@ -732,7 +732,7 @@ msgstr ""
 
 #: ../sentmail/sentmail-show.php:108 ../sentmail/sentmail-show.php:121 ..
 #: /compose/compose-edit.php:103 ../compose/compose-show.php:80 ..
-#: /compose/compose-show.php:88 ../classes/es-register.php:1264
+#: /compose/compose-show.php:88 ../classes/es-register.php:1280
 msgid "Preview"
 msgstr ""
 
@@ -1052,7 +1052,7 @@ msgid "Email Address"
 msgstr ""
 
 #: ../subscribers/view-subscriber-show.php:361 ../subscribers/view-subscriber-
-#: show.php:374 ../classes/es-register.php:1425 ../classes/es-loadwidget.php:28
+#: show.php:374 ../classes/es-register.php:1443 ../classes/es-loadwidget.php:28
 msgid "Name"
 msgstr ""
 
@@ -1242,12 +1242,12 @@ msgid "Select your Email Template"
 msgstr ""
 
 #: ../compose/compose-edit.php:92 ../compose/compose-add.php:80 ../classes/es-
-#: register.php:1286
+#: register.php:1302
 msgid "Newsletter"
 msgstr ""
 
 #: ../compose/compose-edit.php:93 ../compose/compose-add.php:81 ../classes/es-
-#: register.php:1287
+#: register.php:1303
 msgid "Post Notification"
 msgstr ""
 
@@ -1272,7 +1272,7 @@ msgid ""
 msgstr ""
 
 #: ../compose/compose-edit.php:111 ../compose/compose-add.php:93 ../classes/es-
-#: register.php:1346
+#: register.php:1364
 msgid "Available Keywords"
 msgstr ""
 
@@ -1352,7 +1352,7 @@ msgstr ""
 msgid "Get more help and tips..."
 msgstr ""
 
-#: ../help/help.php:183 ../classes/es-register.php:1435 ../classes/es-loadwidget.
+#: ../help/help.php:183 ../classes/es-register.php:1453 ../classes/es-loadwidget.
 #: php:38
 msgid "Subscribe"
 msgstr ""
@@ -1789,13 +1789,13 @@ msgid "<span style=\"color:#993399;\">Immediately</span>"
 msgstr ""
 
 #: ../classes/es-register.php:162 ../classes/es-register.php:163 ../classes/es-
-#: register.php:948 ../classes/es-register.php:1194
+#: register.php:947 ../classes/es-register.php:1193
 msgid "Email Subscribers"
 msgstr ""
 
 #: ../classes/es-register.php:168 ../classes/es-register.php:169 ../classes/es-
-#: register.php:1182 ../classes/es-register.php:1183 ../classes/es-register.php:
-#: 1188
+#: register.php:1181 ../classes/es-register.php:1182 ../classes/es-register.php:
+#: 1187
 msgid "Templates"
 msgstr ""
 
@@ -2054,141 +2054,141 @@ msgctxt "widget-page-enhanced-select"
 msgid "There was a problem with the request"
 msgstr ""
 
-#: ../classes/es-register.php:721
+#: ../classes/es-register.php:720
 msgid ""
 "Keyword structure has been simplified. All your previously set keywords have "
 "been automatically updated to the new structure."
 msgstr ""
 
-#: ../classes/es-register.php:722
+#: ../classes/es-register.php:721
 msgid "Check the updated structure"
 msgstr ""
 
-#: ../classes/es-register.php:722
+#: ../classes/es-register.php:721
 msgid "Okay, I got it."
 msgstr ""
 
-#: ../classes/es-register.php:931
+#: ../classes/es-register.php:930
 msgctxt "timezone date format"
 msgid "Y-m-d"
 msgstr ""
 
-#: ../classes/es-register.php:948
+#: ../classes/es-register.php:947
 msgid "is getting even better!"
 msgstr ""
 
-#: ../classes/es-register.php:949
+#: ../classes/es-register.php:948
 msgid "But I need you to"
 msgstr ""
 
-#: ../classes/es-register.php:949
+#: ../classes/es-register.php:948
 msgid "help me prioritize"
 msgstr ""
 
-#: ../classes/es-register.php:949
+#: ../classes/es-register.php:948
 msgid "Please send your response today."
 msgstr ""
 
-#: ../classes/es-register.php:956
+#: ../classes/es-register.php:955
 msgid "Here's how you use ES:"
 msgstr ""
 
-#: ../classes/es-register.php:961
+#: ../classes/es-register.php:960
 msgid "Post Notifications more often than Newsletter"
 msgstr ""
 
-#: ../classes/es-register.php:963
+#: ../classes/es-register.php:962
 msgid "Newsletter more often than Post Notifications"
 msgstr ""
 
-#: ../classes/es-register.php:965
+#: ../classes/es-register.php:964
 msgid "Post Notification &amp; Newsletter equally"
 msgstr ""
 
-#: ../classes/es-register.php:969
+#: ../classes/es-register.php:968
 msgid "Have "
 msgstr ""
 
-#: ../classes/es-register.php:969
+#: ../classes/es-register.php:968
 msgid " Active Subscribers"
 msgstr ""
 
-#: ../classes/es-register.php:970
+#: ../classes/es-register.php:969
 msgid "Post "
 msgstr ""
 
-#: ../classes/es-register.php:970
+#: ../classes/es-register.php:969
 msgid " blog per week"
 msgstr ""
 
-#: ../classes/es-register.php:974
+#: ../classes/es-register.php:973
 msgid "Send emails via Cron"
 msgstr ""
 
-#: ../classes/es-register.php:976
+#: ../classes/es-register.php:975
 msgid "Send emails Immediately"
 msgstr ""
 
-#: ../classes/es-register.php:983
+#: ../classes/es-register.php:982
 msgid "Using Double Opt In"
 msgstr ""
 
-#: ../classes/es-register.php:985
+#: ../classes/es-register.php:984
 msgid "Using Single Opt In"
 msgstr ""
 
-#: ../classes/es-register.php:1003
+#: ../classes/es-register.php:1002
 msgid "How soon do you want these new features?"
 msgstr ""
 
-#: ../classes/es-register.php:1007
+#: ../classes/es-register.php:1006
 msgid "Beautiful Email Designs"
+msgstr ""
+
+#: ../classes/es-register.php:1007 ../classes/es-register.php:1012 ../classes/es-
+#: register.php:1017 ../classes/es-register.php:1022
+msgid "Right now!"
 msgstr ""
 
 #: ../classes/es-register.php:1008 ../classes/es-register.php:1013 ../classes/es-
 #: register.php:1018 ../classes/es-register.php:1023
-msgid "Right now!"
+msgid "Soon"
 msgstr ""
 
 #: ../classes/es-register.php:1009 ../classes/es-register.php:1014 ../classes/es-
 #: register.php:1019 ../classes/es-register.php:1024
-msgid "Soon"
-msgstr ""
-
-#: ../classes/es-register.php:1010 ../classes/es-register.php:1015 ../classes/es-
-#: register.php:1020 ../classes/es-register.php:1025
 msgid "Later"
 msgstr ""
 
-#: ../classes/es-register.php:1012
+#: ../classes/es-register.php:1011
 msgid "Spam Check, Scheduling... (Better Email Delivery)"
 msgstr ""
 
-#: ../classes/es-register.php:1017
+#: ../classes/es-register.php:1016
 msgid "Discard Fake / Bouncing Emails"
 msgstr ""
 
-#: ../classes/es-register.php:1022
+#: ../classes/es-register.php:1021
 msgid "Advanced Reporting"
 msgstr ""
 
-#: ../classes/es-register.php:1034
+#: ../classes/es-register.php:1033
 msgid "Nah, I don't like improvements"
 msgstr ""
 
-#: ../classes/es-register.php:1040
+#: ../classes/es-register.php:1039
 msgid "Next"
 msgstr ""
 
-#: ../classes/es-register.php:1050
+#: ../classes/es-register.php:1049
 msgid "Thank you!"
 msgstr ""
 
-#: ../classes/es-register.php:1051
+#: ../classes/es-register.php:1050
 msgid "No issues, have a nice day!"
 msgstr ""
 
-#: ../classes/es-register.php:1159
+#: ../classes/es-register.php:1158
 msgid ""
 "If you like <strong>Email Subscribers</strong>, please consider leaving us a "
 "<a target=\"_blank\" href=\"https://wordpress.org/support/plugin/email-"
@@ -2196,64 +2196,64 @@ msgid ""
 "</a> rating. A huge thank you from Icegram in advance!"
 msgstr ""
 
-#: ../classes/es-register.php:1173
+#: ../classes/es-register.php:1172
 #, php-format
 msgid "Email Subscribers version: <strong>%s</strong>"
 msgstr ""
 
-#: ../classes/es-register.php:1184 ../classes/es-register.php:1185
+#: ../classes/es-register.php:1183 ../classes/es-register.php:1184
 msgid "Add new Template"
 msgstr ""
 
-#: ../classes/es-register.php:1186
+#: ../classes/es-register.php:1185
 msgid "Edit Templates"
 msgstr ""
 
-#: ../classes/es-register.php:1187
+#: ../classes/es-register.php:1186
 msgid "New Templates"
 msgstr ""
 
-#: ../classes/es-register.php:1189
+#: ../classes/es-register.php:1188
 msgid "View Templates"
 msgstr ""
 
-#: ../classes/es-register.php:1190
+#: ../classes/es-register.php:1189
 msgid "Search Templates"
 msgstr ""
 
-#: ../classes/es-register.php:1191
+#: ../classes/es-register.php:1190
 msgid "No Templates found"
 msgstr ""
 
-#: ../classes/es-register.php:1192
+#: ../classes/es-register.php:1191
 msgid "No Templates found in Trash"
 msgstr ""
 
-#: ../classes/es-register.php:1195
+#: ../classes/es-register.php:1194
 msgid "Thumbnail (For Visual Representation only)"
 msgstr ""
 
-#: ../classes/es-register.php:1196
+#: ../classes/es-register.php:1195
 msgid "Set thumbnail"
 msgstr ""
 
-#: ../classes/es-register.php:1232
+#: ../classes/es-register.php:1231
 msgid "Template Type"
 msgstr ""
 
-#: ../classes/es-register.php:1281
+#: ../classes/es-register.php:1297
 msgid "Available Keyword for Post Notification: {{POSTTITLE}}"
 msgstr ""
 
-#: ../classes/es-register.php:1284
+#: ../classes/es-register.php:1300
 msgid "Select your Email Template Type"
 msgstr ""
 
-#: ../classes/es-register.php:1332
+#: ../classes/es-register.php:1350
 msgid "Preview Template"
 msgstr ""
 
-#: ../classes/es-register.php:1346
+#: ../classes/es-register.php:1364
 #, php-format
 msgid ""
 "%s for Post Notification: {{NAME}}, {{EMAIL}}, {{DATE}}, {{POSTTITLE}}, "
@@ -2261,26 +2261,26 @@ msgid ""
 "WITHTITLE}}, {{POSTLINK-ONLY}}, {{POSTFULL}}"
 msgstr ""
 
-#: ../classes/es-register.php:1347
+#: ../classes/es-register.php:1365
 msgid "<br/><br/>Available Keywords for Newsletter: {{NAME}}, {{EMAIL}}"
 msgstr ""
 
-#: ../classes/es-register.php:1430 ../classes/es-loadwidget.php:33
+#: ../classes/es-register.php:1448 ../classes/es-loadwidget.php:33
 msgid "Email *"
 msgstr ""
 
-#: ../classes/es-register.php:1473
+#: ../classes/es-register.php:1491
 msgid "Widget Title"
 msgstr ""
 
-#: ../classes/es-register.php:1477
+#: ../classes/es-register.php:1495
 msgid "Short description about subscription form"
 msgstr ""
 
-#: ../classes/es-register.php:1481
+#: ../classes/es-register.php:1499
 msgid "Display Name Field"
 msgstr ""
 
-#: ../classes/es-register.php:1488
+#: ../classes/es-register.php:1506
 msgid "Subscriber Group"
 msgstr ""

@@ -5,7 +5,7 @@ Author URI: https://www.icegram.com/
 Tags: email marketing, email newsletter form, email signup, email widget, newsletter, newsletter signup, subscribe, subscription form, bulk emails, signup form, list builder, lead generation
 Requires at least: 3.4
 Tested up to: 4.8.2
-Stable tag: 3.4.1
+Stable tag: 3.4.2
 License: GPLv3
 License URI: http://www.gnu.org/licenses
 
@@ -150,6 +150,7 @@ Translations inside plugin :
 * Lithuanian (lt_LT) - Andrius
 * Norwegian (nb_NO) - Helge Rosseboe
 * Polish (pl_PL) - Witold
+* Portuguese-Brazil (pt_BR) - Marcelo de Meneses Guedes
 * Swedish (sv_SE) - Rune Svennelid
 * Turkish (tr_TR) - [Erkan ORUÇ](http://designerkan.com/)
 
@@ -310,6 +311,17 @@ Use our free plugin [Email Subscribers - Group Selector](https://wordpress.org/p
 11. Admin page - Delivery Report of emails i.e. email sent, opened, viewed status, viewed date
 
 == Changelog ==
+
+= 3.4.2 (31.10.2017) =
+
+* Fix: User roles not working
+* Fix: Viewed Status in Reports not updating after an email is opened
+* Fix: Preview Template button not redirecting to correct page while previewing
+* Update: Keyword structure display for Name & Email in preview
+* Update: Thumbnail image on Templates
+* Update: POT file
+* Localization: Made all translation files up-to-date with latest POT file
+* Localization: Translation for Portuguese-Brazil (pt_BR) language added (Thanks to Marcelo de Meneses Guedes)
 
 = 3.4.1 (18.10.2017) =
 
@@ -658,6 +670,17 @@ Use our free plugin [Email Subscribers - Group Selector](https://wordpress.org/p
 For the changelog of earlier versions, please refer to the separate [changelog.txt](https://plugins.svn.wordpress.org/email-subscribers/trunk/changelog.txt) file.
 
 == Upgrade Notice ==
+
+= 3.4.2 (31.10.2017) =
+
+* Fix: User roles not working
+* Fix: Viewed Status in Reports not updating after an email is opened
+* Fix: Preview Template button not redirecting to correct page while previewing
+* Update: Keyword structure display for Name & Email in preview
+* Update: Thumbnail image on Templates
+* Update: POT file
+* Localization: Made all translation files up-to-date with latest POT file
+* Localization: Translation for Portuguese-Brazil (pt_BR) language added (Thanks to Marcelo de Meneses Guedes)
 
 = 3.4.1 (18.10.2017) =
 

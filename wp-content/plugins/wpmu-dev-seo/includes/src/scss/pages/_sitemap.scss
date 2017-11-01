@@ -1,0 +1,14 @@
+/* ****************************************************************************
+ * PAGE: SITEMAP
+ */
+.wpmud {
+	.wrap {
+		.box-sitemaps-xml-sitemap-settings {
+			.box-content {
+				> p {
+					margin-bottom: $space--xs;
+				}
+			}
+		}
+	}
+}
