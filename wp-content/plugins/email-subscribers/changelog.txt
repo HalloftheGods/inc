@@ -4,6 +4,17 @@ Author		: Icegram
 Author URI	: https://www.icegram.com/
 License		: GPLv3
 
+************************************************************Version 3.4.2************************************************************
+
+* Fix: User roles not working
+* Fix: Viewed Status in Reports not updating after an email is opened
+* Fix: Preview Template button not redirecting to correct page while previewing
+* Update: Keyword structure display for Name & Email in preview
+* Update: Thumbnail image on Templates
+* Update: POT file
+* Localization: Made all translation files up-to-date with latest POT file
+* Localization: Translation for Portuguese-Brazil (pt_BR) language added (Thanks to Marcelo de Meneses Guedes)
+
 ************************************************************Version 3.4.1************************************************************
 
 * Fix: Fatal error: Can’t use function return value in write context

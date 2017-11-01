@@ -1,10 +1,10 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Email Subscribers & Newsletters 3.3.4\n"
+"Project-Id-Version: Email Subscribers & Newsletters 3.4.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-07-26 12:00:36+00:00\n"
-"PO-Revision-Date: Thu Sep 07 2017 13:21:43 GMT+0530 (IST)\n"
-"Last-Translator: Mansi <mansi.shah@appsmagnet.com>\n"
+"PO-Revision-Date: Tue Oct 31 2017 16:34:17 GMT+0530 (IST)\n"
+"Last-Translator: admin <mansi.shah@appsmagnet.com>\n"
 "Language-Team: StoreApps <support@storeapps.org>, Icegram <hello@icegram."
 "com>\n"
 "Language: Hungarian\n"
@@ -27,7 +27,7 @@ msgstr ""
 msgid "https://www.icegram.com"
 msgstr ""
 
-#: ../email-subscribers.php:75
+#: ../email-subscribers.php:97
 msgctxt "timezone date format"
 msgid "Y-m-d H:i:s"
 msgstr ""
@@ -55,6 +55,12 @@ msgid ""
 "directly in the list."
 msgstr ""
 
+#: ../settings/settings-edit.php:117
+msgid ""
+"Select image size for {{POSTIMAGE}} to be shown in the Post Notification "
+"Emails."
+msgstr ""
+
 #: ../settings/settings-edit.php:136
 msgid "Notify Admin when a new subscriber signs up"
 msgstr ""
@@ -76,7 +82,7 @@ msgstr ""
 #: ../settings/settings-edit.php:157
 msgid ""
 "Content for the admin email whenever a new subscriber signs up and is "
-"confirmed.<br />(Available Keywords: ###NAME###, ###EMAIL###, ###GROUP###)"
+"confirmed.<br />Available Keywords: {{NAME}}, {{EMAIL}}, {{GROUP}}"
 msgstr ""
 
 #: ../settings/settings-edit.php:165
@@ -85,8 +91,8 @@ msgstr ""
 
 #: ../settings/settings-edit.php:172
 msgid ""
-"Content for the email report which will be sent to admin.<br />(Available "
-"Keywords: ###COUNT###, ###UNIQUE###, ###STARTTIME###, ###ENDTIME###)"
+"Content for the email report which will be sent to admin.<br />Available "
+"Keywords: {{COUNT}}, {{UNIQUE}}, {{STARTTIME}}, {{ENDTIME}}"
 msgstr ""
 
 #: ../settings/settings-edit.php:183
@@ -106,7 +112,7 @@ msgstr ""
 #: ../settings/settings-edit.php:191
 msgid ""
 "Content for the confirmation email to be sent for Double Opt-In whenever a "
-"subscriber signs up.<br />(Available Keywords: ###NAME###, ###LINK###)"
+"subscriber signs up.<br />Available Keywords: {{NAME}}, {{LINK}}"
 msgstr ""
 
 #: ../settings/settings-edit.php:197
@@ -142,7 +148,7 @@ msgstr ""
 msgid ""
 "Content for the subscriber welcome email whenever a user's email is either "
 "confirmed (if Double Opt In) / subscribed (if Single Opt In) successfully."
-"<br />(Available Keywords: ###NAME###, ###GROUP###, ###LINK###)"
+"<br />Available Keywords: {{NAME}}, {{GROUP}}, {{LINK}}"
 msgstr ""
 
 #: ../settings/settings-edit.php:241
@@ -155,7 +161,7 @@ msgstr ""
 #: ../settings/settings-edit.php:248
 msgid ""
 "The text for the unsubscribe link. This text is automatically added with "
-"unsubscribe link in the emails.<br />(Available Keyword: ###LINK###)"
+"unsubscribe link in the emails.<br />Available Keyword: {{LINK}}"
 msgstr ""
 
 #: ../settings/settings-edit.php:255
@@ -180,6 +186,10 @@ msgid ""
 "unsubscribe link from the emails."
 msgstr ""
 
+#: ../settings/settings-edit.php:300
+msgid "Templates Menu"
+msgstr ""
+
 #: ../settings/settings-edit.php:369
 msgid "(Your web host has limits. We suggest 50 emails per hour to be safe.)"
 msgstr ""
@@ -190,8 +200,8 @@ msgstr ""
 
 #: ../settings/settings-edit.php:375
 msgid ""
-"Email to admin whenever a cron URL is triggered from your server. (Available "
-"Keywords: ###DATE###, ###SUBJECT###, ###COUNT###)"
+"Email to admin whenever a cron URL is triggered from your server.<br "
+"/>Available Keywords: {{DATE}}, {{SUBJECT}}, {{COUNT}}"
 msgstr ""
 
 #: ../settings/settings-edit.php:386
@@ -226,7 +236,7 @@ msgid ""
 "does not support cron jobs?</a>"
 msgstr ""
 
-#: ../sentmail/sentmail-preview.php:27 ../compose/compose-preview.php:27
+#: ../sentmail/sentmail-preview.php:27
 msgid "Preview Email"
 msgstr ""
 
@@ -237,19 +247,19 @@ msgid ""
 "a slight variation on how your customer will view the email content."
 msgstr ""
 
-#: ../compose/compose-edit.php:61
+#: ../compose/compose-edit.php:62
 msgid "Successfully updated. "
 msgstr ""
 
-#: ../compose/compose-edit.php:89 ../compose/compose-add.php:78
+#: ../compose/compose-edit.php:90 ../compose/compose-add.php:78
 msgid "Select your Email Template"
 msgstr ""
 
-#: ../compose/compose-edit.php:98 ../compose/compose-add.php:87
+#: ../compose/compose-edit.php:99 ../compose/compose-add.php:87
 msgid "Available Keyword: ###POSTTITLE### (For Post Notification only)"
 msgstr ""
 
-#: ../compose/compose-edit.php:110 ../compose/compose-add.php:93
+#: ../compose/compose-edit.php:111 ../compose/compose-add.php:93
 #, php-format
 msgid ""
 "%s: ###NAME###, ###EMAIL###, ###DATE###, ###POSTTITLE###, ###POSTLINK###, "
@@ -262,10 +272,24 @@ msgid "Successfully created. "
 msgstr ""
 
 #: ../compose/compose-preview.php:31
+msgid "Template Preview"
+msgstr ""
+
+#: ../compose/compose-preview.php:39
+msgid "This is how your email may look."
+msgstr ""
+
+#: ../compose/compose-preview.php:41
 msgid ""
-"This is how your email may look. <br>Note: Different email services (like "
-"gmail, yahoo etc) display email content differently. So there could be a "
-"slight variation on how your customer will view the email content."
+"<br><br>This Post Notification preview has replaced keywords from your last "
+"published blog post."
+msgstr ""
+
+#: ../compose/compose-preview.php:43
+msgid ""
+"<br><br>Note: Different email services (like gmail, yahoo etc) display email "
+"content differently. So there could be a slight variation on how your "
+"customer will view the email content."
 msgstr ""
 
 #: ../help/help.php:178
@@ -550,49 +574,138 @@ msgstr ""
 msgid "Email sent successfully. "
 msgstr ""
 
-#: ../classes/es-register.php:193
+#: ../classes/es-register.php:168 ../classes/es-register.php:169 ../classes/es-
+#: register.php:1181 ../classes/es-register.php:1182 ../classes/es-register.php:
+#: 1187
+msgid "Templates"
+msgstr ""
+
+#: ../classes/es-register.php:184
 msgid "<span style=\"color:#f18500;font-weight:bolder;\">Help & Info</span>"
 msgstr ""
 
-#: ../classes/es-register.php:765
+#: ../classes/es-register.php:720
+msgid ""
+"Keyword structure has been simplified. All your previously set keywords have "
+"been automatically updated to the new structure."
+msgstr ""
+
+#: ../classes/es-register.php:721
+msgid "Check the updated structure"
+msgstr ""
+
+#: ../classes/es-register.php:721
+msgid "Okay, I got it."
+msgstr ""
+
+#: ../classes/es-register.php:930
 msgctxt "timezone date format"
 msgid "Y-m-d"
 msgstr ""
 
-#: ../classes/es-register.php:795
+#: ../classes/es-register.php:960
 msgid "Post Notifications more often than Newsletter"
 msgstr ""
 
-#: ../classes/es-register.php:797
+#: ../classes/es-register.php:962
 msgid "Newsletter more often than Post Notifications"
 msgstr ""
 
-#: ../classes/es-register.php:799
+#: ../classes/es-register.php:964
 msgid "Post Notification &amp; Newsletter equally"
 msgstr ""
 
-#: ../classes/es-register.php:808
+#: ../classes/es-register.php:973
 msgid "Send emails via Cron"
 msgstr ""
 
-#: ../classes/es-register.php:810
+#: ../classes/es-register.php:975
 msgid "Send emails Immediately"
 msgstr ""
 
-#: ../classes/es-register.php:817
+#: ../classes/es-register.php:982
 msgid "Using Double Opt In"
 msgstr ""
 
-#: ../classes/es-register.php:819
+#: ../classes/es-register.php:984
 msgid "Using Single Opt In"
 msgstr ""
 
-#: ../classes/es-register.php:868
+#: ../classes/es-register.php:1033
 msgid "Nah, I don't like improvements"
 msgstr ""
 
-#: ../classes/es-register.php:874
+#: ../classes/es-register.php:1039
 msgid "Next"
+msgstr ""
+
+#: ../classes/es-register.php:1172
+#, php-format
+msgid "Email Subscribers version: <strong>%s</strong>"
+msgstr ""
+
+#: ../classes/es-register.php:1183 ../classes/es-register.php:1184
+msgid "Add new Template"
+msgstr ""
+
+#: ../classes/es-register.php:1185
+msgid "Edit Templates"
+msgstr ""
+
+#: ../classes/es-register.php:1186
+msgid "New Templates"
+msgstr ""
+
+#: ../classes/es-register.php:1188
+msgid "View Templates"
+msgstr ""
+
+#: ../classes/es-register.php:1189
+msgid "Search Templates"
+msgstr ""
+
+#: ../classes/es-register.php:1190
+msgid "No Templates found"
+msgstr ""
+
+#: ../classes/es-register.php:1191
+msgid "No Templates found in Trash"
+msgstr ""
+
+#: ../classes/es-register.php:1194
+msgid "Thumbnail (For Visual Representation only)"
+msgstr ""
+
+#: ../classes/es-register.php:1195
+msgid "Set thumbnail"
+msgstr ""
+
+#: ../classes/es-register.php:1231
+msgid "Template Type"
+msgstr ""
+
+#: ../classes/es-register.php:1297
+msgid "Available Keyword for Post Notification: {{POSTTITLE}}"
+msgstr ""
+
+#: ../classes/es-register.php:1300
+msgid "Select your Email Template Type"
+msgstr ""
+
+#: ../classes/es-register.php:1350
+msgid "Preview Template"
+msgstr ""
+
+#: ../classes/es-register.php:1364
+#, php-format
+msgid ""
+"%s for Post Notification: {{NAME}}, {{EMAIL}}, {{DATE}}, {{POSTTITLE}}, "
+"{{POSTLINK}}, {{POSTIMAGE}}, {{POSTDESC}}, {{POSTAUTHOR}}, {{POSTLINK-"
+"WITHTITLE}}, {{POSTLINK-ONLY}}, {{POSTFULL}}"
+msgstr ""
+
+#: ../classes/es-register.php:1365
+msgid "<br/><br/>Available Keywords for Newsletter: {{NAME}}, {{EMAIL}}"
 msgstr ""
 
 #: ../notification/notification-add.php:33
@@ -628,94 +741,94 @@ msgstr "Új bejegyzés-értesítő hozzáadása"
 #: 146 ../subscribers/view-subscriber-show.php:246 ../subscribers/view-subscriber-
 #: export.php:38 ../subscribers/view-subscriber-add.php:114 ../subscribers/view-
 #: subscriber-edit.php:113 ../subscribers/view-subscriber-sync.php:92 ..
-#: compose/compose-edit.php:86 ../compose/compose-add.php:75 ../compose/compose-
-#: show.php:66 ../compose/compose-preview.php:28 ../sendmail/sendmail.php:94
+#: compose/compose-edit.php:87 ../compose/compose-add.php:75 ../compose/compose-
+#: show.php:66 ../compose/compose-preview.php:32 ../sendmail/sendmail.php:94
 msgid "Help"
 msgstr "Segítség"
 
-#: ../notification/notification-add.php:120
+#: ../notification/notification-add.php:121
 msgid "Select Subscribers Group"
 msgstr "Válaszd ki az előfizetői csoportot"
 
-#: ../notification/notification-add.php:124 ../notification/notification-add.php:
-#: 148 ../notification/notification-edit.php:135 ../notification/notification-
-#: edit.php:168 ../subscribers/view-subscriber-import.php:190 ../subscribers/view-
+#: ../notification/notification-add.php:125 ../notification/notification-add.php:
+#: 149 ../notification/notification-edit.php:136 ../notification/notification-
+#: edit.php:169 ../subscribers/view-subscriber-import.php:190 ../subscribers/view-
 #: subscriber-add.php:162 ../subscribers/view-subscriber-edit.php:162 ..
-#: subscribers/view-subscriber-sync.php:119 ../sendmail/sendmail.php:110 ..
-#: sendmail/sendmail.php:137 ../sendmail/sendmail.php:151
+#: subscribers/view-subscriber-sync.php:119 ../sendmail/sendmail.php:111 ..
+#: sendmail/sendmail.php:138 ../sendmail/sendmail.php:152
 msgid "Select"
 msgstr "Választ"
 
-#: ../notification/notification-add.php:142 ../notification/notification-edit.php:
-#: 162
+#: ../notification/notification-add.php:143 ../notification/notification-edit.php:
+#: 163
 msgid "Select Notification Email Subject"
 msgstr "Mi legyen az értesítő levél tárgya? "
 
-#: ../notification/notification-add.php:143 ../notification/notification-edit.php:
-#: 163
+#: ../notification/notification-add.php:144 ../notification/notification-edit.php:
+#: 164
 msgid "(Use compose menu to create new)"
 msgstr "(Üzenet sablonok  menüben létrehozhatsz újat)"
 
-#: ../notification/notification-add.php:167 ../notification/notification-edit.php:
-#: 190
+#: ../notification/notification-add.php:168 ../notification/notification-edit.php:
+#: 191
 msgid "Select Post Categories"
 msgstr "Válszd ki a bejegyzés kategóriáját"
 
-#: ../notification/notification-add.php:195 ../notification/notification-edit.php:
-#: 225
+#: ../notification/notification-add.php:196 ../notification/notification-edit.php:
+#: 226
 msgid "Check All"
 msgstr "Mindegyik kijelölése"
 
-#: ../notification/notification-add.php:196 ../notification/notification-edit.php:
-#: 226
+#: ../notification/notification-add.php:197 ../notification/notification-edit.php:
+#: 227
 msgid "Uncheck All"
 msgstr "Kijelölések visszavonása"
 
-#: ../notification/notification-add.php:202 ../notification/notification-edit.php:
-#: 233
+#: ../notification/notification-add.php:203 ../notification/notification-edit.php:
+#: 234
 msgid "Select your Custom Post Type"
 msgstr "Válaszd ki e bejegyzés típusát"
 
-#: ../notification/notification-add.php:203 ../notification/notification-edit.php:
-#: 234
+#: ../notification/notification-add.php:204 ../notification/notification-edit.php:
+#: 235
 msgid "(Optional)"
 msgstr "(választható)"
 
-#: ../notification/notification-add.php:232 ../notification/notification-edit.php:
-#: 268
+#: ../notification/notification-add.php:233 ../notification/notification-edit.php:
+#: 269
 msgid "No Custom Post Types Available"
 msgstr "Nincsen egyéni bejegyzés típus"
 
-#: ../notification/notification-add.php:239 ../notification/notification-edit.php:
-#: 275
+#: ../notification/notification-add.php:240 ../notification/notification-edit.php:
+#: 276
 msgid "Select Notification Status when a new post is published"
 msgstr "Mi legyen az új bejegyzésről értesítő levél tárgya? "
 
-#: ../notification/notification-add.php:243 ../notification/notification-show.php:
-#: 130 ../notification/notification-edit.php:279 ../sendmail/sendmail.php:138
+#: ../notification/notification-add.php:244 ../notification/notification-show.php:
+#: 130 ../notification/notification-edit.php:280 ../sendmail/sendmail.php:139
 msgid "Send email immediately"
 msgstr "Levéküldés azonnal"
 
-#: ../notification/notification-add.php:244 ../notification/notification-show.php:
-#: 132 ../notification/notification-edit.php:280
+#: ../notification/notification-add.php:245 ../notification/notification-show.php:
+#: 132 ../notification/notification-edit.php:281
 msgid "Add to cron and send email via cron job"
 msgstr "Időzített feladathoz adjuk és időzítve küldjük ki"
 
-#: ../notification/notification-add.php:245 ../notification/notification-edit.php:
-#: 281
+#: ../notification/notification-add.php:246 ../notification/notification-edit.php:
+#: 282
 msgid "Disable email notification"
 msgstr "Az új bejegyzések értesítésének letiltása"
 
-#: ../notification/notification-add.php:253 ../notification/notification-edit.php:
-#: 290 ../subscribers/view-subscriber-edit.php:191 ../compose/compose-edit.php:
-#: 123 ../compose/compose-add.php:105
+#: ../notification/notification-add.php:254 ../notification/notification-edit.php:
+#: 291 ../subscribers/view-subscriber-edit.php:191 ../compose/compose-edit.php:
+#: 125 ../compose/compose-add.php:106
 msgid "Save"
 msgstr "Mentés"
 
 #: ../notification/notification-show.php:21 ../notification/notification-edit.php:
 #: 20 ../sentmail/sentmail-preview.php:18 ../sentmail/sentmail-show.php:22 ..
 #: subscribers/view-subscriber-edit.php:22 ../compose/compose-edit.php:20 ..
-#: compose/compose-show.php:33 ../compose/compose-preview.php:18
+#: compose/compose-show.php:33
 msgid "Oops, selected details does not exists."
 msgstr "A részleteket add meg kérlek"
 
@@ -724,13 +837,13 @@ msgstr "A részleteket add meg kérlek"
 msgid "Selected record deleted."
 msgstr "Sikeresen törölve"
 
-#: ../notification/notification-show.php:52 ../classes/es-register.php:180 ..
-#: classes/es-register.php:181
+#: ../notification/notification-show.php:52 ../classes/es-register.php:171 ..
+#: classes/es-register.php:172
 msgid "Post Notifications"
 msgstr "Új bejegyzés értesítés"
 
 #: ../notification/notification-show.php:53 ../notification/notification-edit.php:
-#: 123 ../compose/compose-edit.php:85 ../compose/compose-show.php:65
+#: 123 ../compose/compose-edit.php:86 ../compose/compose-show.php:65
 msgid "Add New"
 msgstr "Új hozzáadása"
 
@@ -763,7 +876,7 @@ msgid "Notification Status"
 msgstr "Értesítés sttusza"
 
 #: ../notification/notification-show.php:100 ../subscribers/view-subscriber-show.
-#: php:404 ../compose/compose-show.php:103 ../compose/compose-preview.php:52
+#: php:404 ../compose/compose-show.php:103 ../compose/compose-preview.php:35
 msgid "Edit"
 msgstr "Szerkesztés"
 
@@ -795,7 +908,7 @@ msgstr "Értesítés sikeresen módosítva"
 msgid "Edit Notification"
 msgstr "Új bejegyzés értesítés szerkesztése"
 
-#: ../notification/notification-edit.php:131 ../subscribers/view-subscriber-show.
+#: ../notification/notification-edit.php:132 ../subscribers/view-subscriber-show.
 #: php:289
 msgid "Update Subscribers Group"
 msgstr "Előfizetői csoport frissítése"
@@ -832,8 +945,8 @@ msgstr "Időzítés"
 msgid "User Roles"
 msgstr "Felhasználói jogosultságok"
 
-#: ../settings/settings-edit.php:42 ../classes/es-register.php:186 ../classes/es-
-#: register.php:187
+#: ../settings/settings-edit.php:42 ../classes/es-register.php:177 ../classes/es-
+#: register.php:178
 msgid "Settings"
 msgstr "Beállítások"
 
@@ -882,12 +995,6 @@ msgstr "Visszaigazolás nélkül"
 msgid "Image Size"
 msgstr "Képméret"
 
-#: ../settings/settings-edit.php:117
-msgid ""
-"Select image size for ###POSTIMAGE### to be shown in the Post Notification "
-"Emails."
-msgstr "Az értesítőlevélben a  ###POTIMAGE### képméretének kiválasztása "
-
 #: ../settings/settings-edit.php:121
 msgid "Full Size"
 msgstr "Teljes méretű kép"
@@ -896,7 +1003,7 @@ msgstr "Teljes méretű kép"
 msgid "Medium Size"
 msgstr "Közepes méretű kép"
 
-#: ../settings/settings-edit.php:123
+#: ../settings/settings-edit.php:123 ../classes/es-register.php:1232
 msgid "Thumbnail"
 msgstr "Bélyegkép"
 
@@ -921,12 +1028,12 @@ msgstr ""
 "állítsuk \"IGEN\"-re. "
 
 #: ../settings/settings-edit.php:142 ../settings/settings-edit.php:217 ..
-#: subscribers/view-subscriber-sync.php:107 ../classes/es-register.php:1144
+#: subscribers/view-subscriber-sync.php:107 ../classes/es-register.php:1501
 msgid "YES"
 msgstr "Igen"
 
 #: ../settings/settings-edit.php:143 ../settings/settings-edit.php:218 ..
-#: subscribers/view-subscriber-sync.php:106 ../classes/es-register.php:1145
+#: subscribers/view-subscriber-sync.php:106 ../classes/es-register.php:1502
 msgid "NO"
 msgstr "Nem"
 
@@ -1000,16 +1107,12 @@ msgstr "Adminisztrátor/Szerkesztő"
 msgid "Administrator/Editor/Author/Contributor"
 msgstr "Adminisztrátor/Szerkesztő/Szerző/Közreműködő"
 
-#: ../settings/settings-edit.php:300
-msgid "Compose Menu"
-msgstr "Szerkesztés"
-
 #: ../settings/settings-edit.php:312
 msgid "Post Notifications Menu"
 msgstr "Új bejegyzésről értesítés"
 
 #: ../settings/settings-edit.php:324 ../sendmail/sendmail.php:93 ../classes/es-
-#: register.php:183 ../classes/es-register.php:184
+#: register.php:174 ../classes/es-register.php:175
 msgid "Newsletters"
 msgstr "Hírlevél"
 
@@ -1071,7 +1174,7 @@ msgstr "Táblák szinkronizálása"
 msgid "Click to sync tables"
 msgstr "Ide kattintva elkezdődik a táblák szinkronizálása"
 
-#: ../sentmail/sentmail-preview.php:62
+#: ../sentmail/sentmail-preview.php:53
 msgid "Back"
 msgstr "Előző"
 
@@ -1087,8 +1190,8 @@ msgstr " &lt;&lt; "
 msgid " &gt;&gt; "
 msgstr " &gt;&gt; "
 
-#: ../sentmail/sentmail-show.php:93 ../classes/es-register.php:189 ../classes/es-
-#: register.php:190
+#: ../sentmail/sentmail-show.php:93 ../classes/es-register.php:180 ../classes/es-
+#: register.php:181
 msgid "Reports"
 msgstr "Jelentések"
 
@@ -1103,8 +1206,8 @@ msgid "View Reports"
 msgstr "Jelentés megtekintése"
 
 #: ../sentmail/sentmail-show.php:108 ../sentmail/sentmail-show.php:121 ..
-#: compose/compose-edit.php:102 ../compose/compose-show.php:80 ..
-#: compose/compose-show.php:88
+#: compose/compose-edit.php:103 ../compose/compose-show.php:80 ..
+#: compose/compose-show.php:88 ../classes/es-register.php:1280
 msgid "Preview"
 msgstr "Előnézet"
 
@@ -1115,7 +1218,7 @@ msgstr "Típus"
 #: ../sentmail/sentmail-show.php:110 ../sentmail/sentmail-show.php:123 ..
 #: sentmail/deliverreport-show.php:70 ../sentmail/deliverreport-show.php:81 ..
 #: subscribers/view-subscriber-show.php:362 ../subscribers/view-subscriber-show.
-#: php:375 ../compose/compose-edit.php:114 ../compose/compose-add.php:97
+#: php:375 ../compose/compose-edit.php:115 ../compose/compose-add.php:97
 msgid "Status"
 msgstr "Státusz"
 
@@ -1342,8 +1445,8 @@ msgstr "A feliratkozók státuszát frissítettük. "
 msgid "Please select New Status to update."
 msgstr "Válaszd ki a feliratkozók új státuszát"
 
-#: ../subscribers/view-subscriber-show.php:241 ../classes/es-register.php:174 ..
-#: classes/es-register.php:175
+#: ../subscribers/view-subscriber-show.php:241 ../classes/es-register.php:165 ..
+#: classes/es-register.php:166
 msgid "Subscribers"
 msgstr "Feliratkozottak"
 
@@ -1428,7 +1531,7 @@ msgid "Email Address"
 msgstr "E-mail cím"
 
 #: ../subscribers/view-subscriber-show.php:361 ../subscribers/view-subscriber-
-#: show.php:374 ../classes/es-register.php:1086 ../classes/es-loadwidget.php:28
+#: show.php:374 ../classes/es-register.php:1443 ../classes/es-loadwidget.php:28
 msgid "Name"
 msgstr "Név"
 
@@ -1609,35 +1712,38 @@ msgstr "Válaszd ki, hogy az új feliratkozók melyik csoportba kerüljenek!"
 msgid "Please enter template heading."
 msgstr "Mi legyen a sablon címe? "
 
-#: ../compose/compose-edit.php:84
+#: ../compose/compose-edit.php:85
 msgid "Edit Email"
 msgstr "E-mail szerkesztése"
 
-#: ../compose/compose-edit.php:91 ../compose/compose-add.php:80
+#: ../compose/compose-edit.php:92 ../compose/compose-add.php:80 ../classes/es-
+#: register.php:1302
 msgid "Newsletter"
 msgstr "Hírlevél"
 
-#: ../compose/compose-edit.php:92 ../compose/compose-add.php:81
+#: ../compose/compose-edit.php:93 ../compose/compose-add.php:81 ../classes/es-
+#: register.php:1303
 msgid "Post Notification"
 msgstr "Értesítés az új bejegyzésről"
 
-#: ../compose/compose-edit.php:96 ../compose/compose-add.php:85
+#: ../compose/compose-edit.php:97 ../compose/compose-add.php:85
 msgid "Enter your Email Subject"
 msgstr "Írd be az e-mail tárgyát!"
 
-#: ../compose/compose-edit.php:100 ../compose/compose-add.php:89
+#: ../compose/compose-edit.php:101 ../compose/compose-add.php:89
 msgid "Enter Content for your Email"
 msgstr "Írd be az e-mail tartalmát!"
 
-#: ../compose/compose-edit.php:110 ../compose/compose-add.php:93
+#: ../compose/compose-edit.php:111 ../compose/compose-add.php:93 ../classes/es-
+#: register.php:1364
 msgid "Available Keywords"
 msgstr "Választható kulcsszavak"
 
-#: ../compose/compose-edit.php:116 ../compose/compose-add.php:99
+#: ../compose/compose-edit.php:117 ../compose/compose-add.php:99
 msgid "Published"
 msgstr "Közzétéve"
 
-#: ../compose/compose-edit.php:118 ../compose/compose-add.php:101
+#: ../compose/compose-edit.php:119 ../compose/compose-add.php:101
 msgid "Please select your mail status"
 msgstr "Válaszd ki az e-mail státuszát"
 
@@ -1645,8 +1751,7 @@ msgstr "Válaszd ki az e-mail státuszát"
 msgid "Add new Email"
 msgstr "Új e-mail hozzáadása"
 
-#: ../compose/compose-show.php:64 ../classes/es-register.php:177 ../classes/es-
-#: register.php:178
+#: ../compose/compose-show.php:64
 msgid "Compose"
 msgstr "E-mail szerkesztése"
 
@@ -1683,7 +1788,7 @@ msgstr "Üdvözöljük!"
 msgid "Thanks for installing and we hope you will enjoy using Email Subscribers."
 msgstr "Köszönjük, hogy telepítette a bővítményünket és reméljük elégedett lesz. "
 
-#: ../help/help.php:183 ../classes/es-register.php:1096 ../classes/es-loadwidget.
+#: ../help/help.php:183 ../classes/es-register.php:1453 ../classes/es-loadwidget.
 #: php:38
 msgid "Subscribe"
 msgstr "Feliratkozás"
@@ -1757,32 +1862,32 @@ msgstr "Sajnos nem sikerült elküldeni a levelet. A hiba ismeretlen. "
 msgid "Use this to send newsletter emails to your subscribers."
 msgstr "Ezzel tudsz hírlevelet küldeni az előfizetőknek"
 
-#: ../sendmail/sendmail.php:105
+#: ../sendmail/sendmail.php:106
 msgid "Select Email Subject from available list"
 msgstr "Válassza ki az e-mail tárgyát az alábbi listából!"
 
-#: ../sendmail/sendmail.php:132
+#: ../sendmail/sendmail.php:133
 msgid "Select Email Type"
 msgstr "Válassza ki az e-mail típusát!"
 
-#: ../sendmail/sendmail.php:139
+#: ../sendmail/sendmail.php:140
 msgid "Send email via cron job"
 msgstr "Időzített e-mail küldés"
 
-#: ../sendmail/sendmail.php:146
+#: ../sendmail/sendmail.php:147
 msgid "Select Subscribers group to Send Email"
 msgstr "Válassza ki, melyik előfizetői csoportnak kíván e-mailt küldteni"
 
-#: ../sendmail/sendmail.php:178
+#: ../sendmail/sendmail.php:179
 msgid "Recipients : 0 "
 msgstr "Címzettek: 0"
 
-#: ../sendmail/sendmail.php:180
+#: ../sendmail/sendmail.php:181
 #, php-format
 msgid "Recipients : %s"
 msgstr "Címzettek: %s"
 
-#: ../sendmail/sendmail.php:183
+#: ../sendmail/sendmail.php:184
 msgid ""
 "<br><br><strong>Your Recipients count is above 100.<br>We strongly recommend "
 "that you change above Mail Type to Cron and Send Mail via Cron Job."
@@ -1792,11 +1897,11 @@ msgstr ""
 "most egysxzerre küldjed, hanem használd az időzítést. </strong><br>Kattints "
 "a súgóra további segítségért!"
 
-#: ../sendmail/sendmail.php:194 ../sendmail/sendmail.php:196
+#: ../sendmail/sendmail.php:195 ../sendmail/sendmail.php:197
 msgid "Send Email"
 msgstr "Hírlevél küldése"
 
-#: ../sendmail/sendmail.php:199
+#: ../sendmail/sendmail.php:200
 msgid "Reset"
 msgstr "Alapbeállítások visszaállítása"
 
@@ -1844,46 +1949,46 @@ msgstr "<span style=\"color:#20b2aa;font-weight:bold;\">Időzített</span>"
 msgid "<span style=\"color:#993399;\">Immediately</span>"
 msgstr "<span style=\"color:#993399;\">Azonnal</span>"
 
-#: ../classes/es-register.php:171 ../classes/es-register.php:172 ../classes/es-
-#: register.php:782
+#: ../classes/es-register.php:162 ../classes/es-register.php:163 ../classes/es-
+#: register.php:947 ../classes/es-register.php:1193
 msgid "Email Subscribers"
 msgstr "Email Subscribers"
 
-#: ../classes/es-register.php:192
+#: ../classes/es-register.php:183
 msgid "Help & Info"
 msgstr "Segítség & Információ"
 
-#: ../classes/es-register.php:204
+#: ../classes/es-register.php:195
 msgctxt "view-subscriber-enhanced-select"
 msgid "Please enter subscriber email address."
 msgstr "Adja meg az előfizető e-mail címét."
 
-#: ../classes/es-register.php:205
+#: ../classes/es-register.php:196
 msgctxt "view-subscriber-enhanced-select"
 msgid "Please select subscriber email status."
 msgstr "Válassza ki az előfizető e-mail státuszát."
 
-#: ../classes/es-register.php:206
+#: ../classes/es-register.php:197
 msgctxt "view-subscriber-enhanced-select"
 msgid "Please select or create group for this subscriber."
 msgstr "Törölni akarja ezt az adatot?"
 
-#: ../classes/es-register.php:207
+#: ../classes/es-register.php:198
 msgctxt "view-subscriber-enhanced-select"
 msgid "Do you want to delete this record?"
 msgstr "Biztos törölni szeretnéd?"
 
-#: ../classes/es-register.php:208
+#: ../classes/es-register.php:199
 msgctxt "view-subscriber-enhanced-select"
 msgid "Please select the bulk action."
 msgstr "Kérem válassza a tömeges műveleteket!"
 
-#: ../classes/es-register.php:209
+#: ../classes/es-register.php:200
 msgctxt "view-subscriber-enhanced-select"
 msgid "Are you sure you want to delete selected records?"
 msgstr "Biztosan törlöd ezeket az adatokat? "
 
-#: ../classes/es-register.php:210
+#: ../classes/es-register.php:201
 msgctxt "view-subscriber-enhanced-select"
 msgid ""
 "Do you want to resend confirmation email? \\nAlso please note, this will "
@@ -1892,74 +1997,74 @@ msgstr ""
 "Valóban újra akarja küldeni az e-mail visszaigazoló levelet? Ha igen, akkor "
 "az előfizető ismét 'nem igazolt' státuszú lesz. "
 
-#: ../classes/es-register.php:211
+#: ../classes/es-register.php:202
 msgctxt "view-subscriber-enhanced-select"
 msgid "Please select new subscriber group."
 msgstr "KÉrem válassza ki az előfizetői csoportot"
 
-#: ../classes/es-register.php:212
+#: ../classes/es-register.php:203
 msgctxt "view-subscriber-enhanced-select"
 msgid "Please select new status for subscribers"
 msgstr "Add meg az előfizetők új státuszát!"
 
-#: ../classes/es-register.php:213
+#: ../classes/es-register.php:204
 msgctxt "view-subscriber-enhanced-select"
 msgid "Do you want to update subscribers group?"
 msgstr "Frissíteni akarja az előfizetői csoportokat? "
 
-#: ../classes/es-register.php:214
+#: ../classes/es-register.php:205
 msgctxt "view-subscriber-enhanced-select"
 msgid "Do you want to update subscribers status?"
 msgstr "Frissítsük a feliratkozók státuszát?"
 
-#: ../classes/es-register.php:215
+#: ../classes/es-register.php:206
 msgctxt "view-subscriber-enhanced-select"
 msgid ""
 "Please select only csv file. Please check official website for csv structure."
 "."
 msgstr "Csak csv fájlt választhat. Kérem ellenőrizze a csv megfelelő formátumát!"
 
-#: ../classes/es-register.php:223
+#: ../classes/es-register.php:214
 msgctxt "compose-enhanced-select"
 msgid "Please enter the Email Subject."
 msgstr "Kérem írja be a levél tárgyát."
 
-#: ../classes/es-register.php:224
+#: ../classes/es-register.php:215
 msgctxt "compose-enhanced-select"
 msgid "Do you want to delete this record?"
 msgstr "Valóban ki akarja törölni ezt az adatot? "
 
-#: ../classes/es-register.php:232
+#: ../classes/es-register.php:223
 msgctxt "notification-enhanced-select"
 msgid "Please select subscribers group."
 msgstr "Kérem válassza ki az előfizetői csoportot!"
 
-#: ../classes/es-register.php:233
+#: ../classes/es-register.php:224
 msgctxt "notification-enhanced-select"
 msgid "Please select notification mail subject. Use compose menu to create new."
 msgstr "KÉrem válassza ki az értesítőlevél tárgyát!"
 
-#: ../classes/es-register.php:234
+#: ../classes/es-register.php:225
 msgctxt "notification-enhanced-select"
 msgid "Please select notification status."
 msgstr "Válassza ki az értesítőlevél  státuszát!"
 
-#: ../classes/es-register.php:235
+#: ../classes/es-register.php:226
 msgctxt "notification-enhanced-select"
 msgid "Do you want to delete this record?"
 msgstr "Valóban törölni akarja ezt az adatot? "
 
-#: ../classes/es-register.php:243
+#: ../classes/es-register.php:234
 msgctxt "sendmail-enhanced-select"
 msgid "Please select your mail subject."
 msgstr "Kérem töltse ki a levél tárgyát!"
 
-#: ../classes/es-register.php:244
+#: ../classes/es-register.php:235
 msgctxt "sendmail-enhanced-select"
 msgid "Please select your mail type."
 msgstr "Az e-mail típusa (időzített vagy azonnali)"
 
-#: ../classes/es-register.php:245
+#: ../classes/es-register.php:236
 msgctxt "sendmail-enhanced-select"
 msgid ""
 "Have you double checked your selected group? If so, let's go ahead and send "
@@ -1968,54 +2073,54 @@ msgstr ""
 "Ellenőrizd még egyszer, hogy megfelelő csoportnak küldjük ki a leveleket. Ha "
 "rendben, akkor klikkelj megint."
 
-#: ../classes/es-register.php:253
+#: ../classes/es-register.php:244
 msgctxt "sentmail-enhanced-select"
 msgid "Do you want to delete this record?"
 msgstr "Szeretné törölni ezt az adatot? "
 
-#: ../classes/es-register.php:254
+#: ../classes/es-register.php:245
 msgctxt "sentmail-enhanced-select"
 msgid "Do you want to delete all records except latest 10?"
 msgstr "Minden adatot törölni szeretne az utolsó 10 kivételével?"
 
-#: ../classes/es-register.php:262
+#: ../classes/es-register.php:253
 msgctxt "cron-enhanced-select"
 msgid "Please select enter number of mails you want to send per hour/trigger."
 msgstr ""
 "Kérem írja be, hány darab e-mailt szeretne óránként vagy ciklusonként "
 "küldeni?"
 
-#: ../classes/es-register.php:263
+#: ../classes/es-register.php:254
 msgctxt "cron-enhanced-select"
 msgid "Please enter the mail count, only number."
 msgstr "Kérem egy számot adjon meg, hány e-mail? "
 
-#: ../classes/es-register.php:276
+#: ../classes/es-register.php:267
 msgctxt "widget-enhanced-select"
 msgid "Please enter email address"
 msgstr "Kérjük adja meg az e-mail címét"
 
-#: ../classes/es-register.php:277
+#: ../classes/es-register.php:268
 msgctxt "widget-enhanced-select"
 msgid "Please provide a valid email address"
 msgstr "Kérem adjon meg egy érvényes e-mail címet!"
 
-#: ../classes/es-register.php:278
+#: ../classes/es-register.php:269
 msgctxt "widget-enhanced-select"
 msgid "loading..."
 msgstr "betöltés..."
 
-#: ../classes/es-register.php:279
+#: ../classes/es-register.php:270
 msgctxt "widget-enhanced-select"
 msgid "Cannot create XMLHTTP instance"
 msgstr "Nem lehet ilyen XMLHTTP-t létrehozni"
 
-#: ../classes/es-register.php:280
+#: ../classes/es-register.php:271
 msgctxt "widget-enhanced-select"
 msgid "Successfully Subscribed."
 msgstr "Sikeres feliratkozás"
 
-#: ../classes/es-register.php:281
+#: ../classes/es-register.php:272
 msgctxt "widget-enhanced-select"
 msgid ""
 "Your subscription was successful! Within a few minutes, kindly check the "
@@ -2027,57 +2132,57 @@ msgstr ""
 "sincs meg, akkor próbáld meg még egyszer a feliratkozást, hátha hibás e-mail "
 "címet adtál meg. "
 
-#: ../classes/es-register.php:282
+#: ../classes/es-register.php:273
 msgctxt "widget-enhanced-select"
 msgid "Email Address already exists!"
 msgstr "Ez az e-mail cím már létezik"
 
-#: ../classes/es-register.php:283
+#: ../classes/es-register.php:274
 msgctxt "widget-enhanced-select"
 msgid "Oops.. Unexpected error occurred."
 msgstr "Váratlan hiba"
 
-#: ../classes/es-register.php:284
+#: ../classes/es-register.php:275
 msgctxt "widget-enhanced-select"
 msgid "Invalid email address"
 msgstr "Hibás e-mail cím"
 
-#: ../classes/es-register.php:285
+#: ../classes/es-register.php:276
 msgctxt "widget-enhanced-select"
 msgid "Please try after some time"
 msgstr "Kérem próbálja meg kicsit később!"
 
-#: ../classes/es-register.php:286
+#: ../classes/es-register.php:277
 msgctxt "widget-enhanced-select"
 msgid "There was a problem with the request"
 msgstr "Sajnos valami hiba történt."
 
-#: ../classes/es-register.php:293
+#: ../classes/es-register.php:284
 msgctxt "widget-page-enhanced-select"
 msgid "Please enter email address"
 msgstr "KÉrem adja meg az e-mail címét!"
 
-#: ../classes/es-register.php:294
+#: ../classes/es-register.php:285
 msgctxt "widget-page-enhanced-select"
 msgid "Please provide a valid email address"
 msgstr "Kérem adjon meg egy érvényes e-mail címet."
 
-#: ../classes/es-register.php:295
+#: ../classes/es-register.php:286
 msgctxt "widget-page-enhanced-select"
 msgid "loading..."
 msgstr "Kis türelmet..."
 
-#: ../classes/es-register.php:296
+#: ../classes/es-register.php:287
 msgctxt "widget-page-enhanced-select"
 msgid "Cannot create XMLHTTP instance"
 msgstr "Nem lehet ilyen XMLHTTP-t létrehozni"
 
-#: ../classes/es-register.php:297
+#: ../classes/es-register.php:288
 msgctxt "widget-page-enhanced-select"
 msgid "Successfully Subscribed."
 msgstr "Sikeres feliratkozás."
 
-#: ../classes/es-register.php:298
+#: ../classes/es-register.php:289
 msgctxt "widget-page-enhanced-select"
 msgid ""
 "Your subscription was successful! Within a few minutes, kindly check the "
@@ -2089,111 +2194,111 @@ msgstr ""
 "sincs meg, akkor próbáld meg még egyszer a feliratkozást, hátha hibás e-mail "
 "címet adtál meg. "
 
-#: ../classes/es-register.php:299
+#: ../classes/es-register.php:290
 msgctxt "widget-page-enhanced-select"
 msgid "Email Address already exists!"
 msgstr "Ilyen e-mail cím már létezik. "
 
-#: ../classes/es-register.php:300
+#: ../classes/es-register.php:291
 msgctxt "widget-page-enhanced-select"
 msgid "Oops.. Unexpected error occurred."
 msgstr "Váratlan hiba lépett fel"
 
-#: ../classes/es-register.php:301
+#: ../classes/es-register.php:292
 msgctxt "widget-page-enhanced-select"
 msgid "Invalid email address"
 msgstr "Hibás e-mail cím."
 
-#: ../classes/es-register.php:302
+#: ../classes/es-register.php:293
 msgctxt "widget-page-enhanced-select"
 msgid "Please try after some time"
 msgstr "Kérem próbálja meg később. "
 
-#: ../classes/es-register.php:303
+#: ../classes/es-register.php:294
 msgctxt "widget-page-enhanced-select"
 msgid "There was a problem with the request"
 msgstr "Valami hiba történt. "
 
-#: ../classes/es-register.php:782
+#: ../classes/es-register.php:947
 msgid "is getting even better!"
 msgstr "még jobb lesz!"
 
-#: ../classes/es-register.php:783
+#: ../classes/es-register.php:948
 msgid "But I need you to"
 msgstr "De szükségem van arra, hogy"
 
-#: ../classes/es-register.php:783
+#: ../classes/es-register.php:948
 msgid "help me prioritize"
 msgstr "segítsen sorrendet kialakítani"
 
-#: ../classes/es-register.php:783
+#: ../classes/es-register.php:948
 msgid "Please send your response today."
 msgstr "kérem küldje a válaszát még ma!"
 
-#: ../classes/es-register.php:790
+#: ../classes/es-register.php:955
 msgid "Here's how you use ES:"
 msgstr "Így használd az ES-t:"
 
-#: ../classes/es-register.php:803
+#: ../classes/es-register.php:968
 msgid "Have "
 msgstr "Van "
 
-#: ../classes/es-register.php:803
+#: ../classes/es-register.php:968
 msgid " Active Subscribers"
 msgstr " Aktív előfizető"
 
-#: ../classes/es-register.php:804
+#: ../classes/es-register.php:969
 msgid "Post "
 msgstr "Bejegyzés "
 
-#: ../classes/es-register.php:804
+#: ../classes/es-register.php:969
 msgid " blog per week"
 msgstr " blog hetente"
 
-#: ../classes/es-register.php:837
+#: ../classes/es-register.php:1002
 msgid "How soon do you want these new features?"
 msgstr "Mikor szeretnéd ezeket az új funkciókat?"
 
-#: ../classes/es-register.php:841
+#: ../classes/es-register.php:1006
 msgid "Beautiful Email Designs"
 msgstr "Gyönyörű e-mail dizájn."
 
-#: ../classes/es-register.php:842 ../classes/es-register.php:847 ../classes/es-
-#: register.php:852 ../classes/es-register.php:857
+#: ../classes/es-register.php:1007 ../classes/es-register.php:1012 ../classes/es-
+#: register.php:1017 ../classes/es-register.php:1022
 msgid "Right now!"
 msgstr "Most!"
 
-#: ../classes/es-register.php:843 ../classes/es-register.php:848 ../classes/es-
-#: register.php:853 ../classes/es-register.php:858
+#: ../classes/es-register.php:1008 ../classes/es-register.php:1013 ../classes/es-
+#: register.php:1018 ../classes/es-register.php:1023
 msgid "Soon"
 msgstr "Hamarosan"
 
-#: ../classes/es-register.php:844 ../classes/es-register.php:849 ../classes/es-
-#: register.php:854 ../classes/es-register.php:859
+#: ../classes/es-register.php:1009 ../classes/es-register.php:1014 ../classes/es-
+#: register.php:1019 ../classes/es-register.php:1024
 msgid "Later"
 msgstr "Később"
 
-#: ../classes/es-register.php:846
+#: ../classes/es-register.php:1011
 msgid "Spam Check, Scheduling... (Better Email Delivery)"
 msgstr "Levélszemét ellenőrzése. Folyamatban.... (még jobb célbatalálási arány)"
 
-#: ../classes/es-register.php:851
+#: ../classes/es-register.php:1016
 msgid "Discard Fake / Bouncing Emails"
 msgstr "A hamisítá levelek  elvetése / Visszautasított levelek"
 
-#: ../classes/es-register.php:856
+#: ../classes/es-register.php:1021
 msgid "Advanced Reporting"
 msgstr "Részletesebb jelentések"
 
-#: ../classes/es-register.php:884
+#: ../classes/es-register.php:1049
 msgid "Thank you!"
 msgstr "Köszönjük!"
 
-#: ../classes/es-register.php:885
+#: ../classes/es-register.php:1050
 msgid "No issues, have a nice day!"
 msgstr "Semmi probléma a mai nap!"
 
-#: ../classes/es-register.php:977
+#: ../classes/es-register.php:1158
 msgid ""
 "If you like <strong>Email Subscribers</strong>, please consider leaving us a "
 "<a target=\"_blank\" href=\"https://wordpress.org/support/plugin/email-"
@@ -2205,22 +2310,22 @@ msgstr ""
 "org/support/plugin/email-subscribers/reviews/?filter=5#new-post\">&#9733;"
 "&#9733;&#9733;&#9733;&#9733;</a> . Köszönjük előre is. "
 
-#: ../classes/es-register.php:1091 ../classes/es-loadwidget.php:33
+#: ../classes/es-register.php:1448 ../classes/es-loadwidget.php:33
 msgid "Email *"
 msgstr "E-mail*"
 
-#: ../classes/es-register.php:1134
+#: ../classes/es-register.php:1491
 msgid "Widget Title"
 msgstr "Widget Cím"
 
-#: ../classes/es-register.php:1138
+#: ../classes/es-register.php:1495
 msgid "Short description about subscription form"
 msgstr "A feliratkozó űrlap rövid leírása"
 
-#: ../classes/es-register.php:1142
+#: ../classes/es-register.php:1499
 msgid "Display Name Field"
 msgstr "Feliratkozásnál kérjük a nevet is? "
 
-#: ../classes/es-register.php:1149
+#: ../classes/es-register.php:1506
 msgid "Subscriber Group"
 msgstr "Előfizetői csoport"

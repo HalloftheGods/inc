@@ -160,7 +160,7 @@ class es_cls_registerhook {
 		}
 
 		add_menu_page( __( 'Email Subscribers', 'email-subscribers' ),
-			__( 'Email Subscribers', 'email-subscribers' ), 'manage_options', 'es-view-subscribers', array( 'es_cls_intermediate', 'es_subscribers' ), 'dashicons-email', 51 );
+			__( 'Email Subscribers', 'email-subscribers' ), 'edit_posts', 'es-view-subscribers', array( 'es_cls_intermediate', 'es_subscribers' ), 'dashicons-email', 51 );
 
 		add_submenu_page('es-view-subscribers', __( 'Subscribers', ES_TDOMAIN ),
 			__( 'Subscribers', ES_TDOMAIN ), $es_roles_subscriber, 'es-view-subscribers', array( 'es_cls_intermediate', 'es_subscribers' ));
@@ -1239,7 +1239,7 @@ class es_cls_registerhook {
 		global $post;
 
 		$es_post_thumbnail = get_the_post_thumbnail( $post->ID );
-		$es_templ_thumbnail = ( !empty( $es_post_thumbnail ) ) ? get_the_post_thumbnail($post->ID, array('200','200') ) : '<img src="'.ES_URL.'images/es-custom-template.png" />';
+		$es_templ_thumbnail = ( !empty( $es_post_thumbnail ) ) ? get_the_post_thumbnail($post->ID, array('200','200') ) : '<img src="'.ES_URL.'images/envelope.png" />';
 
 		switch ($column) {
 			case 'es_templ_type':
@@ -1255,11 +1255,27 @@ class es_cls_registerhook {
 		return $column; 
 	}
 
+	public static function es_add_admin_css() {
+
+		global $current_screen;
+
+		if($current_screen->post_type != 'es_template') return;
+
+		?>
+		<style type="text/css">
+			.column-es_templ_thumbnail, #es_templ_thumbnail,
+			.column-es_templ_type, #es_templ_type {
+				text-align: center !important;
+			}
+		</style>
+		<?php
+	}
+
 	public static function es_add_template_action( $actions, $post ) {
 		if ($post->post_type != 'es_template') return $actions;
 
 		$es_templ_type = get_post_meta($post->ID, 'es_template_type', true);
-		$page = ($es_templ_type == 'Newsletter') ? 'es-sendemail' : 'es-notification';
+		$page = ( ($es_templ_type == 'Newsletter') ? 'es-sendemail' : 'es-notification' );
 		$preview_url = ES_ADMINURL."?page=".$page."&amp;ac=preview&did=".$post->ID;
 		$actions['preview_campaign'] = '<a class="es-preview-template" target="_blank" href="'.$preview_url.'" >'.__('Preview' , ES_TDOMAIN).'</a>';
 
@@ -1277,16 +1293,16 @@ class es_cls_registerhook {
 			$es_templ_type = get_post_meta($post->ID, 'es_template_type', true);
 		}
 		?>
-			<p style="margin-top: 0em; !important;">
-				<?php echo __( 'Available Keyword for Post Notification: {{POSTTITLE}}', ES_TDOMAIN ); ?>
-			</p>
-			<p>
-				<label for="tag-link"><?php echo __( 'Select your Email Template Type', ES_TDOMAIN ); ?></label><br/>
-				<select name="es_template_type" id="es_template_type">
-					<option value='Newsletter' <?php if( $es_templ_type == 'Newsletter' ) { echo 'selected="selected"' ; } ?>><?php echo __( 'Newsletter', ES_TDOMAIN ); ?></option>
-					<option value='Post Notification' <?php if( $es_templ_type == 'Post Notification' ) { echo 'selected="selected"' ; } ?>><?php echo __( 'Post Notification', ES_TDOMAIN ); ?></option>
-				</select>
-			</p>
+		<p style="margin-top: 0em; !important;">
+			<?php echo __( 'Available Keyword for Post Notification: {{POSTTITLE}}', ES_TDOMAIN ); ?>
+		</p>
+		<p>
+			<label for="tag-link"><?php echo __( 'Select your Email Template Type', ES_TDOMAIN ); ?></label><br/>
+			<select name="es_template_type" id="es_template_type">
+				<option value='Newsletter' <?php if( $es_templ_type == 'Newsletter' ) { echo 'selected="selected"' ; } ?>><?php echo __( 'Newsletter', ES_TDOMAIN ); ?></option>
+				<option value='Post Notification' <?php if( $es_templ_type == 'Post Notification' ) { echo 'selected="selected"' ; } ?>><?php echo __( 'Post Notification', ES_TDOMAIN ); ?></option>
+			</select>
+		</p>
 		<?php
 	}
 
@@ -1319,10 +1335,12 @@ class es_cls_registerhook {
 	public static function add_preview_button() {
 
 		global $post;
-
 		if ($post->post_type != 'es_template') return;
 
-		$preview_url = ES_ADMINURL."?page=es-notification&amp;ac=preview&did=".$post->ID;
+		$es_templ_type = get_post_meta($post->ID, 'es_template_type', true);
+		$page = ($es_templ_type == 'Newsletter') ? 'es-sendemail' : 'es-notification';
+		$preview_url = ES_ADMINURL."?page=".$page."&amp;ac=preview&did=".$post->ID;
+
 		//Adding a preview button in side bar widget
 		$script = "<script>
 		var prvw_button = jQuery('.es_preview_button');
@@ -1333,12 +1351,12 @@ class es_cls_registerhook {
 									<div class="clear"></div></div>';
 		echo $preview_button;
 		echo $script;
+
 	}
 
 	public static function es_add_keyword() {
 
 		global $post;
-
 		if ($post->post_type != 'es_template') return;
 		?>
 		<p>
