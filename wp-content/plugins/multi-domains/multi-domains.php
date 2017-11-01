@@ -176,7 +176,7 @@ class multi_domain {
 		add_action( 'wp_head', array( $this, 'enqueue_signup_javascript' ) );
 
 		// Empty $current_site global on signup page
-		add_action( 'signup_hidden_fields', array( $this, 'modify_current_site' ) );
+		// add_action( 'signup_hidden_fields', array( $this, 'modify_current_site' ) );
 		// Populate $current_site, $domain and $base globals on signup page with values choosen by the user on signup page
 		add_filter( 'newblogname', array( $this, 'set_registration_globals' ) );
 		add_action( 'admin_action_add-site', array( $this, 'set_registration_globals' ) ); // For when the site is created from network admin
