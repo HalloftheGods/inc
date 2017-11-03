@@ -300,7 +300,7 @@ function scrawl_get_gravatar() {
 		's' => 120,
 		'd' => urlencode( $default ),
 	), $url );
-
+	
 	echo sprintf( '<a href="%1$s"><img src="%2$s" class="avatar no-grav site-logo"></a>',
 			esc_url( home_url( '/' ) ),
 			esc_url_raw( $url ) );

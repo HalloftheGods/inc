@@ -14,13 +14,7 @@ if(!defined('IG_SURVEY_TDOMAIN')) define('IG_SURVEY_TDOMAIN', 'icegram');
 
 		$date_diff = floor( ( strtotime($ig_current_date) - strtotime($ig_update_date) ) / (3600 * 24) );
 		if($date_diff < 5) return;
-
-		// $home_url = home_url();
-  //       $strlen = strlen($home_url);
-  //       $res = $strlen%10;
-  //       if( $res != 1 ){
-  //           return;
-  //       }
+		
 		$ig_data = Icegram::ig_get_survey_data();
         $publish_days_diff = human_time_diff(strtotime($ig_data['ig_last_publish_campaign']),strtotime($ig_current_date)); 
         $edit_days_diff = human_time_diff(strtotime($ig_data['ig_last_modified_campaign']),strtotime($ig_current_date));

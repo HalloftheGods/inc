@@ -1,117 +1,100 @@
-# Translation of WordPress.com - Themes - Scrawl in Albanian
-# This file is distributed under the same license as the WordPress.com - Themes - Scrawl package.
+# Translation of Scrawl in Albanian
+# This file is distributed under the same license as the Scrawl package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2017-03-23 08:46:59+0000\n"
+"PO-Revision-Date: 2015-03-12 03:54:34+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: GlotPress/2.4.0-alpha\n"
-"Language: sq_AL\n"
-"Project-Id-Version: WordPress.com - Themes - Scrawl\n"
-
-#: inc/wpcom-colors.php:37
-msgid "Main Accent"
-msgstr "Theksimi Kryesor"
-
-#. Translators: If there are characters in your language that are not
-#. * supported by Lora, translate this to 'off'. Do not translate
-#. * into your own language.
-#: functions.php:125
-msgctxt "Lora font: on or off"
-msgid "on"
-msgstr "on"
+"X-Generator: GlotPress/1.0-alpha-1100\n"
+"Project-Id-Version: Scrawl\n"
 
 #: content.php:35
 msgid "Featured"
 msgstr "E zgjedhur"
 
-#. Description of the plugin/theme
-#: wp-content/themes/pub/scrawl/style.css
-msgid "A clean, responsive theme for long-form writing, with bold featured images, fancy image captions and pull quotes, and plenty of space for your content to shine. A slide-out sidebar provides ready access to all your secondary content, including social links, custom menu, and widgets."
-msgstr "Një temë e pastër, reaguese, për shkrime të gjata, me figura të zgjedhura muskuloze, tituj figurash dhe thonjëza citimesh tërheqëse, dhe plot hapësirë që lënda juaj të ndrisë. Një anështyllë që hapet dhe mbyllet ofron hyrje të menjëhershme te krejt lënda juaj dytësore, përfshi lidhje shoqërore, menu vetjake dhe widget-e."
-
 #: single.php:17
 msgid "Next post"
-msgstr "Postimi pasues"
-
-#: single.php:17
-msgid "Previous post"
-msgstr "Postimi i mëparshëm"
+msgstr "Postimi Pasues"
 
 #: search.php:16
 msgid "Search Results for: %s"
 msgstr "Përfundime Kërkimi për: %s"
 
+#: single.php:17
+msgid "Previous post"
+msgstr "Postimi i Mëparshëm"
+
+#: inc/template-tags.php:189
+msgid "<span class=\"posted-on\">Posted on %1$s</span><span class=\"byline\"> by %2$s</span>"
+msgstr "<span class=\"posted-on\">Postuar më %1$s</span><span class=\"byline\"> nga %2$s</span>"
+
 #: inc/template-tags.php:275
 msgid "All %s posts"
 msgstr "Krejt postimet %s"
 
-#: inc/template-tags.php:189
-msgid "<span class=\"posted-on\">Posted on %1$s</span><span class=\"byline\"> by %2$s</span>"
-msgstr "<span class=\"posted-on\">Postuar në %1$s</span><span class=\"byline\"> nga %2$s</span>"
-
 #: inc/template-tags.php:182
 msgid ", "
 msgstr ", "
-
-#: inc/template-tags.php:177
-msgid "<span class=\"posted-on\">Posted on %1$s</span><span class=\"byline\"> by %3$s</span><span class=\"category-links\"> in %2$s</span>"
-msgstr "<span class=\"posted-on\">Postuar në %1$s</span><span class=\"byline\"> nga %3$s</span><span class=\"category-links\"> nën %2$s</span>"
-
-#: inc/template-tags.php:120
-msgid "Archives"
-msgstr "Arkiva"
 
 #. translators: 1: Taxonomy singular name, 2: Current taxonomy term
 #: inc/template-tags.php:118
 msgid "%1$s: %2$s"
 msgstr "%1$s: %2$s"
 
-#: inc/template-tags.php:114
-msgid "Archives: %s"
-msgstr "Arkiva: %s"
+#: inc/template-tags.php:120
+msgid "Archives"
+msgstr "Arkiva"
 
 #: inc/template-tags.php:111
 msgctxt "post format archive title"
 msgid "Chats"
 msgstr "Fjalosje"
 
-#: inc/template-tags.php:109
-msgctxt "post format archive title"
-msgid "Audio"
-msgstr "Audio"
+#: inc/template-tags.php:114
+msgid "Archives: %s"
+msgstr "Arkiva: %s"
 
 #: inc/template-tags.php:107
 msgctxt "post format archive title"
 msgid "Statuses"
 msgstr "Gjendje"
 
-#: inc/template-tags.php:105
+#: inc/template-tags.php:109
 msgctxt "post format archive title"
-msgid "Links"
-msgstr "Lidhje"
+msgid "Audio"
+msgstr "Audio"
 
 #: inc/template-tags.php:103
 msgctxt "post format archive title"
 msgid "Quotes"
-msgstr "Citime"
+msgstr "Thonjëza"
 
-#: inc/template-tags.php:101
+#: inc/template-tags.php:105
 msgctxt "post format archive title"
-msgid "Videos"
-msgstr "Video"
+msgid "Links"
+msgstr "Lidhje"
 
 #: inc/template-tags.php:99
 msgctxt "post format archive title"
 msgid "Images"
 msgstr "Figura"
 
+#: inc/template-tags.php:101
+msgctxt "post format archive title"
+msgid "Videos"
+msgstr "Video"
+
 #: inc/template-tags.php:97
 msgctxt "post format archive title"
 msgid "Galleries"
 msgstr "Galeri"
+
+#: inc/template-tags.php:92
+msgctxt "daily archives date format"
+msgid "F j, Y"
+msgstr "j F, Y"
 
 #: inc/template-tags.php:95
 msgctxt "post format archive title"
@@ -119,22 +102,17 @@ msgid "Asides"
 msgstr "Anësore"
 
 #: inc/template-tags.php:92
-msgctxt "daily archives date format"
-msgid "F j, Y"
-msgstr "j F, Y"
-
-#: inc/template-tags.php:92
 msgid "Day: %s"
 msgstr "Ditë: %s"
+
+#: inc/template-tags.php:90
+msgid "Month: %s"
+msgstr "Muaj: %s"
 
 #: inc/template-tags.php:90
 msgctxt "monthly archives date format"
 msgid "F Y"
 msgstr "F Y"
-
-#: inc/template-tags.php:90
-msgid "Month: %s"
-msgstr "Muaj: %s"
 
 #: inc/template-tags.php:88
 msgctxt "yearly archives date format"
@@ -153,21 +131,21 @@ msgstr "Autor: %s"
 msgid "Tag: %s"
 msgstr "Etiketë: %s"
 
+#: inc/template-tags.php:56
+msgid "Post navigation"
+msgstr "Lëvizje te postimet"
+
 #: inc/template-tags.php:82
 msgid "Category: %s"
 msgstr "Kategori: %s"
 
-#: inc/template-tags.php:56
-msgid "Post navigation"
-msgstr "Lëvizje te postimi"
-
 #: inc/template-tags.php:31
 msgid "Newer posts"
-msgstr "Postime më të reja"
+msgstr "Postime Më të Reja"
 
 #: inc/template-tags.php:27
 msgid "Older posts"
-msgstr "Postime më të vjetra"
+msgstr "Postime Më të Vjetra"
 
 #: inc/template-tags.php:23
 msgid "Posts navigation"
@@ -179,43 +157,31 @@ msgstr "Anuloje përgjigjen"
 
 #: inc/extras.php:67
 msgid "Page %s"
-msgstr "Faqja %s"
-
-#: inc/customizer.php:30
-msgid "Gravatar Email"
-msgstr "Email Gravatar-i"
+msgstr "Faqe %s"
 
 #: inc/customizer.php:20
 msgid "Theme"
 msgstr "Temë"
 
-#: header.php:54
-msgid "Skip to content"
-msgstr "Hidhu te lënda"
-
-#. Translators: If there are characters in your language that are not
-#. * supported by Merriweather, translate this to 'off'. Do not translate
-#. * into your own language.
-#: functions.php:131
-msgctxt "Merriweather font: on or off"
-msgid "on"
-msgstr "on"
-
 #: functions.php:85
 msgid "Slide-Out Sidebar"
 msgstr "Anështyllë Hapmbyll"
+
+#: header.php:54
+msgid "Skip to content"
+msgstr "Hidhu te lënda"
 
 #: functions.php:50
 msgid "Social Links"
 msgstr "Lidhje Shoqërore"
 
-#: functions.php:49 header.php:25
-msgid "Primary Menu"
-msgstr "Menuja Parësore"
-
 #: footer.php:17
 msgid "Theme: %1$s by %2$s."
 msgstr "Temë: %1$s nga %2$s."
+
+#: functions.php:49 header.php:25
+msgid "Primary Menu"
+msgstr "Menuja Parësore"
 
 #: footer.php:15
 msgid "Proudly powered by %s"
@@ -230,12 +196,12 @@ msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
 msgstr "Vazhdoni leximin <span class=\"meta-nav\">&rarr;</span>"
 
 #: content-single.php:39 content.php:41
-msgid "%"
-msgstr "%"
-
-#: content-single.php:39 content.php:41
 msgid "1"
 msgstr "1"
+
+#: content-single.php:39 content.php:41
+msgid "%"
+msgstr "%"
 
 #: content-single.php:39 content.php:41
 msgid "0"
@@ -243,7 +209,7 @@ msgstr "0"
 
 #: content-page.php:25 content-single.php:42 content.php:44
 msgid "Edit"
-msgstr "Përpunoni"
+msgstr "Përpuno"
 
 #: content-page.php:18 content-single.php:18 content.php:24
 msgid "Pages:"
@@ -251,11 +217,11 @@ msgstr "Faqe:"
 
 #: content-none.php:28
 msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
-msgstr "Duket se nuk gjejmë dot ç&#8217;po kërkonit. Ndoshta mund t&#8217;ju ndihë kërkimi."
+msgstr "Duket se nuk qemë në gjendje të gjenim ç&#8217;po kërkonit. Ndoshta mund t&#8217;ju ndihë kërkimi."
 
 #: content-none.php:23
 msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
-msgstr "Na ndjeni, por nuk u përputh gjë me termat tuaj të kërkimit. Ju lutemi, riprovoni me ndoca fjalëkyçe të tjera."
+msgstr "Na ndjeni, por nuk u përputh gjë me kriterin tuaj të kërkimit. Ju lutemi, riprovoni me ndonjë fjalëkyç tjetër."
 
 #: content-none.php:19
 msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
@@ -265,17 +231,17 @@ msgstr "Gati për botimin e postimit tuaj të parë? <a href=\"%1$s\">Fillojani 
 msgid "Nothing Found"
 msgstr "Nuk u Gjet Gjë"
 
-#: comments.php:62
-msgid "Comments are closed."
-msgstr "Komentet janë të mbyllura."
-
 #: comments.php:50
 msgid "Newer Comments"
-msgstr "Komente Më të Reja"
+msgstr "Komentet Më të Reja"
+
+#: comments.php:62
+msgid "Comments are closed."
+msgstr "Komentet janë mbyllur."
 
 #: comments.php:49
 msgid "Older Comments"
-msgstr "Komente Më të Vjetra"
+msgstr "Komentet Më të Vjetra"
 
 #: comments.php:46
 msgid "Comment navigation"
@@ -283,7 +249,7 @@ msgstr "Lëvizje te komentet"
 
 #: comments.php:39
 msgid "Reply"
-msgstr "Përgjigje"
+msgstr "Përgjigjiuni"
 
 #: comments.php:28
 msgctxt "comments title"
@@ -294,7 +260,7 @@ msgstr[1] "%1$s mendime mbi &ldquo;%2$s&rdquo;"
 
 #: 404.php:19
 msgid "It looks like nothing was found at this location. Maybe try a search?"
-msgstr "Duket se nuk u gjet gjë në këtë vend. Ndoshta duhet provuar një kërkim?"
+msgstr "Duket se nuk u gjet gjë në këtë vend. Të provohet një kërkim ndoshta?"
 
 #: 404.php:15
 msgid "Oops! That page can&rsquo;t be found."

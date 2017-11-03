@@ -1,27 +1,14 @@
-# Translation of WordPress.com - Themes - Scrawl in French (Canada)
-# This file is distributed under the same license as the WordPress.com - Themes - Scrawl package.
+# Translation of Scrawl in French (Canada)
+# This file is distributed under the same license as the Scrawl package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2017-03-23 08:46:59+0000\n"
+"PO-Revision-Date: 2015-05-18 13:23:54+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: GlotPress/2.4.0-alpha\n"
-"Language: fr_CA\n"
-"Project-Id-Version: WordPress.com - Themes - Scrawl\n"
-
-#: inc/wpcom-colors.php:37
-msgid "Main Accent"
-msgstr "Accent Principal"
-
-#. Translators: If there are characters in your language that are not
-#. * supported by Lora, translate this to 'off'. Do not translate
-#. * into your own language.
-#: functions.php:125
-msgctxt "Lora font: on or off"
-msgid "on"
-msgstr "activée"
+"X-Generator: GlotPress/1.0-alpha-1100\n"
+"Project-Id-Version: Scrawl\n"
 
 #: content.php:35
 msgid "Featured"
@@ -31,78 +18,78 @@ msgstr "À la une"
 msgid "Next post"
 msgstr "Article suivant"
 
-#: single.php:17
-msgid "Previous post"
-msgstr "Article précèdent"
-
 #: search.php:16
 msgid "Search Results for: %s"
 msgstr "Résultats de recherche pour : %s"
 
-#: inc/template-tags.php:275
-msgid "All %s posts"
-msgstr "Tous les articles de %s"
+#: single.php:17
+msgid "Previous post"
+msgstr "Article précèdent"
 
 #: inc/template-tags.php:189
 msgid "<span class=\"posted-on\">Posted on %1$s</span><span class=\"byline\"> by %2$s</span>"
 msgstr "<span class=\"posted-on\">Publié le %1$s</span><span class=\"byline\"> par %2$s</span>"
 
+#: inc/template-tags.php:275
+msgid "All %s posts"
+msgstr "Tous les articles de %s"
+
 #: inc/template-tags.php:182
 msgid ", "
 msgstr ", "
-
-#: inc/template-tags.php:120
-msgid "Archives"
-msgstr "Archives"
 
 #. translators: 1: Taxonomy singular name, 2: Current taxonomy term
 #: inc/template-tags.php:118
 msgid "%1$s: %2$s"
 msgstr "%1$s : %2$s"
 
-#: inc/template-tags.php:114
-msgid "Archives: %s"
-msgstr "Archives&nbsp;: %s"
+#: inc/template-tags.php:120
+msgid "Archives"
+msgstr "Archives"
 
 #: inc/template-tags.php:111
 msgctxt "post format archive title"
 msgid "Chats"
 msgstr "Clavardages"
 
-#: inc/template-tags.php:109
-msgctxt "post format archive title"
-msgid "Audio"
-msgstr "Audio"
+#: inc/template-tags.php:114
+msgid "Archives: %s"
+msgstr "Archives&nbsp;: %s"
 
 #: inc/template-tags.php:107
 msgctxt "post format archive title"
 msgid "Statuses"
 msgstr "Statuts"
 
-#: inc/template-tags.php:105
-msgctxt "post format archive title"
-msgid "Links"
-msgstr "Liens"
-
 #: inc/template-tags.php:103
 msgctxt "post format archive title"
 msgid "Quotes"
 msgstr "Citations"
 
-#: inc/template-tags.php:101
+#: inc/template-tags.php:105
 msgctxt "post format archive title"
-msgid "Videos"
-msgstr "Vidéos"
+msgid "Links"
+msgstr "Liens"
 
 #: inc/template-tags.php:99
 msgctxt "post format archive title"
 msgid "Images"
 msgstr "Images"
 
+#: inc/template-tags.php:101
+msgctxt "post format archive title"
+msgid "Videos"
+msgstr "Vidéos"
+
 #: inc/template-tags.php:97
 msgctxt "post format archive title"
 msgid "Galleries"
 msgstr "Galeries"
+
+#: inc/template-tags.php:92
+msgctxt "daily archives date format"
+msgid "F j, Y"
+msgstr "j F Y"
 
 #: inc/template-tags.php:95
 msgctxt "post format archive title"
@@ -110,22 +97,17 @@ msgid "Asides"
 msgstr "Apartés"
 
 #: inc/template-tags.php:92
-msgctxt "daily archives date format"
-msgid "F j, Y"
-msgstr "j F Y"
-
-#: inc/template-tags.php:92
 msgid "Day: %s"
 msgstr "Jour&nbsp;: %s"
+
+#: inc/template-tags.php:90
+msgid "Month: %s"
+msgstr "Mois&nbsp;: %s"
 
 #: inc/template-tags.php:90
 msgctxt "monthly archives date format"
 msgid "F Y"
 msgstr "F Y"
-
-#: inc/template-tags.php:90
-msgid "Month: %s"
-msgstr "Mois&nbsp;: %s"
 
 #: inc/template-tags.php:88
 msgctxt "yearly archives date format"
@@ -144,13 +126,13 @@ msgstr "Auteur : %s"
 msgid "Tag: %s"
 msgstr "Mot-clé : %s"
 
-#: inc/template-tags.php:82
-msgid "Category: %s"
-msgstr "Catégorie : %s"
-
 #: inc/template-tags.php:56
 msgid "Post navigation"
 msgstr "Navigation des articles"
+
+#: inc/template-tags.php:82
+msgid "Category: %s"
+msgstr "Catégorie : %s"
 
 #: inc/template-tags.php:31
 msgid "Newer posts"
@@ -176,10 +158,6 @@ msgstr "Page %s"
 msgid "Theme"
 msgstr "Thème"
 
-#: header.php:54
-msgid "Skip to content"
-msgstr "Aller au contenu principal"
-
 #. Translators: If there are characters in your language that are not
 #. * supported by Merriweather, translate this to 'off'. Do not translate
 #. * into your own language.
@@ -188,17 +166,21 @@ msgctxt "Merriweather font: on or off"
 msgid "on"
 msgstr "activée"
 
+#: header.php:54
+msgid "Skip to content"
+msgstr "Aller au contenu principal"
+
 #: functions.php:50
 msgid "Social Links"
 msgstr "Liens Sociaux"
 
-#: functions.php:49 header.php:25
-msgid "Primary Menu"
-msgstr "Menu principal"
-
 #: footer.php:17
 msgid "Theme: %1$s by %2$s."
 msgstr "Thème %1$s par %2$s."
+
+#: functions.php:49 header.php:25
+msgid "Primary Menu"
+msgstr "Menu principal"
 
 #: footer.php:15
 msgid "Proudly powered by %s"
@@ -213,12 +195,12 @@ msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
 msgstr "Lire la suite <span class=\"meta-nav\">&rarr;</span>"
 
 #: content-single.php:39 content.php:41
-msgid "%"
-msgstr "%"
-
-#: content-single.php:39 content.php:41
 msgid "1"
 msgstr "1"
+
+#: content-single.php:39 content.php:41
+msgid "%"
+msgstr "%"
 
 #: content-single.php:39 content.php:41
 msgid "0"
@@ -248,13 +230,13 @@ msgstr "Vous êtes prêt à publier votre premier article? <a href=\"%1$s\">Comm
 msgid "Nothing Found"
 msgstr "Inaccessible"
 
-#: comments.php:62
-msgid "Comments are closed."
-msgstr "Les commentaires sont fermés."
-
 #: comments.php:50
 msgid "Newer Comments"
 msgstr "Commentaires ultérieurs"
+
+#: comments.php:62
+msgid "Comments are closed."
+msgstr "Les commentaires sont fermés."
 
 #: comments.php:49
 msgid "Older Comments"

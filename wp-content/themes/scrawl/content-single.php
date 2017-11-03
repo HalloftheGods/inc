@@ -24,7 +24,7 @@ $formats = get_theme_support( 'post-formats' );
 	<footer class="entry-footer">
 		<?php
 			$tags_list = get_the_tag_list( '', '' );
-			if ( $tags_list && ! is_wp_error( $tags_list ) ) :
+			if ( $tags_list ) :
 		?>
 		<span class="tags-links clear">
 			<?php echo $tags_list; ?>

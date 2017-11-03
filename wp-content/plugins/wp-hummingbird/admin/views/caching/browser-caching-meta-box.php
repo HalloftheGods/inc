@@ -38,7 +38,7 @@
 			<p>
 				<?php printf(
 					/* translators: %s: Number of issues */
-				__( '%s of your cache types don’t meet the recommended expiry period of 8 days.', 'wphb' ), absint( $issues ) );
+				__( '%s of your cache types don’t meet the recommended expiry period of 8 days.', 'wphb' ), absint( $issues ) );		  		 		 	 				  			
 				?>
 			</p>
 		</div>
@@ -83,6 +83,27 @@
 			endif; ?>
 			<div class="table-row">
 				<div class="wphb-caching-summary-item-type">
+					<span class="wphb-filename-extension wphb-filename-extension-<?php echo esc_attr( $type ); ?>">
+						<?php
+						switch ( $type ) {
+							case 'javascript':
+								$label = 'JavaScript';
+								echo 'js';
+								break;
+							case 'images':
+								$label = 'Images';
+								echo 'img';
+								break;
+							case 'css':
+								$label = 'CSS';
+								echo esc_html( $type );
+								break;
+							case 'media':
+								$label = 'Media';
+								echo esc_html( $type );
+								break;
+						} ?>
+					</span>
 					<?php echo esc_html( $type ); ?>
 				</div>
 				<div class="wphb-caching-summary-item-expiry">

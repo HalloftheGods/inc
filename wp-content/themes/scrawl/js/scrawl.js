@@ -3,7 +3,7 @@
 	var menuToggle = $( '.menu-toggle' );
 	var slideMenu = $( '.slide-menu' );
 	var body = $( 'body' );
-
+	
 	var toggleAria = function( selector ) {
 		if ( 'false' === selector.attr( 'aria-expanded' ) ) {
 			selector.attr( 'aria-expanded', 'true' );
@@ -12,10 +12,10 @@
 			selector.attr( 'aria-expanded', 'false' );
 		}
 	};
-
+	
 	slideMenu.attr( 'aria-expanded', 'false' );
 	menuToggle.attr( 'aria-expanded', 'false' );
-
+	
 	/*
 	 * Toggle slide menu
 	 */
@@ -36,12 +36,12 @@
 					$( slideMenu ).attr( "data-pos", $(window).scrollTop() );
 					$(window).scrollTop( 0 );
 				}
-				else {
+				else { 
 					// if not, return to saved data-pos
 					$(window).scrollTop( $( slideMenu ).attr('data-pos') );
 				}
 			}
-
+			
 			//Close slide menu with double click
 			body.dblclick( function( e ) {
 				e.preventDefault();
@@ -156,7 +156,7 @@
 					}
 				} );
 		} );
-
+		
 		$( '.entry-content .jetpack-video-wrapper' ).each( function() {
 			if ( $( this ).find( ':first-child' ).width >= 800 ) {
 				$( this ).addClass( 'caption-big' );

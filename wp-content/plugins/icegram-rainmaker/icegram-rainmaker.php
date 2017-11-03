@@ -3,7 +3,7 @@
  * Plugin Name: Rainmaker - The Best Readymade WP Forms Plugin
  * Plugin URI: http://www.icegram.com/addons/icegram-rainmaker/
  * Description: The complete solution to create simple forms and collect leads
- * Version: 0.25
+ * Version: 0.26
  * Author: icegram
  * Author URI: http://www.icegram.com/
  *

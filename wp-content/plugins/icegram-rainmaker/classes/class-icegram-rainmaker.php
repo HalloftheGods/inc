@@ -10,7 +10,7 @@ if ( !class_exists( 'Rainmaker' ) ) {
 		function __construct() {
 		    $this->plugin_url   = untrailingslashit( plugins_url( '/', __FILE__ ) ) .'/';
 		    $this->plugin_path  = untrailingslashit( plugin_dir_path( __FILE__ ) );
-		    $this->version = "0.25";
+		    $this->version = "0.26";
 		    //welcome
 		    add_action( 'admin_init', array( &$this, 'welcome' ) );
 			add_action( 'init', array( &$this, 'register_rainmaker_form_post_type' ) );
@@ -74,8 +74,8 @@ if ( !class_exists( 'Rainmaker' ) ) {
 		    }
 		    
 
-		    add_action( 'admin_notices', array( &$this,'rm_add_admin_notices'));
-		    add_action( 'admin_init', array( &$this, 'rm_dismiss_admin_notice' ) );
+		    // add_action( 'admin_notices', array( &$this,'rm_add_admin_notices'));
+		    // add_action( 'admin_init', array( &$this, 'rm_dismiss_admin_notice' ) );
 		}
 
 		function welcome(){
@@ -103,20 +103,20 @@ if ( !class_exists( 'Rainmaker' ) ) {
             include ( 'addons.php' );
         }
 
-        public function rm_add_admin_notices() {        
-            $screen = get_current_screen(); 
-	        if ( !in_array( $screen->id, array( 'edit-rainmaker_form', 'rainmaker_form','edit-rainmaker_lead','rainmaker_form_page_icegram-rainmaker-support', 'rainmaker_form_page_icegram-rainmaker-upgrade' ), true ) ) return;
-	        include_once('rm-offer.php');
-        }
+     //    public function rm_add_admin_notices() {        
+     //        $screen = get_current_screen(); 
+	    //     if ( !in_array( $screen->id, array( 'edit-rainmaker_form', 'rainmaker_form','edit-rainmaker_lead','rainmaker_form_page_icegram-rainmaker-support', 'rainmaker_form_page_icegram-rainmaker-upgrade' ), true ) ) return;
+	    //     include_once('rm-offer.php');
+     //    }
 
-        public function rm_dismiss_admin_notice(){
-        	if(isset($_GET['rm_dismiss_admin_notice']) && $_GET['rm_dismiss_admin_notice'] == '1' && isset($_GET['rm_option_name'])){
-	            $option_name = sanitize_text_field($_GET['rm_option_name']);
-	            update_option($option_name.'_icegram', true);
-	            header("Location: https://www.icegram.com/rainmaker-pricing-table?utm_source=in-app&utm_medium=banner&utm_campaign=halloween2017");
-	            exit();
-	        }
-	    }
+     //    public function rm_dismiss_admin_notice(){
+     //    	if(isset($_GET['rm_dismiss_admin_notice']) && $_GET['rm_dismiss_admin_notice'] == '1' && isset($_GET['rm_option_name'])){
+	    //         $option_name = sanitize_text_field($_GET['rm_option_name']);
+	    //         update_option($option_name.'_icegram', true);
+	    //         header("Location: https://www.icegram.com/rainmaker-pricing-table?utm_source=in-app&utm_medium=banner&utm_campaign=halloween2017");
+	    //         exit();
+	    //     }
+	    // }
         
         public function klawoo_subscribe_form() {
             ?>

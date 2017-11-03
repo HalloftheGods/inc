@@ -304,13 +304,13 @@ textarea {
 		right: 0;
 		left: auto;
 	}
-
+	
 	.sidebar-open .site,
     .sidebar-open #infinite-footer {
         -webkit-transform: translateX(450px);
                 transform: translateX(450px);
     }
-
+    
     .menu-toggle.toggle-on {
 		-webkit-transform: scale3d(.8, .8, .8) translateX(560px);
 				transform: scale3d(.8, .8, .8) translateX(560px);
