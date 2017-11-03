@@ -30,6 +30,7 @@
 			 */
 			if( $gallery_shortcode  && is_array( $gallery_shortcode ) ) {
 				$content = str_replace( $gallery_shortcode[0][0], '', $content );
+				$content = wp_kses_post( $content );
 			}
 			echo apply_filters( 'the_content', $content );
 		?>

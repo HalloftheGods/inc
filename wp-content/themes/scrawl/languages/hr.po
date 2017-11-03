@@ -1,14 +1,15 @@
-# Translation of Scrawl in Croatian
-# This file is distributed under the same license as the Scrawl package.
+# Translation of WordPress.com - Themes - Scrawl in Croatian
+# This file is distributed under the same license as the WordPress.com - Themes - Scrawl package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2015-03-12 03:54:34+0000\n"
+"PO-Revision-Date: 2017-03-09 11:21:58+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: GlotPress/1.0-alpha-1100\n"
-"Project-Id-Version: Scrawl\n"
+"X-Generator: GlotPress/2.4.0-alpha\n"
+"Language: hr\n"
+"Project-Id-Version: WordPress.com - Themes - Scrawl\n"
 
 #: content.php:35
 msgid "Featured"
@@ -18,75 +19,74 @@ msgstr "Istaknuto"
 msgid "Next post"
 msgstr "Sljedeći post"
 
-#: search.php:16
-msgid "Search Results for: %s"
-msgstr "Rezultati Pretrage za: %s"
-
 #: single.php:17
 msgid "Previous post"
 msgstr "Prethodni post"
 
+#: search.php:16
+msgid "Search Results for: %s"
+msgstr "Rezultati Pretrage za: %s"
+
+#: inc/template-tags.php:275
+msgid "All %s posts"
+msgstr "Svih %s članaka"
+
 #: inc/template-tags.php:182
 msgid ", "
 msgstr ", "
+
+#: inc/template-tags.php:120
+msgid "Archives"
+msgstr "Arhiva"
 
 #. translators: 1: Taxonomy singular name, 2: Current taxonomy term
 #: inc/template-tags.php:118
 msgid "%1$s: %2$s"
 msgstr "%1$s: %2$s"
 
-#: inc/template-tags.php:120
-msgid "Archives"
-msgstr "Arhiva"
+#: inc/template-tags.php:114
+msgid "Archives: %s"
+msgstr "Arhiva: %s"
 
 #: inc/template-tags.php:111
 msgctxt "post format archive title"
 msgid "Chats"
 msgstr "Čavrljanja"
 
-#: inc/template-tags.php:114
-msgid "Archives: %s"
-msgstr "Arhiva: %s"
+#: inc/template-tags.php:109
+msgctxt "post format archive title"
+msgid "Audio"
+msgstr "Audio"
 
 #: inc/template-tags.php:107
 msgctxt "post format archive title"
 msgid "Statuses"
 msgstr "Statusi"
 
-#: inc/template-tags.php:109
+#: inc/template-tags.php:105
 msgctxt "post format archive title"
-msgid "Audio"
-msgstr "Audio"
+msgid "Links"
+msgstr "Poveznice"
 
 #: inc/template-tags.php:103
 msgctxt "post format archive title"
 msgid "Quotes"
 msgstr "Citati"
 
-#: inc/template-tags.php:105
+#: inc/template-tags.php:101
 msgctxt "post format archive title"
-msgid "Links"
-msgstr "Poveznice"
+msgid "Videos"
+msgstr "Videi"
 
 #: inc/template-tags.php:99
 msgctxt "post format archive title"
 msgid "Images"
 msgstr "Slike"
 
-#: inc/template-tags.php:101
-msgctxt "post format archive title"
-msgid "Videos"
-msgstr "Videi"
-
 #: inc/template-tags.php:97
 msgctxt "post format archive title"
 msgid "Galleries"
 msgstr "Galerije"
-
-#: inc/template-tags.php:92
-msgctxt "daily archives date format"
-msgid "F j, Y"
-msgstr "j. F Y."
 
 #: inc/template-tags.php:95
 msgctxt "post format archive title"
@@ -94,17 +94,22 @@ msgid "Asides"
 msgstr "Crtice"
 
 #: inc/template-tags.php:92
+msgctxt "daily archives date format"
+msgid "F j, Y"
+msgstr "j. F Y."
+
+#: inc/template-tags.php:92
 msgid "Day: %s"
 msgstr "Dan: %s"
-
-#: inc/template-tags.php:90
-msgid "Month: %s"
-msgstr "Mjesec: %s"
 
 #: inc/template-tags.php:90
 msgctxt "monthly archives date format"
 msgid "F Y"
 msgstr "F Y"
+
+#: inc/template-tags.php:90
+msgid "Month: %s"
+msgstr "Mjesec: %s"
 
 #: inc/template-tags.php:88
 msgctxt "yearly archives date format"
@@ -123,13 +128,13 @@ msgstr "Autor: %s"
 msgid "Tag: %s"
 msgstr "Oznaka: %s"
 
-#: inc/template-tags.php:56
-msgid "Post navigation"
-msgstr "Post Navigacija"
-
 #: inc/template-tags.php:82
 msgid "Category: %s"
 msgstr "Kategorija: %s"
+
+#: inc/template-tags.php:56
+msgid "Post navigation"
+msgstr "Post Navigacija"
 
 #: inc/template-tags.php:31
 msgid "Newer posts"
@@ -159,13 +164,13 @@ msgstr "Tema"
 msgid "Skip to content"
 msgstr "Skoči do sadržaja"
 
-#: footer.php:17
-msgid "Theme: %1$s by %2$s."
-msgstr "Tema: %1$s od %2$s "
-
 #: functions.php:49 header.php:25
 msgid "Primary Menu"
 msgstr "Primarni Izbornik"
+
+#: footer.php:17
+msgid "Theme: %1$s by %2$s."
+msgstr "Tema: %1$s od %2$s "
 
 #: footer.php:15
 msgid "Proudly powered by %s"
@@ -180,12 +185,12 @@ msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
 msgstr "Nastavi čitati <span class=\"meta-nav\">&rarr;</span>"
 
 #: content-single.php:39 content.php:41
-msgid "1"
-msgstr "1"
-
-#: content-single.php:39 content.php:41
 msgid "%"
 msgstr "%"
+
+#: content-single.php:39 content.php:41
+msgid "1"
+msgstr "1"
 
 #: content-single.php:39 content.php:41
 msgid "0"
@@ -215,13 +220,13 @@ msgstr "Jesi spreman objaviti prvi članak? <a href=\"%1$s\">Započni ovdje</a>.
 msgid "Nothing Found"
 msgstr "Ništa nije pronađeno"
 
-#: comments.php:50
-msgid "Newer Comments"
-msgstr "Noviji komentari"
-
 #: comments.php:62
 msgid "Comments are closed."
 msgstr "Komentari su zatvoreni."
+
+#: comments.php:50
+msgid "Newer Comments"
+msgstr "Noviji komentari"
 
 #: comments.php:49
 msgid "Older Comments"

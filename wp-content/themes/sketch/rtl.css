@@ -318,23 +318,35 @@ div.sharedaddy div.sd-block {
 	}
 
 	.project-navigation-wrapper .jetpack-portfolio,
-	  .page-template-portfolio-page-php .jetpack-portfolio,
-	  body[class*="jetpack-portfolio"].archive .jetpack-portfolio {
+	.page-template-portfolio-page-php .jetpack-portfolio,
+	body[class*="jetpack-portfolio"].archive .jetpack-portfolio {
 		float: right;
 		margin-left: 2%;
-		margin-right: auto;
+		margin-right: 0;
 	}
 
 	.project-navigation-wrapper .jetpack-portfolio:nth-of-type(3n),
-	  .page-template-portfolio-page-php .jetpack-portfolio:nth-of-type(3n),
-	  body[class*="jetpack-portfolio"].archive .jetpack-portfolio:nth-of-type(3n) {
+	.page-template-portfolio-page-php .jetpack-portfolio:nth-of-type(3n),
+	body[class*="jetpack-portfolio"].archive .jetpack-portfolio:nth-of-type(3n) {
+		clear: left;
 		margin-left: 0;
-		margin-right: auto;
+	}
+
+	.project-navigation-wrapper .jetpack-portfolio:nth-of-type(3n+1),
+	.page-template-portfolio-page-php .jetpack-portfolio:nth-of-type(3n+1),
+	body[class*="jetpack-portfolio"].archive .jetpack-portfolio:nth-of-type(3n+1) {
+		clear: right;
+	}
+
+	.page-template-portfolio-page-php .featured-posts .jetpack-portfolio:nth-of-type(3n+1),
+	.project-navigation-wrapper .more-projects .jetpack-portfolio:nth-of-type(3n),
+	.project-navigation-wrapper .jetpack-portfolio:nth-of-type(3n+1) {
+		clear: none;
 	}
 
 	.project-navigation-wrapper .entry-thumbnail img,
-	  .page-template-portfolio-page-php .entry-thumbnail img,
-	  body[class*="jetpack-portfolio"].archive .entry-thumbnail img {
+	.page-template-portfolio-page-php .entry-thumbnail img,
+	body[class*="jetpack-portfolio"].archive .entry-thumbnail img {
 		right: 0;
 		left: auto;
 	}

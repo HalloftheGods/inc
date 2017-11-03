@@ -63,6 +63,10 @@ Image Files
     https://pixabay.com/en/business-newspaper-paper-1031754/
 
 == Changelog ==
+Version 1.2.1
+=================
+* Updated Font Awesome
+
 Version 1.2.0
 =================
 * Minor Bugs Fixed

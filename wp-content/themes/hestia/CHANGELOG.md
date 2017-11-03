@@ -1,4 +1,15 @@
 
+ ### v1.1.52 - 2017-10-24 
+ **Changes:** 
+ * Fixed problem with parallax effect in the Ribbon section on iOS
+* New filter for the header background wrapper to be used in a child theme, to allow users to have a featured image for each category - http://docs.themeisle.com/article/706-how-to-use-categories-featured-images-as-header-image-in-hestia
+* Fixed vertical alignment issue on frontpage Products section
+* Fixed compatibility responsive issues with Pirate Forms
+* Fixed callback function used for the custom logo
+* Fixed issue with items descriptions appearing in the primary menu
+* Fixed active buttons color issue in the primary menu
+* Fixed small JavaScript console error in Customizer
+ 
  ### v1.1.51 - 2017-10-18 
  **Changes:** 
  * [Hestia PRO] New cart icon in the primary menu when WooCommerce is used

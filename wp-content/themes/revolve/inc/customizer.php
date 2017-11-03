@@ -29,11 +29,8 @@ function revolve_customize_register( $wp_customize ) {
 	        'revolve-pro',
 	        array(
 	            'title'    => esc_html__( 'Upgrade To Revolve Pro', 'revolve' ),
-	            'title1'    => esc_html__( 'Free Vs Pro', 'revolve' ),
 	            'pro_text' => esc_html__( 'Buy Now','revolve' ),
-	            'pro_text1' => esc_html__( 'Compare','revolve' ),
 	            'pro_url'  => 'https://accesspressthemes.com/wordpress-themes/revolve-pro/',
-	            'pro_url1'  => admin_url( 'themes.php?page=revolve-welcome&section=free_vs_pro'),
 	            'priority' => 1,
 	        )
 	    )

@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Scrawl package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2015-07-22 06:05:07+0000\n"
+"PO-Revision-Date: 2015-10-06 15:50:10+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -194,6 +194,10 @@ msgstr "1"
 #: content-single.php:39 content.php:41
 msgid "%"
 msgstr "%"
+
+#: content-single.php:39 content.php:41
+msgid "0"
+msgstr "0"
 
 #: content-page.php:25 content-single.php:42 content.php:44
 msgid "Edit"

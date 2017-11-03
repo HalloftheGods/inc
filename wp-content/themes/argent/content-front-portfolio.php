@@ -61,7 +61,7 @@ $project_query = new WP_Query ( $args );
 			<h3 class="page-title"><?php _e( 'No Projects Found', 'argent' ); ?></h3>
 
 			<p>
-				<?php printf( esc_html__( 'This section will display your latest projects. It can can be disbaled via the Customizer.', 'argent' ) ); ?><br />
+				<?php printf( esc_html__( 'This section will display your latest projects. It can be disabled via the Customizer.', 'argent' ) ); ?><br />
 				<?php printf( wp_kses( __( 'Ready to publish your first project? <a href="%1$s">Get started here</a>.', 'argent' ), array( 'a' => array( 'href' => array() ) ) ), esc_url( admin_url( 'post-new.php?post_type=jetpack-portfolio' ) ) ); ?>
 			</p>
 		</div>

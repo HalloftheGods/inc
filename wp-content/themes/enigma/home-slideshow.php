@@ -30,15 +30,15 @@ $wl_theme_options['slider_image_speed'];
             <div class="carousel-caption">
 			<?php if($wl_theme_options['slide_title_'.$i]!='') {  ?>
 			<div class="carousel-text">
-            <h1 class="animated bounceInRight"><?php echo esc_attr($wl_theme_options['slide_title_'.$i]); ?></h1>			
+            <h1 class="animated bounceInRight head_<?php echo $i ?>"><?php echo esc_attr($wl_theme_options['slide_title_'.$i]); ?></h1>			
 			<?php  	
 			 if($wl_theme_options['slide_desc_'.$i]!='') {  ?>
 			  <ul class="list-unstyled carousel-list">
-			 <li class="animated bounceInLeft"><?php echo get_theme_mod('slide_desc_'.$i , $wl_theme_options['slide_desc_'.$i]); ?></li>
+			 <li class="animated bounceInLeft desc_<?php echo $i ?>"><?php echo get_theme_mod('slide_desc_'.$i , $wl_theme_options['slide_desc_'.$i]); ?></li>
 			 </ul>
 			 <?php }
 			if($wl_theme_options['slide_btn_text_'.$i]!='') { ?>
-            <a class="enigma_blog_read_btn animated bounceInUp" href="<?php if($wl_theme_options['slide_btn_link_'.$i]!='') { echo esc_url($wl_theme_options['slide_btn_link_'.$i]); } ?>" role="button"><?php echo esc_attr($wl_theme_options['slide_btn_text_'.$i]); ?></a>
+            <a class="enigma_blog_read_btn animated bounceInUp rdm_<?php echo $i ?>" href="<?php if($wl_theme_options['slide_btn_link_'.$i]!='') { echo esc_url($wl_theme_options['slide_btn_link_'.$i]); } ?>" role="button"><?php echo esc_attr($wl_theme_options['slide_btn_text_'.$i]); ?></a>
 			<?php } ?>
             </div>
 			<?php } ?>

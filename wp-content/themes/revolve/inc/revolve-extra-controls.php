@@ -109,10 +109,7 @@
         public function json() {
             $json = parent::json();
             $json['pro_text'] = $this->pro_text;
-            $json['title1'] = $this->title1;
-            $json['pro_text1'] = $this->pro_text1;
             $json['pro_url']  = esc_url( $this->pro_url );
-            $json['pro_url1']  = $this->pro_url1;
             return $json;
         }
 
@@ -130,12 +127,6 @@
                     {{ data.title }}
                     <# if ( data.pro_text && data.pro_url ) { #>
                         <a href="{{ data.pro_url }}" class="button button-secondary alignright" target="_blank">{{ data.pro_text }}</a>
-                    <# } #>
-                </h3>
-                <h3 class="accordion-section-title">
-                    {{ data.title1 }}
-                    <# if ( data.pro_text1 && data.pro_url1 ) { #>
-                        <a href="{{ data.pro_url1 }}" class="button button-secondary alignright" target="_blank">{{ data.pro_text1 }}</a>
                     <# } #>
                 </h3>
             </li>

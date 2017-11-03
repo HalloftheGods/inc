@@ -1,14 +1,14 @@
-# Translation of Scrawl in Greek (Polytonic)
-# This file is distributed under the same license as the Scrawl package.
+# Translation of WordPress.com - Themes - Scrawl in Greek (Polytonic)
+# This file is distributed under the same license as the WordPress.com - Themes - Scrawl package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2015-03-12 03:54:34+0000\n"
+"PO-Revision-Date: 2017-06-01 10:41:22+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: GlotPress/1.0-alpha-1100\n"
-"Project-Id-Version: Scrawl\n"
+"X-Generator: GlotPress/2.4.0-alpha\n"
+"Project-Id-Version: WordPress.com - Themes - Scrawl\n"
 
 #: content.php:35
 msgid "Featured"
@@ -18,73 +18,73 @@ msgstr "Ἰδιαιτέρου ἐνδιαφέροντος"
 msgid "Next post"
 msgstr "Ἑπόμενη ἀνάρτηση"
 
-#: search.php:16
-msgid "Search Results for: %s"
-msgstr "Ἀναζήτηση ἀποτελεσμάτων γιά: %s"
-
 #: single.php:17
 msgid "Previous post"
 msgstr "Προηγούμενο ἄρθρο"
 
-#: inc/template-tags.php:189
-msgid "<span class=\"posted-on\">Posted on %1$s</span><span class=\"byline\"> by %2$s</span>"
-msgstr "<span class=\"posted-on\">Ἀναρτήθηκε στὶς %1$s</span><span class=\"byline\"> ἀπὸ τὸν/τὴν %2$s</span>"
+#: search.php:16
+msgid "Search Results for: %s"
+msgstr "Ἀναζήτηση ἀποτελεσμάτων γιά: %s"
 
 #: inc/template-tags.php:275
 msgid "All %s posts"
 msgstr "Ὅλα τὰ ἄρθρα τοῦ %s"
 
+#: inc/template-tags.php:189
+msgid "<span class=\"posted-on\">Posted on %1$s</span><span class=\"byline\"> by %2$s</span>"
+msgstr "<span class=\"posted-on\">Ἀναρτήθηκε στὶς %1$s</span><span class=\"byline\"> ἀπὸ τὸν/τὴν %2$s</span>"
+
 #: inc/template-tags.php:182
 msgid ", "
 msgstr ","
+
+#: inc/template-tags.php:120
+msgid "Archives"
+msgstr "Ἀρχεῖα"
 
 #. translators: 1: Taxonomy singular name, 2: Current taxonomy term
 #: inc/template-tags.php:118
 msgid "%1$s: %2$s"
 msgstr "%1$s: %2$s"
 
-#: inc/template-tags.php:120
-msgid "Archives"
-msgstr "Ἀρχεῖα"
+#: inc/template-tags.php:114
+msgid "Archives: %s"
+msgstr "Ἀρχεῖα: %s"
 
 #: inc/template-tags.php:111
 msgctxt "post format archive title"
 msgid "Chats"
 msgstr "Συζητήσεις"
 
-#: inc/template-tags.php:114
-msgid "Archives: %s"
-msgstr "Ἀρχεῖα: %s"
+#: inc/template-tags.php:109
+msgctxt "post format archive title"
+msgid "Audio"
+msgstr "Ἠχητικό"
 
 #: inc/template-tags.php:107
 msgctxt "post format archive title"
 msgid "Statuses"
 msgstr "Καταστάσεις"
 
-#: inc/template-tags.php:109
+#: inc/template-tags.php:105
 msgctxt "post format archive title"
-msgid "Audio"
-msgstr "Ἠχητικό"
+msgid "Links"
+msgstr "Σύνδεσμοι"
 
 #: inc/template-tags.php:103
 msgctxt "post format archive title"
 msgid "Quotes"
 msgstr "Λήμματα"
 
-#: inc/template-tags.php:105
+#: inc/template-tags.php:101
 msgctxt "post format archive title"
-msgid "Links"
-msgstr "Σύνδεσμοι"
+msgid "Videos"
+msgstr "Βίντεο"
 
 #: inc/template-tags.php:99
 msgctxt "post format archive title"
 msgid "Images"
 msgstr "Εἰκόνες"
-
-#: inc/template-tags.php:101
-msgctxt "post format archive title"
-msgid "Videos"
-msgstr "Βίντεο"
 
 #: inc/template-tags.php:97
 msgctxt "post format archive title"
@@ -92,17 +92,22 @@ msgid "Galleries"
 msgstr "Συλλογές εἰκόνων"
 
 #: inc/template-tags.php:92
+msgctxt "daily archives date format"
+msgid "F j, Y"
+msgstr "j F Y"
+
+#: inc/template-tags.php:92
 msgid "Day: %s"
 msgstr "Ἡμέρα: %s"
-
-#: inc/template-tags.php:90
-msgid "Month: %s"
-msgstr "Μῆνας: %s"
 
 #: inc/template-tags.php:90
 msgctxt "monthly archives date format"
 msgid "F Y"
 msgstr "F Y"
+
+#: inc/template-tags.php:90
+msgid "Month: %s"
+msgstr "Μῆνας: %s"
 
 #: inc/template-tags.php:88
 msgctxt "yearly archives date format"
@@ -121,13 +126,13 @@ msgstr "Συγγραφέας: %s"
 msgid "Tag: %s"
 msgstr "Ἐτικέττα: %s"
 
-#: inc/template-tags.php:56
-msgid "Post navigation"
-msgstr "Περιήγηση ἄρθρων"
-
 #: inc/template-tags.php:82
 msgid "Category: %s"
 msgstr "Κατηγορία: %s"
+
+#: inc/template-tags.php:56
+msgid "Post navigation"
+msgstr "Περιήγηση ἄρθρων"
 
 #: inc/template-tags.php:31
 msgid "Newer posts"
@@ -153,6 +158,10 @@ msgstr "Σελίδα %s"
 msgid "Theme"
 msgstr "Θέμα ἐμφάνισης"
 
+#: header.php:54
+msgid "Skip to content"
+msgstr "Πηγαίνετε στὸ περιεχόμενο τοῦ ἱστολογίου"
+
 #. Translators: If there are characters in your language that are not
 #. * supported by Merriweather, translate this to 'off'. Do not translate
 #. * into your own language.
@@ -161,21 +170,17 @@ msgctxt "Merriweather font: on or off"
 msgid "on"
 msgstr "on"
 
-#: header.php:54
-msgid "Skip to content"
-msgstr "Πηγαίνετε στὸ περιεχόμενο τοῦ ἱστολογίου"
-
 #: functions.php:50
 msgid "Social Links"
 msgstr "Σύνδεσμοι πρὸς κοινωνικὰ δίκτυα"
 
-#: footer.php:17
-msgid "Theme: %1$s by %2$s."
-msgstr "Θέμα: %1$s ἀπὸ τὸν/τὴν %2$s."
-
 #: functions.php:49 header.php:25
 msgid "Primary Menu"
 msgstr "Πρωτεῦον μενού"
+
+#: footer.php:17
+msgid "Theme: %1$s by %2$s."
+msgstr "Θέμα: %1$s ἀπὸ τὸν/τὴν %2$s."
 
 #: footer.php:15
 msgid "Proudly powered by %s"
@@ -190,12 +195,12 @@ msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
 msgstr "Συνέχεια <span class=\"meta-nav\">&rarr;</span>"
 
 #: content-single.php:39 content.php:41
-msgid "1"
-msgstr "1"
-
-#: content-single.php:39 content.php:41
 msgid "%"
 msgstr "%"
+
+#: content-single.php:39 content.php:41
+msgid "1"
+msgstr "1"
 
 #: content-single.php:39 content.php:41
 msgid "0"
@@ -225,13 +230,13 @@ msgstr "Ἕτοιμος/-η γιὰ τὸ πρῶτο σας ἄρθρο; <a hre
 msgid "Nothing Found"
 msgstr "Οὑδὲν εὑρέθη!"
 
-#: comments.php:50
-msgid "Newer Comments"
-msgstr "Νεότερα σχόλια"
-
 #: comments.php:62
 msgid "Comments are closed."
 msgstr "Ἡ ὑποβολὴ σχολίων ἔχει κλείσει."
+
+#: comments.php:50
+msgid "Newer Comments"
+msgstr "Νεότερα σχόλια"
 
 #: comments.php:49
 msgid "Older Comments"

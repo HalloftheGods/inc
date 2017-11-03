@@ -2,14 +2,47 @@
 # This file is distributed under the same license as the WordPress.com - Themes - Argent package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2016-06-02 01:58:28+0000\n"
+"PO-Revision-Date: 2017-04-21 04:49:37+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: GlotPress/2.1.0-alpha\n"
+"X-Generator: GlotPress/2.4.0-alpha\n"
 "Language: ja_JP\n"
 "Project-Id-Version: WordPress.com - Themes - Argent\n"
+
+#: inc/wpcom-colors.php:146
+msgid "Widget Area Background"
+msgstr "ウィジェットエリア背景"
+
+#: inc/wpcom-colors.php:141
+msgid "Main Accent"
+msgstr "メインアクセント"
+
+#: inc/wpcom-colors.php:97
+msgid "Links"
+msgstr "リンク"
+
+#: inc/wpcom-colors.php:53
+msgid "Text"
+msgstr "テキスト"
+
+#. translators: used between list items, there is a space after the comma
+#: inc/template-tags.php:126
+msgid "Tagged"
+msgstr "タグ:"
+
+#: content-portfolio-archive.php:30
+msgid "Portfolio navigation"
+msgstr "ポートフォリオナビゲーション"
+
+#: content-portfolio-archive.php:29
+msgid "Newer projects"
+msgstr "新しいプロジェクト"
+
+#: content-portfolio-archive.php:28 inc/jetpack.php:39
+msgid "Older projects"
+msgstr "過去のプロジェクト"
 
 #: content-front-portfolio.php:9
 msgid "Recent Projects"
@@ -49,129 +82,129 @@ msgstr "Argent"
 msgid "Search Results for: %s"
 msgstr "検索結果: %s"
 
-#: inc/template-tags.php:275
+#: inc/template-tags.php:272
 msgid "Projects"
 msgstr "プロジェクト"
 
-#: inc/template-tags.php:253
+#: inc/template-tags.php:250
 msgid "Archives"
 msgstr "アーカイブ"
 
 #. translators: 1: Taxonomy singular name, 2: Current taxonomy term
-#: inc/template-tags.php:251
+#: inc/template-tags.php:248
 msgid "%1$s: %2$s"
 msgstr "%1$s: %2$s"
 
-#: inc/template-tags.php:247
+#: inc/template-tags.php:244
 msgid "Archives: %s"
 msgstr "アーカイブ: %s"
 
-#: inc/template-tags.php:244
+#: inc/template-tags.php:241
 msgctxt "post format archive title"
 msgid "Chats"
 msgstr "チャット"
 
-#: inc/template-tags.php:242
+#: inc/template-tags.php:239
 msgctxt "post format archive title"
 msgid "Audio"
 msgstr "音声"
 
-#: inc/template-tags.php:240
+#: inc/template-tags.php:237
 msgctxt "post format archive title"
 msgid "Statuses"
 msgstr "ステータス"
 
-#: inc/template-tags.php:238
+#: inc/template-tags.php:235
 msgctxt "post format archive title"
 msgid "Links"
 msgstr "リンク"
 
-#: inc/template-tags.php:236
+#: inc/template-tags.php:233
 msgctxt "post format archive title"
 msgid "Quotes"
 msgstr "引用"
 
-#: inc/template-tags.php:234
+#: inc/template-tags.php:231
 msgctxt "post format archive title"
 msgid "Videos"
 msgstr "動画"
 
-#: inc/template-tags.php:232
+#: inc/template-tags.php:229
 msgctxt "post format archive title"
 msgid "Images"
 msgstr "画像"
 
-#: inc/template-tags.php:230
+#: inc/template-tags.php:227
 msgctxt "post format archive title"
 msgid "Galleries"
 msgstr "ギャラリー"
 
-#: inc/template-tags.php:228
+#: inc/template-tags.php:225
 msgctxt "post format archive title"
 msgid "Asides"
 msgstr "アサイド"
 
-#: inc/template-tags.php:225
+#: inc/template-tags.php:222
 msgctxt "daily archives date format"
 msgid "F j, Y"
 msgstr "Y年n月j日"
 
-#: inc/template-tags.php:225
+#: inc/template-tags.php:222
 msgid "Day: %s"
 msgstr "﻿日: %s"
 
-#: inc/template-tags.php:223
+#: inc/template-tags.php:220
 msgctxt "monthly archives date format"
 msgid "F Y"
 msgstr "Y年n月"
 
-#: inc/template-tags.php:223
+#: inc/template-tags.php:220
 msgid "Month: %s"
 msgstr "月別: %s"
 
-#: inc/template-tags.php:221
+#: inc/template-tags.php:218
 msgctxt "yearly archives date format"
 msgid "Y"
 msgstr "Y年"
 
-#: inc/template-tags.php:221
+#: inc/template-tags.php:218
 msgid "Year: %s"
 msgstr "﻿年: %s"
 
-#: inc/template-tags.php:219
+#: inc/template-tags.php:216
 msgid "Author: %s"
 msgstr "作者別: %s"
 
-#: inc/template-tags.php:217
+#: inc/template-tags.php:214
 msgid "Tag: %s"
 msgstr "タグ: %s"
 
-#: inc/template-tags.php:215
+#: inc/template-tags.php:212
 msgid "Category: %s"
 msgstr "カテゴリー: %s"
 
-#: inc/template-tags.php:185
+#: inc/template-tags.php:182
 msgid "Your comment is awaiting moderation."
 msgstr "あなたのコメントは承認待ちです。"
 
-#: inc/template-tags.php:169
+#: inc/template-tags.php:166
 msgctxt "1: date, 2: time"
 msgid "%1$s at %2$s"
 msgstr "%1$s %2$s"
 
-#: inc/template-tags.php:153
+#: inc/template-tags.php:150
 msgid "Pingback:"
 msgstr "ピンバック:"
 
-#: inc/template-tags.php:134
+#: inc/template-tags.php:131
 msgid "% Comments"
 msgstr "%件のコメント"
 
-#: inc/template-tags.php:134
+#: inc/template-tags.php:131
 msgid "1 Comment"
 msgstr "1件のコメント"
 
-#: inc/template-tags.php:134
+#: inc/template-tags.php:131
 msgid "Leave a comment"
 msgstr "コメントをどうぞ"
 
@@ -298,7 +331,7 @@ msgstr "Proudly powered by %s"
 msgid "http://wordpress.org/"
 msgstr "http://ja.wordpress.org/"
 
-#: content-portfolio-single.php:49 inc/template-tags.php:128
+#: content-portfolio-single.php:49
 msgid "Tagged %1$s"
 msgstr "タグ:  %1$s"
 
@@ -313,8 +346,8 @@ msgid ", "
 msgstr ", "
 
 #: content-page.php:19 content-portfolio-single.php:53
-#: inc/template-tags.php:137 inc/template-tags.php:153
-#: inc/template-tags.php:193
+#: inc/template-tags.php:134 inc/template-tags.php:150
+#: inc/template-tags.php:190
 msgid "Edit"
 msgstr "編集"
 
@@ -339,7 +372,7 @@ msgid "Ready to publish your first project? <a href=\"%1$s\">Get started here</a
 msgstr "最初のプロジェクトを公開する準備ができたら、<a href=\"%1$s\">こちらからスタート</a>してください。"
 
 #: content-front-portfolio.php:64
-msgid "This section will display your latest projects. It can can be disbaled via the Customizer."
+msgid "This section will display your latest projects. It can be disabled via the Customizer."
 msgstr "このセクションには最新のプロジェクトが表示されます。カスタマイザーを使って無効化できます。"
 
 #: content-front-portfolio.php:61

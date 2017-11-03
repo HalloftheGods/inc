@@ -163,6 +163,15 @@ class Argent_Theme_Plugin_Enhancements {
 				'module' => 'custom-content-types',
 			);
 		endif;
+		
+		if ( current_theme_supports( 'jetpack-content-options' ) ) :
+			$dependencies['content-options'] = array(
+				'name' => esc_html__( 'Content Options', 'argent' ),
+				'slug' => 'jetpack-content-options',
+				'url'  => '',
+				'module' => 'none',
+			);
+		endif;
 
 		return $dependencies;
 	}
@@ -232,6 +241,11 @@ class Argent_Theme_Plugin_Enhancements {
 	 * Display the admin notice for the plugin enhancements.
 	 */
 	function admin_notices() {
+		// Bail if the user has previously dismissed the notice (doesn't show the notice)
+		if ( get_user_meta( get_current_user_id(), 'argent_jetpack_admin_notice', true ) === 'dismissed' ) {
+			return;
+		}
+
 		$notice = '';
 
 		// Loop through the plugins and print the message and the download or active links.
@@ -302,7 +316,7 @@ class Argent_Theme_Plugin_Enhancements {
 			'a'      => array( 'href' => array() ),
 		);
 		printf(
-			'<div id="message" class="notice notice-warning is-dismissible">%s</div>',
+			'<div id="jetpack-notice" class="notice notice-warning is-dismissible">%s</div>',
 			wp_kses( $notice, $allowed )
 		);
 	}
@@ -358,3 +372,38 @@ class Argent_Theme_Plugin_Enhancements {
 	}
 }
 add_action( 'admin_head', array( 'Argent_Theme_Plugin_Enhancements', 'init' ) );
+
+function enqueue_scripts() {
+	// Add the admin JS if the notice has not been dismissed
+	if ( is_admin() && get_user_meta( get_current_user_id(), 'argent_jetpack_admin_notice', true ) !== 'dismissed' ) {
+
+		// Adds our JS file to the queue that WordPress will load
+		wp_enqueue_script( 'argent_jetpack_admin_script', get_template_directory_uri() . '/inc/plugin-enhancements.js', array( 'jquery' ), '20160624', true );
+
+		// Make some data available to our JS file
+		wp_localize_script( 'argent_jetpack_admin_script', 'argent_jetpack_admin', array(
+			'argent_jetpack_admin_nonce' => wp_create_nonce( 'argent_jetpack_admin_nonce' ),
+		));
+	}
+}
+add_action( 'admin_enqueue_scripts', 'enqueue_scripts' );
+
+/**
+ *	Process the AJAX request on the server and send a response back to the JS.
+ *	If nonce is valid, update the current user's meta to prevent notice from displaying.
+ */
+function dismiss_admin_notice() {
+	// Verify the security nonce and die if it fails
+	if ( ! isset( $_POST['argent_jetpack_admin_nonce'] ) || ! wp_verify_nonce( $_POST['argent_jetpack_admin_nonce'], 'argent_jetpack_admin_nonce' ) ) {
+		wp_die( __( 'Your request failed permission check.', 'argent' ) );
+	}
+	// Store the user's dimissal so that the notice doesn't show again
+	update_user_meta( get_current_user_id(), 'argent_jetpack_admin_notice', 'dismissed' );
+	// Send success message
+	wp_send_json( array(
+		'status' => 'success',
+		'message' => __( 'Your request was processed. See ya!', 'argent' )
+	) );
+}
+add_action( 'wp_ajax_argent_jetpack_admin_notice', 'dismiss_admin_notice' );
+

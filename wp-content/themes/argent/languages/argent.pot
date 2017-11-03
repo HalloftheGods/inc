@@ -1,14 +1,14 @@
-# Copyright (C) 2016 Automattic
+# Copyright (C) 2017 Automattic
 # This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""
 "Project-Id-Version: Argent 1.1.0\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/support/theme/argent\n"
-"POT-Creation-Date: 2016-06-09 03:34:46+00:00\n"
+"POT-Creation-Date: 2017-03-23 06:03:18+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2016-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2017-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 
@@ -59,8 +59,8 @@ msgstr ""
 
 #: content-front-portfolio.php:64
 msgid ""
-"This section will display your latest projects. It can can be disbaled via "
-"the Customizer."
+"This section will display your latest projects. It can be disabled via the "
+"Customizer."
 msgstr ""
 
 #: content-front-portfolio.php:65
@@ -90,8 +90,8 @@ msgid ""
 msgstr ""
 
 #: content-page.php:19 content-portfolio-single.php:53
-#: inc/template-tags.php:137 inc/template-tags.php:153
-#: inc/template-tags.php:193
+#: inc/template-tags.php:134 inc/template-tags.php:150
+#: inc/template-tags.php:190
 msgid "Edit"
 msgstr ""
 
@@ -117,7 +117,7 @@ msgstr ""
 msgid "Posted in %1$s"
 msgstr ""
 
-#: content-portfolio-single.php:49 inc/template-tags.php:128
+#: content-portfolio-single.php:49
 msgid "Tagged %1$s"
 msgstr ""
 
@@ -247,130 +247,151 @@ msgctxt "post author"
 msgid "by %s"
 msgstr ""
 
-#: inc/template-tags.php:134
+#. translators: used between list items, there is a space after the comma
+#: inc/template-tags.php:126
+msgid "Tagged"
+msgstr ""
+
+#: inc/template-tags.php:131
 msgid "Leave a comment"
 msgstr ""
 
-#: inc/template-tags.php:134
+#: inc/template-tags.php:131
 msgid "1 Comment"
 msgstr ""
 
-#: inc/template-tags.php:134
+#: inc/template-tags.php:131
 msgid "% Comments"
 msgstr ""
 
-#: inc/template-tags.php:153
+#: inc/template-tags.php:150
 msgid "Pingback:"
 msgstr ""
 
-#: inc/template-tags.php:169
+#: inc/template-tags.php:166
 msgctxt "1: date, 2: time"
 msgid "%1$s at %2$s"
 msgstr ""
 
-#: inc/template-tags.php:185
+#: inc/template-tags.php:182
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
-#: inc/template-tags.php:215
+#: inc/template-tags.php:212
 msgid "Category: %s"
 msgstr ""
 
-#: inc/template-tags.php:217
+#: inc/template-tags.php:214
 msgid "Tag: %s"
 msgstr ""
 
-#: inc/template-tags.php:219
+#: inc/template-tags.php:216
 msgid "Author: %s"
 msgstr ""
 
-#: inc/template-tags.php:221
+#: inc/template-tags.php:218
 msgid "Year: %s"
 msgstr ""
 
-#: inc/template-tags.php:221
+#: inc/template-tags.php:218
 msgctxt "yearly archives date format"
 msgid "Y"
 msgstr ""
 
-#: inc/template-tags.php:223
+#: inc/template-tags.php:220
 msgid "Month: %s"
 msgstr ""
 
-#: inc/template-tags.php:223
+#: inc/template-tags.php:220
 msgctxt "monthly archives date format"
 msgid "F Y"
 msgstr ""
 
-#: inc/template-tags.php:225
+#: inc/template-tags.php:222
 msgid "Day: %s"
 msgstr ""
 
-#: inc/template-tags.php:225
+#: inc/template-tags.php:222
 msgctxt "daily archives date format"
 msgid "F j, Y"
 msgstr ""
 
-#: inc/template-tags.php:228
+#: inc/template-tags.php:225
 msgctxt "post format archive title"
 msgid "Asides"
 msgstr ""
 
-#: inc/template-tags.php:230
+#: inc/template-tags.php:227
 msgctxt "post format archive title"
 msgid "Galleries"
 msgstr ""
 
-#: inc/template-tags.php:232
+#: inc/template-tags.php:229
 msgctxt "post format archive title"
 msgid "Images"
 msgstr ""
 
-#: inc/template-tags.php:234
+#: inc/template-tags.php:231
 msgctxt "post format archive title"
 msgid "Videos"
 msgstr ""
 
-#: inc/template-tags.php:236
+#: inc/template-tags.php:233
 msgctxt "post format archive title"
 msgid "Quotes"
 msgstr ""
 
-#: inc/template-tags.php:238
+#: inc/template-tags.php:235
 msgctxt "post format archive title"
 msgid "Links"
 msgstr ""
 
-#: inc/template-tags.php:240
+#: inc/template-tags.php:237
 msgctxt "post format archive title"
 msgid "Statuses"
 msgstr ""
 
-#: inc/template-tags.php:242
+#: inc/template-tags.php:239
 msgctxt "post format archive title"
 msgid "Audio"
 msgstr ""
 
-#: inc/template-tags.php:244
+#: inc/template-tags.php:241
 msgctxt "post format archive title"
 msgid "Chats"
 msgstr ""
 
-#: inc/template-tags.php:247
+#: inc/template-tags.php:244
 msgid "Archives: %s"
 msgstr ""
 
 #. translators: 1: Taxonomy singular name, 2: Current taxonomy term
-#: inc/template-tags.php:251
+#: inc/template-tags.php:248
 msgid "%1$s: %2$s"
 msgstr ""
 
-#: inc/template-tags.php:253
+#: inc/template-tags.php:250
 msgid "Archives"
 msgstr ""
 
-#: inc/template-tags.php:275
+#: inc/template-tags.php:272
 msgid "Projects"
+msgstr ""
+
+#: inc/wpcom-colors.php:53
+msgid "Text"
+msgstr ""
+
+#: inc/wpcom-colors.php:97
+msgid "Links"
+msgstr ""
+
+#: inc/wpcom-colors.php:141
+msgid "Main Accent"
+msgstr ""
+
+#: inc/wpcom-colors.php:146
+msgid "Widget Area Background"
 msgstr ""
 
 #: search.php:16

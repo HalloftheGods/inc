@@ -31,6 +31,14 @@ function scrawl_setup() {
 	 */
 	load_theme_textdomain( 'scrawl', get_template_directory() . '/languages' );
 
+	/*
+	 * Let WordPress manage the document title.
+	 * By adding theme support, we declare that this theme does not use a
+	 * hard-coded <title> tag in the document head, and expect WordPress to
+	 * provide it for us.
+	 */
+	add_theme_support( 'title-tag' );
+
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
 
@@ -50,7 +58,7 @@ function scrawl_setup() {
 		'social'  => __( 'Social Links', 'scrawl' ),
 	) );
 
-	add_editor_style( array( 'editor-style.css', scrawl_fonts_url(), get_template_directory_uri() . '/genericons/genericons.css' ) );
+	add_editor_style( array( 'editor-style.css', scrawl_fonts_url(), get_template_directory_uri() . '/fonts/genericons/genericons.css' ) );
 
 	/*
 	 * Switch default core markup for search form, comment form, and comments
@@ -116,13 +124,13 @@ add_action( 'wp_enqueue_scripts', 'scrawl_scripts', 1 );
  * Register Google Fonts
  */
 function scrawl_fonts_url() {
-    $fonts_url = '';
+	$fonts_url = '';
 
 	/* Translators: If there are characters in your language that are not
-	 * supported by Arbutus Slab, translate this to 'off'. Do not translate
+	 * supported by Lora, translate this to 'off'. Do not translate
 	 * into your own language.
 	 */
-	$arbutusslab = _x( 'on', 'Arbutus Slab font: on or off', 'scrawl' );
+	$lora = _x( 'on', 'Lora font: on or off', 'scrawl' );
 
 	/* Translators: If there are characters in your language that are not
 	 * supported by Merriweather, translate this to 'off'. Do not translate
@@ -130,20 +138,15 @@ function scrawl_fonts_url() {
 	 */
 	$merriweather = _x( 'on', 'Merriweather font: on or off', 'scrawl' );
 
-	if ( 'off' !== $arbutusslab && 'off' !== $merriweather ) {
+	$font_families = array();
 
-		$font_families = array();
-
-		if ( 'off' !== $arbutusslab  ) {
-
+	if ( 'off' !== $lora && 'off' !== $merriweather ) {
+		if ( 'off' !== $lora ) {
 			$font_families[] = 'Lora:400,700';
-
 		}
 
-		if ( 'off' !== $merriweather  ) {
-
+		if ( 'off' !== $merriweather ) {
 			$font_families[] = 'Merriweather:400italic,400,700,700italic';
-
 		}
 	}
 
@@ -250,3 +253,10 @@ require get_template_directory() . '/inc/customizer.php';
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
+
+
+
+/**
+ * Load plugin enhancement file to display admin notices.
+ */
+require get_template_directory() . '/inc/plugin-enhancements.php';

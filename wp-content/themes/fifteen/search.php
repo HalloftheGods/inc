@@ -1,37 +1,46 @@
 <?php
 /**
- * The template for displaying Search Results pages.
+ * The template for displaying search results pages.
  *
- * @package Fifteen
+ * @package 
  */
 
-get_header('single'); ?>
+get_header(); ?>
 
-	<h1 class="container single-entry-title"><?php printf( __( 'Search Results for: %s', 'fifteen' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
-	<div id="content" class="site-content container row clearfix clear">
-	<div class="container col-md-12">
-	<section id="primary" class="content-area col-md-8">
-		<main id="main" class="site-main" role="main">
+	<section id="primary" class="<?php do_action('fifteen_primary-width') ?> content-area">
+		<header class="page-header">
+			<h1 class="page-title"><?php printf( __( 'Search Results for: %s', 'fifteen' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+		</header><!-- .page-header -->
+			
+		<main id="main" class="site-main <?php do_action('fifteen_masonry_class') ?>" role="main">
 
 		<?php if ( have_posts() ) : ?>
+
 			<?php /* Start the Loop */ ?>
 			<?php while ( have_posts() ) : the_post(); ?>
 
-				<?php get_template_part( 'content', 'search' ); ?>
+				<?php
+				/**
+				 * Run the loop for the search to output the results.
+				  */
+				do_action('fifteen_blog_layout'); 
+				?>
 
 			<?php endwhile; ?>
 
-			<?php fifteen_pagination(); ?>
+			<?php //the_posts_pagination( array( 'mid_size' => 2 ));; ?>
 
 		<?php else : ?>
 
-			<?php get_template_part( 'no-results', 'search' ); ?>
+			<?php get_template_part( 'content', 'none' ); ?>
 
 		<?php endif; ?>
 
 		</main><!-- #main -->
+		
+		<?php if ( have_posts() ) { the_posts_pagination( array( 'mid_size' => 2 ));; } ?>
+		
 	</section><!-- #primary -->
 
 <?php get_sidebar(); ?>
-<?php get_sidebar('footer'); ?>
 <?php get_footer(); ?>

@@ -134,11 +134,19 @@ jQuery( document ).ready(
 						var $input = $( this );
 
 						// Requires form-group standard markup (will add it if necessary)
-						var $formGroup = $input.closest( '.form-group' ); // note that form-group may be grandparent in the case of an input-group
-						if ($formGroup.length === 0 && $input.attr( 'type' ) !== 'hidden' && ! $input.attr( 'hidden' )) {
-							$input.wrap( '<div class="form-group"></div>' );
-							$formGroup = $input.closest( '.form-group' ); // find node after attached (otherwise additional attachments don't work)
+                            var $formGroup = $input.closest( '.form-group' ); // note that form-group may be grandparent in the case of an input-group
+                            if ($formGroup.length === 0 && $input.attr( 'type' ) !== 'hidden' && ! $input.attr( 'hidden' ) && ! $input.parents('.pirate_forms').length ) {
+                                $input.wrap( '<div class="form-group"></div>' );
+                                $formGroup = $input.closest( '.form-group' ); // find node after attached (otherwise additional attachments don't work)
 						}
+
+						// Pirate Forms compatibility
+                        if ($formGroup.length === 0 && $input.attr( 'type' ) !== 'hidden' && ! $input.attr( 'hidden' ) && $input.parents('.pirate_forms').length ) {
+							var $labelControl = $input.prev();
+
+							$input.add($labelControl).wrapAll( '<div class="form-group label-floating"></div>' );
+                            $formGroup = $input.closest( '.form-group' );
+                        }
 
 						// Legacy - Add hint label if using the old shorthand data-hint attribute on the input
 						if ($input.attr( 'data-hint' )) {

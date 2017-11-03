@@ -1,13 +1,11 @@
 === Scrawl ===
 Contributors: automattic
-Donate link:
-Tags: light, gray, white, custom-background, custom-menu, flexible-header, featured-images, editor-style, post-formats, one-column, rtl-language-support, theme-options, sticky-post, translation-ready, fixed-layout, responsive-layout
 Tested up to: 4.2
 Stable tag: 3.9
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Scrawl is based on Underscores http://underscores.me/, (C) 2012-2015 Automattic, Inc.
+Scrawl is based on Underscores http://underscores.me/, (C) 2012-2016 Automattic, Inc.
 
 == Description ==
 
@@ -57,6 +55,38 @@ You can add links to a multitude of social services in the slide-out menu, using
 * The site logo appears at a maximum width of 120 and height of 40 in the site header, and a maximum width of 354 and height of 200 in the slide-out sidebar.
 
 == Changelog ==
+
+= 3 July 2017 =
+* Fixes no reference to add_theme_support( "title-tag" ) issue
+* Cleans up stylesheet heading tags
+
+= 12 May 2017 =
+* remove display: inline-block from links.
+
+= 22 March 2017 =
+* add Custom Colors annotations directly to the theme
+* move fonts annotations directly into the theme
+
+= 9 February 2017 =
+* Check for is_wp_error() in cases when using get_the_tag_list() to avoid potential fatal errors.
+
+= 31 October 2016 =
+* In the customizer, jetpack site logo should always be printed even if there's no site logo.
+
+= 23 June 2016 =
+* Remove WP genericon before link in the Custom Menu Widget (keep the other genericons).
+
+= 16 June 2016 =
+* Add a class of .widgets-hidden to the body tag when the sidebar is active; allows the widgets to be targeted by Direct Manipulation.
+
+= 18 May 2016 =
+* Add Headstart annotations.
+
+= 25 January 2016 =
+* Changing font enqueuing comments and variable name so they refer to Lora, rather than Arbutus Slab. Noticed while investigating another issue -
+
+= 22 January 2016 =
+* fix PHP error.
 
 = 22 September 2015 =
 * Add JavaScript to return window to previous scroll position after closing menu -- fixed #3283. Adjust CSS for menu to fix z-index issue in IE9.

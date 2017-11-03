@@ -1,14 +1,19 @@
-# Translation of Scrawl in Italian
-# This file is distributed under the same license as the Scrawl package.
+# Translation of WordPress.com - Themes - Scrawl in Italian
+# This file is distributed under the same license as the WordPress.com - Themes - Scrawl package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2015-09-08 10:14:31+0000\n"
+"PO-Revision-Date: 2017-03-23 08:46:59+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: GlotPress/1.0-alpha-1100\n"
-"Project-Id-Version: Scrawl\n"
+"X-Generator: GlotPress/2.4.0-alpha\n"
+"Language: it\n"
+"Project-Id-Version: WordPress.com - Themes - Scrawl\n"
+
+#: inc/wpcom-colors.php:37
+msgid "Main Accent"
+msgstr "Accento Principale"
 
 #: content.php:35
 msgid "Featured"
@@ -18,13 +23,13 @@ msgstr "In evidenza"
 msgid "Next post"
 msgstr "Articolo successivo"
 
-#: search.php:16
-msgid "Search Results for: %s"
-msgstr "Risultati della ricerca per: %s"
-
 #: single.php:17
 msgid "Previous post"
 msgstr "Articolo precedente"
+
+#: search.php:16
+msgid "Search Results for: %s"
+msgstr "Risultati della ricerca per: %s"
 
 #: inc/template-tags.php:275
 msgid "All %s posts"
@@ -34,63 +39,58 @@ msgstr "Tutti %s i posti"
 msgid ", "
 msgstr ", "
 
+#: inc/template-tags.php:120
+msgid "Archives"
+msgstr "Archivi"
+
 #. translators: 1: Taxonomy singular name, 2: Current taxonomy term
 #: inc/template-tags.php:118
 msgid "%1$s: %2$s"
 msgstr "%1$s: %2$s"
 
-#: inc/template-tags.php:120
-msgid "Archives"
-msgstr "Archivi"
+#: inc/template-tags.php:114
+msgid "Archives: %s"
+msgstr "Archivi: %s"
 
 #: inc/template-tags.php:111
 msgctxt "post format archive title"
 msgid "Chats"
 msgstr "Chat"
 
-#: inc/template-tags.php:114
-msgid "Archives: %s"
-msgstr "Archivi: %s"
+#: inc/template-tags.php:109
+msgctxt "post format archive title"
+msgid "Audio"
+msgstr "Audio"
 
 #: inc/template-tags.php:107
 msgctxt "post format archive title"
 msgid "Statuses"
 msgstr "Stati"
 
-#: inc/template-tags.php:109
+#: inc/template-tags.php:105
 msgctxt "post format archive title"
-msgid "Audio"
-msgstr "Audio"
+msgid "Links"
+msgstr "Link"
 
 #: inc/template-tags.php:103
 msgctxt "post format archive title"
 msgid "Quotes"
 msgstr "Citazioni"
 
-#: inc/template-tags.php:105
+#: inc/template-tags.php:101
 msgctxt "post format archive title"
-msgid "Links"
-msgstr "Link"
+msgid "Videos"
+msgstr "Video"
 
 #: inc/template-tags.php:99
 msgctxt "post format archive title"
 msgid "Images"
 msgstr "Immagini"
 
-#: inc/template-tags.php:101
-msgctxt "post format archive title"
-msgid "Videos"
-msgstr "Video"
-
 #: inc/template-tags.php:97
 msgctxt "post format archive title"
 msgid "Galleries"
 msgstr "Gallerie"
-
-#: inc/template-tags.php:92
-msgctxt "daily archives date format"
-msgid "F j, Y"
-msgstr "j F Y"
 
 #: inc/template-tags.php:95
 msgctxt "post format archive title"
@@ -98,17 +98,22 @@ msgid "Asides"
 msgstr "Digressioni"
 
 #: inc/template-tags.php:92
+msgctxt "daily archives date format"
+msgid "F j, Y"
+msgstr "j F Y"
+
+#: inc/template-tags.php:92
 msgid "Day: %s"
 msgstr "Giorno: %s"
-
-#: inc/template-tags.php:90
-msgid "Month: %s"
-msgstr "Mese: %s"
 
 #: inc/template-tags.php:90
 msgctxt "monthly archives date format"
 msgid "F Y"
 msgstr "F Y"
+
+#: inc/template-tags.php:90
+msgid "Month: %s"
+msgstr "Mese: %s"
 
 #: inc/template-tags.php:88
 msgctxt "yearly archives date format"
@@ -127,13 +132,13 @@ msgstr "Autore: %s"
 msgid "Tag: %s"
 msgstr "Tag: %s"
 
-#: inc/template-tags.php:56
-msgid "Post navigation"
-msgstr "Navigazione articolo"
-
 #: inc/template-tags.php:82
 msgid "Category: %s"
 msgstr "Categoria: %s"
+
+#: inc/template-tags.php:56
+msgid "Post navigation"
+msgstr "Navigazione articolo"
 
 #: inc/template-tags.php:31
 msgid "Newer posts"
@@ -175,13 +180,13 @@ msgstr "on"
 msgid "Social Links"
 msgstr "Link social"
 
-#: footer.php:17
-msgid "Theme: %1$s by %2$s."
-msgstr "Tema: %1$s di %2$s."
-
 #: functions.php:49 header.php:25
 msgid "Primary Menu"
 msgstr "Menu principale"
+
+#: footer.php:17
+msgid "Theme: %1$s by %2$s."
+msgstr "Tema: %1$s di %2$s."
 
 #: footer.php:15
 msgid "Proudly powered by %s"
@@ -196,12 +201,12 @@ msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
 msgstr "Continua a leggere <span class=\"meta-nav\">&rarr;</span>"
 
 #: content-single.php:39 content.php:41
-msgid "1"
-msgstr "1"
-
-#: content-single.php:39 content.php:41
 msgid "%"
 msgstr "%"
+
+#: content-single.php:39 content.php:41
+msgid "1"
+msgstr "1"
 
 #: content-single.php:39 content.php:41
 msgid "0"
@@ -231,13 +236,13 @@ msgstr "Sei pronto a pubblicare il tuo primo articolo? <a href=\"%1$s\">Comincia
 msgid "Nothing Found"
 msgstr "Nessun risultato"
 
-#: comments.php:50
-msgid "Newer Comments"
-msgstr "Nuovi commenti"
-
 #: comments.php:62
 msgid "Comments are closed."
 msgstr "I commenti sono chiusi."
+
+#: comments.php:50
+msgid "Newer Comments"
+msgstr "Nuovi commenti"
 
 #: comments.php:49
 msgid "Older Comments"

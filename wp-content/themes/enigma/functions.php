@@ -9,6 +9,7 @@
 	define('WL_TEMPLATE_DIR_CORE' , WL_TEMPLATE_DIR . '/core');
 	require( WL_TEMPLATE_DIR_CORE . '/menu/default_menu_walker.php' );
 	require( WL_TEMPLATE_DIR_CORE . '/menu/weblizar_nav_walker.php' );
+	
 	require( WL_TEMPLATE_DIR_CORE . '/scripts/css_js.php' ); //Enquiring Resources here	
 	require( WL_TEMPLATE_DIR_CORE . '/comment-function.php' );	
 	require(dirname(__FILE__).'/customizer.php');
@@ -194,7 +195,8 @@ add_theme_support( 'custom-header', $args );
 	'admin-preview-callback' => '',
 );
 add_theme_support( 'custom-header', $defaults );
-		
+
+add_theme_support( 'customize-selective-refresh-widgets' );
 		
 		/*
 		 * This theme styles the visual editor to resemble the theme style,
@@ -493,7 +495,7 @@ add_action( 'admin_notices', 'enigma_rating' );
 function enigma_rating() {
     ?>
     <div class="notice error my-acf-notice is-dismissible notice-box" >
-        <p><?php _e( 'Thank You for using Weblizar theme, Please give your rating on Enigma theme. Your rating help us to improve our theme' ); ?></p>
+        <p><?php _e( 'Thank You for using Enigma theme, Please give your reviews and rating on Enigma theme. Your ratings will help us to improve our themes','enigma' ); ?></p>
 		<p style="font-size:17px;"> 
 			<a style="color: #fff;background: #ec635b;padding: 3px 7px 4px 6px;border-radius: 5px;" href="<?php echo esc_url('https://wordpress.org/support/theme/enigma/reviews/?filter=5');  ?>" target="_blank"><?php _e('Rate the theme','enigma') ?></a>
 		</p>

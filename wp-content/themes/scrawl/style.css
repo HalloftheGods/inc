@@ -2,15 +2,13 @@
 Theme Name: Scrawl
 Theme URI: https://wordpress.com/themes/scrawl/
 Description: A clean, responsive theme for long-form writing, with bold featured images, fancy image captions and pull quotes, and plenty of space for your content to shine. A slide-out sidebar provides ready access to all your secondary content, including social links, custom menu, and widgets.
-Version: 1.0.9
+Version: 1.0.12
 Author: Automattic
 Author URI: https://wordpress.com/themes/
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: scrawl
-Tags: light, gray, white, custom-background, custom-menu, flexible-header, featured-images, editor-style, post-formats, one-column, rtl-language-support, theme-options, sticky-post, translation-ready, fixed-layout, responsive-layout
-
-Scrawl is based on Underscores http://underscores.me/, (C) 2012-2015 Automattic, Inc.
+Tags: blog, custom-background, custom-colors, custom-menu, flexible-header, featured-images, editor-style, post-formats, one-column, rtl-language-support, theme-options, sticky-post, translation-ready
 */
 
 /*--------------------------------------------------------------
@@ -813,15 +811,14 @@ a:active {
 .comment-respond a,
 .site-footer a {
     position: relative;
-    display: inline-block;
 }
 .comment-content a:after,
 .entry-content a:after,
 .comment-respond a:after,
 .site-footer a:after {
     position: absolute;
-        top: 90%;
-        left: 0;
+    bottom: -15%;
+    left: 0;
     width: 100%;
     height: 2px;
     background: #cc523e;
@@ -1935,10 +1932,6 @@ object {
     line-height: 1.5;
     margin-right: 8px;
     vertical-align: top;
-}
-.widget_nav_menu ul a[href*='wordpress.org']:before,
-.widget_nav_menu ul a[href*='wordpress.com']:before {
-    content: '\f205';
 }
 .widget_nav_menu ul a[href*='facebook.com']:before {
     content: '\f204';

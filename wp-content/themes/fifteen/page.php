@@ -7,26 +7,23 @@
  * and that other 'pages' on your WordPress site will use a
  * different template.
  *
- * @package Fifteen
+ * @package 
  */
 
-get_header('single'); ?>
+get_header(); ?>
 
-	<h1 class="container single-entry-title"><?php the_title(); ?></h1>
-	<div id="content" class="site-content container row clearfix clear">
-	<div class="container col-md-12">
-	
-	<div id="primary" class="content-area col-md-8">
+	<div id="primary-mono" class="content-area <?php do_action('fifteen_primary-width') ?> page">
 		<main id="main" class="site-main" role="main">
 
 			<?php while ( have_posts() ) : the_post(); ?>
 
-				<?php get_template_part( 'content', 'page' ); ?>
+				<?php get_template_part( 'modules/content/content', 'page' ); ?>
 
 				<?php
 					// If comments are open or we have at least one comment, load up the comment template
-					if ( comments_open() || '0' != get_comments_number() )
+					if ( comments_open() || get_comments_number() ) :
 						comments_template();
+					endif;
 				?>
 
 			<?php endwhile; // end of the loop. ?>
@@ -35,5 +32,4 @@ get_header('single'); ?>
 	</div><!-- #primary -->
 
 <?php get_sidebar(); ?>
-<?php get_sidebar('footer'); ?>
 <?php get_footer(); ?>

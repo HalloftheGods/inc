@@ -1,0 +1,38 @@
+#parallax {
+	position: relative;
+	.section-title {
+		color: white;
+		text-shadow: 1px 1px black;
+	}
+	.layer {
+		background: fade(black, 50%);
+	}
+	.parallax-content {
+		text-align: center;
+		font-size: 18px;
+		line-height: 2em;
+		color: white;
+		position: relative;
+		z-index: 10;
+		font-weight: normal;
+		-webkit-font-smoothing: antialiased;
+		text-shadow: 0 1px black;
+		.parallax-body {
+			margin-bottom: 30px;
+		}
+	}
+	
+	.buttons {
+		a {
+			display: inline-block;
+			margin: 10px 10px;
+			margin-top: 20px;
+			background: linear-gradient(to top, darken(@accent, 10%) 0%, @accent 100%);
+			color: @onaccent;
+			text-shadow: 1px 1px darken(@content, 1%);
+			padding: 10px 30px;
+			border-radius: 8px;
+			border-top: solid 1px fade(@onaccent, 50%);
+		}
+	}
+}

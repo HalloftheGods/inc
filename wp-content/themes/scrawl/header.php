@@ -11,10 +11,8 @@
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title><?php wp_title( '|', true, 'right' ); ?></title>
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
-
 <?php wp_head(); ?>
 </head>
 
@@ -25,26 +23,26 @@
 		<span class="screen-reader-text"><?php _e( 'Primary Menu', 'scrawl' ); ?></span>
 	</button>
 	<div class="slide-menu">
-		<?php if ( function_exists( 'jetpack_the_site_logo' ) && has_site_logo() ) {
+		<?php if ( function_exists( 'jetpack_the_site_logo' ) && ( is_customize_preview() || has_site_logo() ) ) {
 				jetpack_the_site_logo();
 			} elseif ( '' !== get_theme_mod( 'scrawl_gravatar_email', '' ) ) {
 				scrawl_get_gravatar();
-			} 
+			}
 		?>
-		
+
 		<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 		<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
-		
+
 		<?php if ( has_nav_menu ( 'social' ) ) : ?>
 			<?php wp_nav_menu( array( 'theme_location' => 'social', 'depth' => 1, 'link_before' => '<span class="screen-reader-text">', 'link_after' => '</span>', 'container_class' => 'social-links', ) ); ?>
 		<?php endif; ?>
-		
+
 		<?php if ( has_nav_menu( 'primary' ) ) : ?>
 			<nav id="site-navigation" class="main-navigation" role="navigation">
 				<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
 			</nav><!-- #site-navigation -->
 		<?php endif; ?>
-		
+
 		<?php if ( is_active_sidebar( 'sidebar-1' ) ) {
 			get_sidebar();
 		} ?>
@@ -56,11 +54,11 @@
 	<header id="masthead" class="site-header" role="banner">
 
 		<div class="site-branding">
-			<?php if ( function_exists( 'jetpack_the_site_logo' ) && has_site_logo() ) {
+			<?php if ( function_exists( 'jetpack_the_site_logo' ) && ( is_customize_preview() || has_site_logo() ) ) {
 					jetpack_the_site_logo();
 				} elseif ( '' !== get_theme_mod( 'scrawl_gravatar_email', '' ) ) {
 					scrawl_get_gravatar();
-				} 
+				}
 			?>
 			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 		</div>

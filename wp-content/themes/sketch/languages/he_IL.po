@@ -2,14 +2,18 @@
 # This file is distributed under the same license as the WordPress.com - Themes - Sketch package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2016-02-09 03:54:01+0000\n"
+"PO-Revision-Date: 2017-03-23 09:01:54+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: GlotPress/2.1.0-alpha\n"
+"X-Generator: GlotPress/2.4.0-alpha\n"
 "Language: he_IL\n"
 "Project-Id-Version: WordPress.com - Themes - Sketch\n"
+
+#: inc/wpcom-colors.php:24
+msgid "Main Accent"
+msgstr "דגש עיקרי"
 
 #. Author of the plugin/theme
 #: wp-content/themes/pub/sketch/style.css
@@ -17,30 +21,30 @@ msgid "Automattic"
 msgstr "אוטומטיק"
 
 #. Template Name of the plugin/theme
-#: wp-content/themes/pub/sketch/fullwidth-page.php
-msgid "Full Width, No Sidebar"
-msgstr "רוחב מלא, ללא עמודה צידית"
-
-#. Template Name of the plugin/theme
 #: wp-content/themes/pub/sketch/portfolio-page.php
 msgid "Portfolio Page Template"
 msgstr "<span dir=rtl>תבנית של דף תיק עבודות</span>"
+
+#. Template Name of the plugin/theme
+#: wp-content/themes/pub/sketch/fullwidth-page.php
+msgid "Full Width, No Sidebar"
+msgstr "רוחב מלא, ללא עמודה צידית"
 
 #: search.php:16
 msgid "Search Results for: %s"
 msgstr "תוצאות החיפוש: %s"
 
-#: inc/template-tags.php:217
-msgid "All %s posts"
-msgstr "כל הרשומות של %s"
+#: portfolio-page.php:90
+msgid "Ready to publish your first project? <a href=\"%1$s\">Get started here</a>."
+msgstr "<span dir=rtl>מוכן לפרסם את הפרויקט הראשון שלך?</span> <span dir=rtl><a href=\"%1$s\">התחל כאן</a>.</span>"
 
 #: portfolio-page.php:84
 msgid "No Project Found"
 msgstr "לא נמצא פרוייקט"
 
-#: portfolio-page.php:90
-msgid "Ready to publish your first project? <a href=\"%1$s\">Get started here</a>."
-msgstr "<span dir=rtl>מוכן לפרסם את הפרויקט הראשון שלך?</span> <span dir=rtl><a href=\"%1$s\">התחל כאן</a>.</span>"
+#: inc/template-tags.php:217
+msgid "All %s posts"
+msgstr "כל הרשומות של %s"
 
 #: inc/template-tags.php:173
 msgid "More Projects"
@@ -66,55 +70,51 @@ msgstr "ניווט בין הרשומות"
 msgid "Page %s"
 msgstr "עמוד %s"
 
-#: inc/customizer.php:33
-msgid "Landscape (4:3)"
-msgstr "רוחבי (4:3)"
-
-#: inc/customizer.php:35
-msgid "Square (1:1)"
-msgstr "ריבוע (1:1)"
-
-#: inc/customizer.php:45
+#: inc/customizer.php:40
 msgid "Hide title and content on Portfolio Page Template"
 msgstr "<span dir=rtl>הסתר את הכותרת ואת התוכן בתבנית דף תיק העבודות</span>"
 
-#: inc/customizer.php:34
+#: inc/customizer.php:30
+msgid "Square (1:1)"
+msgstr "ריבוע (1:1)"
+
+#: inc/customizer.php:29
 msgid "Portrait (3:4)"
 msgstr "אופקי (3:4)"
 
-#: inc/customizer.php:29
+#: inc/customizer.php:28
+msgid "Landscape (4:3)"
+msgstr "רוחבי (4:3)"
+
+#: inc/customizer.php:24
 msgid "Portfolio Thumbnail Aspect Ratio"
 msgstr "יחס גובה רוחב של תמונה מוקטנת של תיק עבודות"
 
-#: inc/customizer.php:19
-msgid "Theme"
-msgstr "ערכת עיצוב"
-
-#: header.php:32
+#: header.php:31
 msgid "Menu"
 msgstr "תפריט"
 
-#: header.php:23
+#: header.php:22
 msgid "Skip to content"
 msgstr "דילוג לתוכן"
 
 #. Translators: If there are characters in your language that are not
 #. * supported by Lato, translate this to 'off'. Do not translate
 #. * into your own language.
-#: functions.php:157
+#: functions.php:165
 msgctxt "Lato font: on or off"
 msgid "on"
 msgstr "off"
 
-#: functions.php:67
-msgid "Social Links"
-msgstr "קישורים חברתיים"
-
-#: functions.php:108
+#: functions.php:116
 msgid "Sidebar"
 msgstr " סרגל צדדי"
 
-#: functions.php:66
+#: functions.php:75
+msgid "Social Links"
+msgstr "קישורים חברתיים"
+
+#: functions.php:74
 msgid "Primary Menu"
 msgstr "תפריט ראשי"
 
@@ -151,14 +151,14 @@ msgstr "תגובה אחת"
 msgid "Leave a comment"
 msgstr "השארת תגובה"
 
+#: content-portfolio-single.php:23 content.php:33
+msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
+msgstr "להמשיך לקרוא <span class=\"meta-nav\">&larr;</span>"
+
 #: content-portfolio-single.php:16
 msgctxt "Used between list items, there is a space after the comma."
 msgid ", "
 msgstr ", "
-
-#: content-portfolio-single.php:23 content.php:33
-msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
-msgstr "להמשיך לקרוא <span class=\"meta-nav\">&larr;</span>"
 
 #: content-page.php:18 content-portfolio-single.php:26 content-single.php:22
 #: content.php:36 portfolio-page.php:28
@@ -277,14 +277,10 @@ msgstr "יום: %s"
 msgid "Author: %s"
 msgstr "מחבר: %s"
 
-#: archive-jetpack-portfolio.php:19
-msgid "Portfolio"
-msgstr "תיק עבודות"
+#: 404.php:19
+msgid "It looks like nothing was found at this location. Maybe try a search?"
+msgstr "נראה שלא נמצא כלום במיקום הזה. אולי תנסו לחפש?"
 
 #: 404.php:15
 msgid "Oops! That page can&rsquo;t be found."
 msgstr "אופס. העמוד שביקשת אינו קיים."
-
-#: 404.php:19
-msgid "It looks like nothing was found at this location. Maybe try a search?"
-msgstr "נראה שלא נמצא כלום במיקום הזה. אולי תנסו לחפש?"

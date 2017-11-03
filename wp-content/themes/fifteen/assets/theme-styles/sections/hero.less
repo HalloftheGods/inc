@@ -1,0 +1,41 @@
+#hero {
+	min-height: 500px;
+	position: relative;
+	@hero-color: white;
+	margin-bottom: 20px;
+	.hero-content {
+		position: absolute;
+		top: 45%;
+		transform: translateY(-50%);
+		width: 100%;
+		text-align: center;
+		left: 0;
+		color: @hero-color;
+	}
+	.hero-title {
+		font-weight: bold;
+		font-size: 42px;
+		margin-bottom: 40px;
+	}
+	.hero-button {
+		color: @hero-color;
+		border: solid 2px @hero-color;
+		padding: 15px 29px;
+		border-radius: 8px; 
+		font-size: 15px;
+		text-transform: uppercase;
+		.transition(0.4s all ease);
+		padding-right: 42px;
+		padding-left: 24px;
+		&:before {
+			//icon
+			right: 18px;
+			top: 14px;
+			content: "\f101";
+		}
+		&:hover {
+			background: fade(@accent,50%);
+			color: @onaccent;
+		}
+	}
+}

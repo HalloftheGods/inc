@@ -71,6 +71,47 @@ The portfolio archive page can be found at http://mygroovysite.wordpress.com/por
 
 == Changelog ==
 
+= 26 July 2017 =
+* Rework '[comment author] says' string to include a translation function, and replace wp_kses_post with just wp_kses and specific markup.
+
+= 21 July 2017 =
+* sanitize output after regex replacement.
+
+= 27 June 2017 =
+* Centring icons in social media widget, and changing opacity when hovered over.
+
+= 31 May 2017 =
+* Updating blockquote styles so they're not applied to the Content Form confirmation message.
+
+= 28 March 2017 =
+* Fix padding on menu items for RTL
+* Update menu-toggle icon for RTL.
+
+= 22 March 2017 =
+* add Custom Colors annotations directly to the theme
+* move fonts annotations directly into the theme
+
+= 27 February 2017 =
+* Adjusting mobile menu styles to prevent line break between second level menu items and their bullet points.
+
+= 2 February 2017 =
+* Add forgotten context and gettext function around comma separators for translators.
+
+= 25 January 2017 =
+* Replace get_the_tag_list() with the_tags() for a more straightforward approach that prevents potential fatal errors.
+
+= 20 January 2017 =
+* Fix page-content pseudo element alignment.
+
+= 18 January 2017 =
+* Make sure .entry-header is display block.
+
+= 17 January 2017 =
+* Add new grid-layout tag to stylesheet.
+
+= 7 September 2016 =
+* Correct typos.
+
 = 1 July 2016 =
 * Switch top position from ems to %, so it's not affected by Custom Font sizes.
 

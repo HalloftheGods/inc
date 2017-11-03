@@ -34,7 +34,7 @@
 					
 					<?php if($wl_theme_options['port_'.$i.'_title'] !='') { ?>	
 					<div class="enigma_home_portfolio_caption">
-					<h3><a target="_blank" href="<?php echo esc_url($wl_theme_options['port_'.$i.'_link']); ?>"><?php echo esc_attr($wl_theme_options['port_'.$i.'_title']); ?></a></h3>
+					<h3 class="port_<?php echo $i ?>"><a target="_blank" href="<?php echo esc_url($wl_theme_options['port_'.$i.'_link']); ?>"><?php echo esc_attr($wl_theme_options['port_'.$i.'_title']); ?></a></h3>
 					</div>
 					<?php } ?>
 					</div>

@@ -6,6 +6,10 @@ Enigma
 
 CHANGE-LOG:
 
+@Version: 3.6 [31-10-2017]
+1. Quick edit option added.
+2. menu walker changed.
+
 @Version: 3.5 [23-09-2017]
 1. Editor in Service section added.
 2. HomePage Section manager  added.
@@ -114,7 +118,7 @@ CHANGE-LOG:
 4. Footer-Call-Out icon setting added.
 
 @Version: 2.2 [17/10/2015]
-1. Mobils Menus Fix.
+1. Mobile Menus Fix.
 
 @Version: 2.1 [08/10/2015]
 1. Parallax Layout in *Premium Theme added..
@@ -190,7 +194,7 @@ CHANGE-LOG:
 @Version: 1.7.1[16/01/2015]
 1. Title Repetition Removed.
 2. Unused JS file removed.
-3. Pagw with Left Sidebar added. 
+3. Page with Left Sidebar added. 
 
 @Version: 1.7 [05/01/15]
 1. Editor added in Theme-Options.

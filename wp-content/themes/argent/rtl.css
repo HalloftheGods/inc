@@ -66,15 +66,20 @@ textarea {
 	right: 100%;
 	left: auto;
 }
+
+.main-navigation ul ul {
+	margin-left: 0;
+	margin-right: 2.5em;
+}
+
 /* Small menu. */
 
-.menu-toggle:after {
-	content: '\f419';
+.menu-toggle:before {
 	padding-left: 8px;
 	padding-right: 0;
 }
-.menu-toggle:before {
-	padding-right: 0;
+.main-navigation a {
+	padding: 0.3889em 1.5556em 0.3889em 0;
 }
 
 /* Posts, comments navigation */
@@ -223,8 +228,12 @@ textarea {
 	.nav-menu > li:first-child > a:before {
 	  content: "";
 	}
+	.main-navigation a {
+		padding: 0.8889em 0;
+	}
 	.main-navigation ul ul {
 		float: right;
+		margin: 0;
 		text-align: right;
 	}
 	.main-navigation div>ul>li>ul::before {

@@ -16,7 +16,7 @@ var hestia_customize_scroller = function ( $ ) {
     $( function () {
         var customize = wp.customize;
 
-        $('ul[id*="hestia_frontpage_sections"] .accordion-section').each( function () {
+        $('ul[id*="hestia_frontpage_sections"] .accordion-section').not('.panel-meta').each( function () {
             $( this ).on( 'click', function() {
                 var section = $( this ).attr('aria-owns').split( '_' ).pop();
                 customize.previewer.send('clicked-customizer-section', section);

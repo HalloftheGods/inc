@@ -1,0 +1,26 @@
+#counters {
+	.counter-item {
+		text-align: center;
+		@media screen and (max-width: 576px) {
+			&:nth-of-type(4) {
+				clear: left;
+			}
+		}
+		.counter-content {
+			text-align: center;
+			.counter-body {
+				font-size: 43px;
+				color: @content;
+				font-weight: bold;
+				.title-font;
+			}
+			.counter-title {
+				margin-top: 10px;
+				font-weight: normal;
+				font-size: 20px;
+				margin-bottom: 20px;
+				-webkit-font-smoothing: antialiased;
+			}
+		}
+	}
+}

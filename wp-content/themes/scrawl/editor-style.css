@@ -277,8 +277,8 @@ a,
 a:visited {
     color: #cc523e;
     -webkit-transition: all .2s ease-in-out;
-      
-        
+
+
             transition: all .2s ease-in-out;
     text-decoration: none;
 }
@@ -287,8 +287,8 @@ a:focus,
 a:active {
     color: #cc523e;
     -webkit-transition: all .2s ease-in-out;
-      
-        
+
+
             transition: all .2s ease-in-out;
 }
 a {
@@ -305,7 +305,7 @@ a:after {
     content: '';
     opacity: 0;
     -webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
-      
+
             transition: opacity 0.3s, transform 0.3s;
     -webkit-transform: translateY(5px);
             transform: translateY(5px);

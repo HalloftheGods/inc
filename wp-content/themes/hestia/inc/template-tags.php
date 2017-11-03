@@ -174,7 +174,7 @@ if ( ! function_exists( 'hestia_output_wrapper_header_background' ) ) :
 		}
 		$header_filter_div .= '></div>';
 
-		echo $header_filter_div;
+		echo apply_filters( 'hestia_header_wrapper_background_filter', $header_filter_div );
 	}
 endif;
 
@@ -1128,3 +1128,50 @@ if ( ! function_exists( 'hestia_hidden_sidebars' ) ) :
 	}
 endif;
 add_action( 'hestia_do_footer','hestia_hidden_sidebars' );
+
+/**
+ * Changing Pirate Forms output.
+ *
+ * @package Hestia
+ * @since Hestia 1.0
+ */
+add_filter(
+	'pirate_forms_public_controls', function( $elements ) {
+
+		foreach ( $elements as $key => $element ) {
+			// Name field
+			if ( $element['id'] === 'pirate-forms-contact-name' ) {
+				$elements[ $key ]['wrap']['class'] = 'col-xs-12 col-sm-6 contact_name_wrap pirate_forms_three_inputs form_field_wrap';
+				$elements[ $key ]['label']['html'] = $elements[ $key ]['placeholder'];
+				$elements[ $key ]['label']['class'] = 'control-label';
+				$elements[ $key ]['placeholder'] = '';
+			}
+
+			// E-mail field
+			if ( $element['id'] === 'pirate-forms-contact-email' ) {
+				$elements[ $key ]['wrap']['class'] = 'col-xs-12 col-sm-6 contact_email_wrap pirate_forms_three_inputs form_field_wrap';
+				$elements[ $key ]['label']['html'] = $elements[ $key ]['placeholder'];
+				$elements[ $key ]['label']['class'] = 'control-label';
+				$elements[ $key ]['placeholder'] = '';
+			}
+
+			// Subject field
+			if ( $element['id'] === 'pirate-forms-contact-subject' ) {
+				$elements[ $key ]['wrap']['class'] = 'col-xs-12 contact_subject_wrap pirate_forms_three_inputs form_field_wrap';
+				$elements[ $key ]['label']['html'] = $elements[ $key ]['placeholder'];
+				$elements[ $key ]['label']['class'] = 'control-label';
+				$elements[ $key ]['placeholder'] = '';
+			}
+
+			// Message field
+			if ( $element['id'] === 'pirate-forms-contact-message' ) {
+				$elements[ $key ]['wrap']['class'] = 'col-xs-12 form_field_wrap contact_message_wrap';
+				$elements[ $key ]['label']['html'] = $elements[ $key ]['placeholder'];
+				$elements[ $key ]['label']['class'] = 'control-label';
+				$elements[ $key ]['placeholder'] = '';
+			}
+		}
+
+		return $elements;
+	} , 20
+);

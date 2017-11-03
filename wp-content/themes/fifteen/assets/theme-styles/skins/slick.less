@@ -1,0 +1,30 @@
+@import '../variables';
+
+//Override Variables
+@accent: #483456;
+@background: #eadfd7;
+@onaccent: #222;
+
+@import '../functions';
+@import '../_init';
+
+//additional css for featured area 1
+
+#f1_container {
+  .face.back{
+    h2{
+      color: lighten(@onaccent,100%);
+    }
+  }
+}
+@media screen and (max-width:981px) {
+  .mobile-bface-title {
+    color: lighten(@onaccent,100%);
+  }
+}
+
+//additional css for featured area 2
+
+#featured-degree h2 {
+  color: lighten(@onaccent, 100%);
+}

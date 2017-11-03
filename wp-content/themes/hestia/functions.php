@@ -28,7 +28,7 @@ if ( ! defined( 'ELEMENTOR_PARTNER_ID' ) ) {
 	define( 'ELEMENTOR_PARTNER_ID', 2112 );
 }
 
-define( 'HESTIA_VERSION', '1.1.51' );
+define( 'HESTIA_VERSION', '1.1.52' );
 
 define( 'HESTIA_VENDOR_VERSION', '1.0.1' );
 

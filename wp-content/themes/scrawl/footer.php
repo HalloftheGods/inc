@@ -14,7 +14,7 @@
 		<div class="site-info">
 			<a href="<?php echo esc_url( __( 'http://wordpress.org/', 'scrawl' ) ); ?>"><?php printf( __( 'Proudly powered by %s', 'scrawl' ), 'WordPress' ); ?></a>
 			<span class="sep"> ~ </span>
-			<?php printf( __( 'Theme: %1$s by %2$s.', 'scrawl' ), 'Scrawl', '<a href="https://wordpress.com/themes/scrawl" rel="designer">WordPress.com</a>' ); ?>
+			<?php printf( __( 'Theme: %1$s by %2$s.', 'scrawl' ), 'Scrawl', '<a href="http://wordpress.com/themes/scrawl/" rel="designer">WordPress.com</a>' ); ?>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->

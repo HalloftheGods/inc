@@ -123,10 +123,7 @@ function argent_entry_meta() {
 		}
 
 		/* translators: used between list items, there is a space after the comma */
-		$tags_list = get_the_tag_list( '', __( ', ', 'argent' ) );
-		if ( $tags_list ) {
-			printf( '<span class="tags-links">' . esc_html__( 'Tagged %1$s', 'argent' ) . '</span>', $tags_list );
-		}
+		the_tags( sprintf( '<span class="tags-links">%s ', esc_html__( 'Tagged', 'argent' ) ), esc_html__( ', ', 'argent' ), '</span>' );
 	}
 
 	if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
@@ -179,7 +176,18 @@ function argent_comment( $comment, $args, $depth ) {
 						) ) );
 					?>
 				</div><!-- .comment-metadata -->
-				<?php printf( wp_kses_post( '%s <span class="says">says:</span>', 'argent' ), sprintf( '<cite class="fn">%s</cite>', get_comment_author_link() ) ); ?>
+				<?php printf(
+						wp_kses(
+							__( '%s <span class="says">says:</span>', 'argent' ),
+							array(
+								'span' => array(
+									'class' => array(),
+								),
+							)
+						),
+						sprintf( '<cite class="fn">%s</cite>', get_comment_author_link() )
+					);
+				 ?>
 
 				<?php if ( '0' == $comment->comment_approved ) : ?>
 				<p class="comment-awaiting-moderation"><?php esc_html_e( 'Your comment is awaiting moderation.', 'argent' ); ?></p>

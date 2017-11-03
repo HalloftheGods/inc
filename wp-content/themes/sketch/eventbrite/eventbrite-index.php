@@ -41,7 +41,7 @@ get_header(); ?>
 							<div class="entry-meta">
 								<?php eventbrite_event_meta(); ?>
 
-								<?php eventbrite_edit_post_link( __( 'Edit', 'eventbrite_api' ), '<span class="sep"> | </span><span class="edit-link">', '</span>' ); ?>
+								<?php eventbrite_edit_post_link( __( 'Edit', 'sketch' ), '<span class="sep"> | </span><span class="edit-link">', '</span>' ); ?>
 							</div><!-- .entry-meta -->
 
 							<div class="entry-content">

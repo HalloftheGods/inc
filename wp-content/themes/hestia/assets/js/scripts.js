@@ -228,84 +228,39 @@ jQuery(document).ready(function ($) {
         }
     });
 
-    if (typeof $('.contact_name_wrap') !== 'undefined') {
-        if ($('.contact_name_wrap').hasClass('col-sm-4')) {
-            $('.contact_name_wrap').removeClass('col-sm-4');
-        }
-        if ($('.contact_name_wrap').hasClass('col-lg-4')) {
-            $('.contact_name_wrap').removeClass('col-lg-4');
-        }
-        $('.contact_name_wrap').addClass('col-md-6');
-        $('.contact_name_wrap .form-group').addClass('label-floating');
-        var placeholder1 = $('.contact_name_wrap #pirate-forms-contact-name').attr('placeholder');
-        $('.contact_name_wrap #pirate-forms-contact-name').removeAttr('placeholder');
-        $('<label class="control-label"> ' + placeholder1 + ' </label>').insertBefore('.contact_name_wrap #pirate-forms-contact-name');
-    }
-
-    if (typeof $('.contact_email_wrap') !== 'undefined') {
-        if ($('.contact_email_wrap').hasClass('col-sm-4')) {
-            $('.contact_email_wrap').removeClass('col-sm-4');
-        }
-        if ($('.contact_email_wrap').hasClass('col-lg-4')) {
-            $('.contact_email_wrap').removeClass('col-lg-4');
-        }
-        $('.contact_email_wrap').addClass('col-md-6');
-        $('.contact_email_wrap .form-group').addClass('label-floating');
-        var placeholder2 = $('.contact_email_wrap #pirate-forms-contact-email').attr('placeholder');
-        $('.contact_email_wrap #pirate-forms-contact-email').removeAttr('placeholder');
-        $('<label class="control-label"> ' + placeholder2 + ' </label>').insertBefore('.contact_email_wrap #pirate-forms-contact-email');
-    }
-
-    if (typeof $('.contact_subject_wrap') !== 'undefined') {
-        if ($('.contact_subject_wrap').hasClass('col-sm-4')) {
-            $('.contact_subject_wrap').removeClass('col-sm-4');
-        }
-        if ($('.contact_subject_wrap').hasClass('col-lg-4')) {
-            $('.contact_subject_wrap').removeClass('col-lg-4');
-        }
-        $('.contact_subject_wrap').addClass('col-md-12');
-        $('.contact_subject_wrap .form-group').addClass('label-floating');
-        var placeholder3 = $('.contact_subject_wrap #pirate-forms-contact-subject').attr('placeholder');
-        $('.contact_subject_wrap #pirate-forms-contact-subject').removeAttr('placeholder');
-        $('<label class="control-label"> ' + placeholder3 + ' </label>').insertBefore('.contact_subject_wrap #pirate-forms-contact-subject');
-    }
-
-    if (typeof $('.contact_message_wrap') !== 'undefined') {
-        $('.contact_message_wrap textarea').attr('rows', '6');
-        $('.contact_message_wrap .form-group').addClass('label-floating');
-        var placeholder4 = $('.contact_message_wrap #pirate-forms-contact-message').attr('placeholder');
-        $('.contact_message_wrap #pirate-forms-contact-message').removeAttr('placeholder');
-        $('<label class="control-label"> ' + placeholder4 + ' </label>').insertBefore('.contact_message_wrap #pirate-forms-contact-message');
+    // Add control-label for each contact form field
+    function addControlLabel(field) {
+        var placeholderField = field.attr('placeholder');
+        field.removeAttr('placeholder');
+        $('<label class="control-label"> ' + placeholderField + ' </label>').insertBefore(field);
     }
 
     var searchForm = $('.search-form label');
     if (typeof (searchForm) !== 'undefined') {
 
         var searchField = $(searchForm).find('.search-field');
-        var placeholder = $(searchField).attr('placeholder');
         if ($(searchField).attr('value') === '') {
             $(searchForm).addClass('label-floating is-empty');
         } else {
             $(searchForm).addClass('label-floating');
         }
-        $(searchField).removeAttr('placeholder');
-        $('<label class="control-label ">' + placeholder + '</label>').insertBefore(searchField);
+
+        addControlLabel(searchField);
     }
 
     var wooSearchForm = $('.woocommerce-product-search');
     if (typeof (wooSearchForm) !== 'undefined') {
 
         var wooSearchField = $(wooSearchForm).find('.search-field');
-        var wooPlaceholder = $(wooSearchField).attr('placeholder');
         if ($(wooSearchField).attr('value') === '') {
             $(wooSearchForm).addClass('label-floating is-empty');
         } else {
             $(wooSearchForm).addClass('label-floating');
         }
-        $(wooSearchField).removeAttr('placeholder');
-        $('<label class="control-label">' + wooPlaceholder + '</label>').insertBefore(wooSearchField);
 
+        addControlLabel(wooSearchField);
     }
+
     if (typeof $('.contact_submit_wrap') !== 'undefined') {
         $('.pirate-forms-submit-button').addClass('btn btn-primary');
     }
@@ -474,7 +429,7 @@ jQuery(document).ready(function ($) {
      * Detect if browser is iPhone or iPad then add body class
      */
     function hestia_detect_ios() {
-        if ($('.hestia-about').length > 0) {
+        if ($('.hestia-about').length > 0 || $('.hestia-ribbon').length > 0) {
             var iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
 
             if (iOS) {

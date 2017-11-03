@@ -1,14 +1,14 @@
-# Copyright (C) 2015 Automattic
+# Copyright (C) 2017 Automattic
 # This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Scrawl 1.0.8\n"
+"Project-Id-Version: Scrawl 1.0.10\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/support/theme/scrawl\n"
-"POT-Creation-Date: 2015-08-29 03:41:29+00:00\n"
+"POT-Creation-Date: 2017-03-23 08:46:55+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2015-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2017-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 
@@ -121,10 +121,10 @@ msgid "Slide-Out Sidebar"
 msgstr ""
 
 #. Translators: If there are characters in your language that are not
-#. 	 * supported by Arbutus Slab, translate this to 'off'. Do not translate
+#. 	 * supported by Lora, translate this to 'off'. Do not translate
 #. 	 * into your own language.
 #: functions.php:125
-msgctxt "Arbutus Slab font: on or off"
+msgctxt "Lora font: on or off"
 msgid "on"
 msgstr ""
 
@@ -289,6 +289,10 @@ msgstr ""
 msgid "All %s posts"
 msgstr ""
 
+#: inc/wpcom-colors.php:37
+msgid "Main Accent"
+msgstr ""
+
 #: search.php:16
 msgid "Search Results for: %s"
 msgstr ""
@@ -328,4 +332,39 @@ msgstr ""
 #. Author URI of the plugin/theme
 #: wp-content/themes/pub/scrawl/style.css
 msgid "https://wordpress.com/themes/"
+msgstr ""
+#: inc/plugin-enhancements.php:92
+msgid "The %1$s is necessary to use some of this theme&rsquo;s features, including: "
+msgstr ""
+
+#: inc/plugin-enhancements.php:93
+msgid "Jetpack plugin"
+msgstr ""
+
+#: inc/plugin-enhancements.php:180
+msgid "no specific module needed"
+msgstr ""
+
+#: inc/plugin-enhancements.php:181
+msgid "Custom Content Types module"
+msgstr ""
+
+#: inc/plugin-enhancements.php:253
+msgid "Please activate %1$s. %2$s"
+msgstr ""
+
+#: inc/plugin-enhancements.php:255
+msgid "Activate"
+msgstr ""
+
+#: inc/plugin-enhancements.php:263
+msgid "Please install %1$s. %2$s"
+msgstr ""
+
+#: inc/plugin-enhancements.php:265
+msgid "Install"
+msgstr ""
+
+#: inc/plugin-enhancements.php:290
+msgid "To use %1$s, please activate the Jetpack plugin&rsquo;s %2$s."
 msgstr ""

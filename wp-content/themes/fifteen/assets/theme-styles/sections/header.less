@@ -1,0 +1,81 @@
+/* ---------- Header ------------- */
+#masthead {
+	position: relative; 
+	text-align: center; 
+	color: @header-color;
+	.single-entry-title{
+		background: rgba(0, 0, 0, 0.6);
+		padding: 31px 30px;
+		color: #eee;
+		font-weight: lighter;
+		top: -50px;
+		//right: 15px;
+		position: relative;
+		@media screen and (max-width: 767px) {
+			padding: 10px 30px;
+			right: 0px;
+			font-size: 24px;
+		}
+	}
+	.site-branding { 
+		padding: 25px 0;
+		overflow: hidden;
+		display: inline-block;
+		text-align: center;
+		width: 100%;
+		@media screen and (max-width: 991px) {
+				float: none;
+				width: 100%;
+			}
+	}
+	#text-title-desc {
+		clear: none;
+		float: none;
+		width: 100%;
+		text-align: center;
+		@media screen and (max-width: 991px) {
+			margin-top: 30px;
+		}
+		vertical-align: middle;  
+	}
+	
+	h1.site-title {
+		font-weight: 300;
+		margin-top: 0px;
+		font-size: 42px;
+		margin-bottom: 20px;
+		a {
+			color: @header-color;
+			text-shadow: 1px 2px fade(black, 40%);
+		}
+	}
+	h2.site-description {
+		font-weight: 300;
+		font-size: 18px;
+		margin-top: 0px;
+		margin-bottom: 20px;
+		-webkit-font-smoothing: antialiased;
+		text-shadow: 0 1px black;
+		color: @header-color;
+	}
+	
+	@media screen and (max-width: 767px) {
+		text-align: center;	
+		.layer {
+			min-height: 430px;
+		}
+	}
+}
+
+
+#site-logo {
+	display: inline-block;
+	float: none;
+	width: 150px;
+	height: auto;
+	@media screen and (max-width: 768px) {
+			float: none;
+		}
+}
+
+

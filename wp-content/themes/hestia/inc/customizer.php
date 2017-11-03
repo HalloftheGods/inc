@@ -248,11 +248,7 @@ function hestia_custom_logo_callback() {
 		$logo = wp_get_attachment_image_src( get_theme_mod( 'custom_logo' ) , 'full' );
 		$logo = '<img src="' . esc_url( $logo[0] ) . '">';
 	} else {
-		if ( is_front_page() ) {
-			$logo = '<h1>' . get_bloginfo( 'name' ) . '</h1>';
-		} else {
-			$logo = '<p>' . get_bloginfo( 'name' ) . '</p>';
-		}
+		$logo = '<p>' . get_bloginfo( 'name' ) . '</p>';
 	}
 	return $logo;
 }

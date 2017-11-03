@@ -1,7 +1,4 @@
-<?php
-
-
-add_action( 'customize_register', 'weblizar_gl_customizer' );
+<?php add_action( 'customize_register', 'weblizar_gl_customizer' );
 
 function weblizar_gl_customizer( $wp_customize ) {
 	wp_enqueue_style('customizr', WL_TEMPLATE_DIR_URI .'/css/customizr.css');
@@ -16,13 +13,33 @@ function weblizar_gl_customizer( $wp_customize ) {
 	$port['4'] = esc_url(get_template_directory_uri() ."/images/portfolio4.png"); 
 	
 	
-	
+	$wp_customize->selective_refresh->add_partial( 'blogname', array(
+		'selector' => '.logo h1',
+	) );
+	$wp_customize->selective_refresh->add_partial( 'blogdescription', array(
+		'selector' => '.logo p',
+	) );
 	
 	/* Genral section */
 	$wp_customize->add_panel( 'enigma_theme_option', array(
     'title' => __( 'Theme Options','enigma' ),
     'priority' => 1, // Mixed with top-level-section hierarchy.
 ) );
+//changelog//	
+	$wp_customize->add_section('changelog_sec',	array('title' =>  __( 'Changelog','enigma' ),
+			'panel'=>'enigma_theme_option',
+            'priority' => 1,
+    ));
+	$wp_customize->add_setting( 'changelog', array(
+			'default'    		=> null,
+			'sanitize_callback' => 'sanitize_text_field',
+	));
+	$wp_customize->add_control( new enigma_changelog_Control( $wp_customize, 'changelog', array(
+			'label'    => __( 'Enigma', 'enigma' ),
+			'section'  => 'changelog_sec',
+			'settings' => 'changelog',
+			'priority' => 1,
+	)));
 $wp_customize->add_section(
         'general_sec',
         array(
@@ -321,6 +338,11 @@ $wp_customize->add_section(
 		'section'    => 'slider_sec',
 		'settings'   => 'enigma_options[slide_title_1]'
 	) );
+	
+	$wp_customize->selective_refresh->add_partial( 'enigma_options[slide_title_1]', array(
+		'selector' => '.carousel-text .head_1',
+	) );
+	
 	$wp_customize->add_control(new One_Page_Editor($wp_customize, 'slide_desc_1', array(
 		'label'        => __( 'Slider description one', 'enigma' ),
 		'active_callback' => 'show_on_front',
@@ -329,12 +351,19 @@ $wp_customize->add_section(
 		'settings'   => 'slide_desc_1'
 	) ));
 	
+	$wp_customize->selective_refresh->add_partial( 'slide_desc_1', array(
+		'selector' => '.desc_1',
+	) );
 	
 	$wp_customize->add_control( 'Slider button one', array(
 		'label'        => __( 'Slider Button Text One', 'enigma' ),
 		'type'=>'text',
 		'section'    => 'slider_sec',
 		'settings'   => 'enigma_options[slide_btn_text_1]'
+	) );
+	
+	$wp_customize->selective_refresh->add_partial( 'enigma_options[slide_btn_text_1]', array(
+		'selector' => '.rdm_1',
 	) );
 	
 	$wp_customize->add_control( 'enigma_slide_btnlink_1', array(
@@ -355,6 +384,11 @@ $wp_customize->add_section(
 		'section'    => 'slider_sec',
 		'settings'   => 'enigma_options[slide_title_2]'
 	) );
+	
+	$wp_customize->selective_refresh->add_partial( 'enigma_options[slide_title_2]', array(
+		'selector' => '.carousel-text .head_2',
+	) );
+	
 	$wp_customize->add_control(new One_Page_Editor($wp_customize, 'slide_desc_2', array(
 		'label'        => __( 'Slider Description Two', 'enigma' ),
 		'active_callback' => 'show_on_front',
@@ -363,12 +397,21 @@ $wp_customize->add_section(
 		'settings'   => 'slide_desc_2'
 	)));
 	
+	$wp_customize->selective_refresh->add_partial( 'slide_desc_2', array(
+		'selector' => '.desc_2',
+	) );
+	
 	$wp_customize->add_control( 'enigma_slide_btn_2', array(
 		'label'        => __( 'Slider Button Text Two', 'enigma' ),
 		'type'=>'text',
 		'section'    => 'slider_sec',
 		'settings'   => 'enigma_options[slide_btn_text_2]'
 	) );
+	
+	$wp_customize->selective_refresh->add_partial( 'enigma_options[slide_btn_text_2]', array(
+		'selector' => '.rdm_2',
+	) );
+	
 	$wp_customize->add_control( 'enigma_slide_btnlink_2', array(
 		'label'        => __( 'Slider Button Link Two', 'enigma' ),
 		'type'=>'url',
@@ -387,6 +430,10 @@ $wp_customize->add_section(
 		'settings'   => 'enigma_options[slide_title_3]'
 	) );
 	
+	$wp_customize->selective_refresh->add_partial( 'enigma_options[slide_title_3]', array(
+		'selector' => '.carousel-text .head_3',
+	) );
+	
 	$wp_customize->add_control(new One_Page_Editor($wp_customize,'slide_desc_3', array(
 		'label'        => __( 'Slider Description Three', 'enigma' ),
 		'active_callback' => 'show_on_front',
@@ -395,12 +442,21 @@ $wp_customize->add_section(
 		'settings'   => 'slide_desc_3'
 	)));
 	
+	$wp_customize->selective_refresh->add_partial( 'slide_desc_3', array(
+		'selector' => '.desc_3',
+	) );
+	
 	$wp_customize->add_control( 'enigma_slide_btn_3', array(
 		'label'        => __( 'Slider Button Text Three', 'enigma' ),
 		'type'=>'text',
 		'section'    => 'slider_sec',
 		'settings'   => 'enigma_options[slide_btn_text_3]'
 	) );
+	
+	$wp_customize->selective_refresh->add_partial( 'enigma_options[slide_btn_text_3]', array(
+		'selector' => '.rdm_3',
+	) );
+	
 	$wp_customize->add_control( 'enigma_slide_btnlink_3', array(
 		'label'        => __( 'Slider Button Link Three', 'enigma' ),
 		'type'=>'url',
@@ -472,6 +528,11 @@ $wp_customize->add_section(
 		'section'    => 'service_section',
 		'settings'   => 'enigma_options[home_service_heading]'
 	) );
+	
+	$wp_customize->selective_refresh->add_partial( 'enigma_options[home_service_heading]', array(
+		'selector' => '.enigma_service .enigma_heading_title h3',
+	) );
+	
 	$wp_customize->add_setting(
 	'enigma_options[service_1_icons]',
 		array(
@@ -602,6 +663,10 @@ $wp_customize->add_section(
 		'settings'   => 'enigma_options[service_1_title]'
 	) );
 	
+	$wp_customize->selective_refresh->add_partial( 'enigma_options[service_1_title]', array(
+		'selector' => '.enigma_service_detail .head_1',
+	) );
+	
 		$wp_customize->add_control(new Enigma_Customizer_Icon_Picker_Control($wp_customize,'service_1_icons',
         array(
 			'label'        => __( 'Service Icon One', 'enigma' ),
@@ -640,6 +705,10 @@ $wp_customize->add_section(
 		'section'    => 'service_section',
 		'settings'   => 'enigma_options[service_2_title]'
 	) );
+	
+	$wp_customize->selective_refresh->add_partial( 'enigma_options[service_2_title]', array(
+		'selector' => '.enigma_service_detail .head_2',
+	) ); 
 		$wp_customize->add_control(new Enigma_Customizer_Icon_Picker_Control($wp_customize,'service_2_icons',
         array(
 			'label'        => __( 'Service Icon Two', 'enigma' ),
@@ -674,6 +743,9 @@ $wp_customize->add_section(
 		'type'=>'text',
 		'section'    => 'service_section',
 		'settings'   => 'enigma_options[service_3_title]'
+	) );
+	$wp_customize->selective_refresh->add_partial( 'enigma_options[service_3_title]', array(
+		'selector' => '.enigma_service_detail .head_3',
 	) );
 	$wp_customize->add_control(new Enigma_Customizer_Icon_Picker_Control($wp_customize, 'service_3_icons',
         array(
@@ -772,6 +844,10 @@ $wp_customize->add_section(
 		'settings'   => 'enigma_options[port_heading]'
 	) );
 
+	$wp_customize->selective_refresh->add_partial( 'enigma_options[port_heading]', array(
+		'selector' => '.enigma_project_section .enigma_heading_title h3',
+	) );
+	
 	for($i=1;$i<=4;$i++){
 	$j = array(' One', ' Two', ' Three', ' Four');
 		$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'enigma_portfolio_img_'.$i, array(
@@ -784,6 +860,10 @@ $wp_customize->add_section(
 		'type'=>'text',
 		'section'    => 'portfolio_section',
 		'settings'   => 'enigma_options[port_'.$i.'_title]'
+	) );
+	
+	$wp_customize->selective_refresh->add_partial( 'enigma_options[port_'.$i.'_title]', array(
+		'selector' => '.enigma_home_portfolio_caption .port_'.$i,
 	) );
 	
 	$wp_customize->add_control( 'enigma_portfolio_link_'.$i, array(
@@ -831,6 +911,11 @@ $wp_customize->add_section(
 		'section'    => 'blog_section',
 		'settings'   => 'enigma_options[blog_title]',
 	) );
+	
+	$wp_customize->selective_refresh->add_partial( 'enigma_options[blog_title]', array(
+		'selector' => '.enigma_blog_area .enigma_heading_title h3',
+	) );
+	
 	$wp_customize->add_setting(
 		'enigma_options[blog_speed]',
 		array(
@@ -949,6 +1034,11 @@ $wp_customize->add_section(
 		'section'    => 'social_section',
 		'settings'   => 'enigma_options[header_social_media_in_enabled]'
 	) );
+	
+	$wp_customize->selective_refresh->add_partial( 'enigma_options[header_social_media_in_enabled]', array(
+		'selector' => '.header_section .social',
+	) );
+	
 	$wp_customize->add_setting(
 	'enigma_options[footer_section_social_media_enbled]',
 		array(
@@ -964,6 +1054,11 @@ $wp_customize->add_section(
 		'section'    => 'social_section',
 		'settings'   => 'enigma_options[footer_section_social_media_enbled]'
 	) );
+	
+	$wp_customize->selective_refresh->add_partial( 'enigma_options[footer_section_social_media_enbled]', array(
+		'selector' => '.enigma_footer_area .social',
+	) );
+	
 	$wp_customize->add_setting(
 	'enigma_options[email_id]',
 		array(
@@ -979,6 +1074,11 @@ $wp_customize->add_section(
 		'section'    => 'social_section',
 		'settings'   => 'enigma_options[email_id]'
 	) );
+	
+	$wp_customize->selective_refresh->add_partial( 'enigma_options[email_id]', array(
+		'selector' => '.head-contact-info',
+	) );
+	
 	$wp_customize->add_setting(
 	'enigma_options[phone_no]',
 		array(
@@ -1168,6 +1268,11 @@ $wp_customize->add_section(
 		'section'    => 'callout_section',
 		'settings'   => 'enigma_options[fc_title]'
 	) );
+	
+	$wp_customize->selective_refresh->add_partial( 'enigma_options[fc_title]', array(
+		'selector' => '.enigma_callout_area p',
+	) );
+	
 	$wp_customize->add_setting(
 	'enigma_options[fc_btn_txt]',
 		array(
@@ -1183,6 +1288,11 @@ $wp_customize->add_section(
 		'section'    => 'callout_section',
 		'settings'   => 'enigma_options[fc_btn_txt]'
 	) );
+	
+	$wp_customize->selective_refresh->add_partial( 'enigma_options[fc_btn_txt]', array(
+		'selector' => '.enigma_callout_area a',
+	) );
+	
 	$wp_customize->add_setting(
 	'enigma_options[fc_btn_link]',
 		array(
@@ -1235,6 +1345,10 @@ $wp_customize->add_section(
 		'type'=>'text',
 		'section'    => 'footer_section',
 		'settings'   => 'enigma_options[footer_customizations]'
+	) );
+	
+	$wp_customize->selective_refresh->add_partial( 'enigma_options[footer_customizations]', array(
+		'selector' => '.enigma_footer_copyright_info',
 	) );
 	
 	$wp_customize->add_setting(
@@ -1663,4 +1777,152 @@ function show_on_front() {
 		return is_home();
 	}
 }
+
+if ( class_exists( 'WP_Customize_Control' ) && ! class_exists( 'enigma_changelog_Control' ) ) :
+class enigma_changelog_Control extends WP_Customize_Control {
+
+	/**
+	* Render the content on the theme customizer page
+	*/
+	public function render_content() { ?>
+		<label style="overflow: hidden; zoom: 1;">
+						
+			<div class="col-md-3 col-sm-6">
+				<h2 style="margin-top:10px;color:#fff;background-color: #3ca3e0;padding: 10px;font-size: 19px;"><?php echo _e( 'Enigma Theme Changelog','enigma'); ?></h2>
+					<ul style="padding-top:20px">
+						<li class="upsell-enigma"> <div class="versionhd"> Version: 3.6 - <span> Current Version </span></div>
+		<ol> <li> Quick Edit option added </li></ol></li>				
+	<li class="upsell-enigma"> <div class="versionhd"> Version: 3.5 - </div>
+		<ol> <li> Editor in Service section added.</li><li> HomePage Section manager  added. </li><li>User Rating Banner.</li></ol> </li>
+	<li class="upsell-enigma"> <div class="versionhd"> Version: 3.4 - </div>
+		<ol> <li> Icon picker feature added in Service Options. </li></ol></li>
+	<li class="upsell-enigma"> <div class="versionhd"> Version: 3.3 - </div>
+		<ol> <li> New feature add in Blog Option. </li><li> Excerpt Option added. </li></ol> </li>
+	<li class="upsell-enigma">  <div class="versionhd"> Version: 3.2 - </div>
+		<ol> <li> Minor changes in header. </li></ol> </li>
+	<li class="upsell-enigma">  <div class="versionhd"> Version: 3.1 - </div>
+		<ol> <li>Minor changes in header.</li></ol></li>
+	<li class="upsell-enigma"> <div class="versionhd"> Version: 3.0 - </div>
+		<ol> <li> Minor changes. </li></ol></li>				
+	<li class="upsell-enigma"> <div class="versionhd"> Version: 2.9 - </div>
+		<ol> <li> Extra Section for Child-Theme. </li><li> Coupon Code added. </li></ol> </li>
+	<li class="upsell-enigma"> <div class="versionhd"> Version: 2.8.6 - </div>
+		<ol> <li> Appointment Schedular plugin added in plugin recommendation. </li><li> Logo/Site Title Center feature added. </li></ol></li>
+	<li class="upsell-enigma"> <div class="versionhd"> Version: 2.8.5 - </div>
+		<ol> <li> Minor changes in custom header. </li></ol> </li>
+	<li class="upsell-enigma">  <div class="versionhd"> Version: 2.8.4 - </div>
+		<ol> <li> Gallery bug fixed. </li></ol> </li>
+	<li class="upsell-enigma">  <div class="versionhd"> Version: 2.8.3 - </div>
+		<ol> <li>Header text color support added.</li></ol></li>
+	<li class="upsell-enigma"> <div class="versionhd"> Version: 2.8.2 - </div>
+		<ol> <li> Snow effect removed. </li> <li> Minor issue Fixed..</li></ol></li>				
+	<li class="upsell-enigma"> <div class="versionhd"> Version: 2.8.1 - </div>
+		<ol> <li> Slider interval added.</li></ol> </li>
+	<li class="upsell-enigma"> <div class="versionhd"> Version: 2.8 - </div>
+		<ol> <li> Custom-header image added. </li><li>FontAwesome library updated version 4.7.0 </li><li>Snow effect added </li></ol></li>
+	<li class="upsell-enigma"> <div class="versionhd"> Version: 2.7.2 - </div>
+		<ol> <li>Minor Update in Social Icons [whatsapp link]. </li></ol> </li>
+	<li class="upsell-enigma">  <div class="versionhd">Version: 2.7.1 - </div>
+		<ol> <li> Minor Fixes. </li><li> Updated Pro Themes and Plugins Page with features. </li></ol> </li>
+	<li class="upsell-enigma">  <div class="versionhd"> Version: 2.7 - </div>
+		<ol> <li>FA library.</li><li> More social icon added in header and footer. </li></ol></li>
+	<li class="upsell-enigma">  <div class="versionhd"> Version: 2.6 - </div>
+		<ol> <li> Plugin Recommandation. </li><li>Minor Fix.</li><li> Tags updated.</li></ol> </li>
+	<li class="upsell-enigma">  <div class="versionhd"> Version: 2.5 - </div>
+		<ol> <li>Updated Pro Themes and Plugins Page with Upcoming Premium Theme Features.</li><li> Minor Issue Fixed. </li>
+		</ol></li>
+	<li class="upsell-enigma"> <div class="versionhd"> Version: 2.4.3 - </div>
+		<ol> <li> Minor issue fixed. </li> <li> Link updated in Pro themes.</li><li> Twitter spelling corretions.</li></ol></li>				
+	<li class="upsell-enigma"> <div class="versionhd"> Version: 2.4.2 - </div>
+		<ol> <li>woocomerce minor fix. </li> <li> Updated Pro Themes and Plugins Page with features. </li></ol></li>
+
+
+	<li class="upsell-enigma"> <div class="versionhd"> Version: 2.4.1 - </div>
+		<ol> <li> Minor issue fixed. </li></ol></li>				
+	<li class="upsell-enigma"> <div class="versionhd"> Version: 2.4 - </div>
+		<ol> <li> Update Pro Themes and Plugins Page with features. </li><li> Minor Google Font issue fixed. </li></ol> </li>
+	<li class="upsell-enigma"> <div class="versionhd"> Version: 2.3 - </div>
+		<ol> <li> Google font option added. </li><li> Some other minor issue fixed. </li><li>Remove Theme Option Page. </li><li>Service Link Added in Customizer. </li><li> Service On/Off.</li><li> Footer-Call-Out icon setting added.</li></ol></li>
+	<li class="upsell-enigma"> <div class="versionhd"> Version: 2.2 - </div>
+		<ol> <li> Mobile Menus Fix. </li></ol> </li>
+	<li class="upsell-enigma">  <div class="versionhd"> Version: 2.1 - </div>
+		<ol> <li> Parallax Layout in *Premium Theme added.. </li></ol> </li>
+	<li class="upsell-enigma">  <div class="versionhd"> Version: 2.0 - </div>
+		<ol> <li> Menus Fixes. </li></ol></li>
+	<li class="upsell-enigma"> <div class="versionhd"> Version: 1.9.8 - </div>
+		<ol> <li> MENU HOVER ISSUE FIXED. </li></ol></li>				
+	<li class="upsell-enigma"> <div class="versionhd"> Version: 1.9.7 - </div>
+		<ol> <li> Minor bradcrumb Fix. </li><li> Screen-reader Class Added. </li></ol> </li>
+	<li class="upsell-enigma"> <div class="versionhd"> Version: 1.9.6 - </div>
+		<ol> <li> Minor home page Issue Fixed. </li></ol></li>
+	<li class="upsell-enigma"> <div class="versionhd"> Version: 1.9.5 - </div>
+		<ol> <li> Some Customizr Issue Fixed. </li><li> Minor Plugin Conflict-ion Solved. </li></ol> </li>
+	<li class="upsell-enigma">  <div class="versionhd"> Version: 1.9.4 - </div>
+		<ol> <li> Minor Issue Fixed. </li></ol> </li>
+	<li class="upsell-enigma">  <div class="versionhd"> Version: 1.9.3 - </div>
+		<ol> <li>Theme option panel are customize ready.</li></ol></li>
+	<li class="upsell-enigma"> <div class="versionhd"> Version: 1.9.2 - </div>
+		<ol> <li> Footer Call-Out Issue Fixed. </li> <li> Search Box Issue Fixed.</li></ol></li>				
+	<li class="upsell-enigma"> <div class="versionhd"> Version: 1.9.1 - </div>
+		<ol> <li> WPML Competible.</li></ol> </li>
+	<li class="upsell-enigma"> <div class="versionhd"> Version: 1.9 - </div>
+		<ol> <li> Russian mo file. </li><li>Slider - Text -Button viewable in Mob. </li></ol></li>
+	<li class="upsell-enigma"> <div class="versionhd"> Version: 1.8.9 - </div>
+		<ol> <li>Mobile Slider Text Fixed. </li></ol> </li>
+	<li class="upsell-enigma">  <div class="versionhd">Version: 1.8.8 - </div>
+		<ol> <li> Minor Translation added. </li></ol> </li>
+	<li class="upsell-enigma">  <div class="versionhd"> Version: 1.8.6 - </div>
+		<ol> <li>Minor Fixes in Header and Footer</li></ol></li>
+	<li class="upsell-enigma">  <div class="versionhd"> Version: 1.8.5 - </div>
+		<ol> <li> Checked() implimented. </li><li>Home-Blog Show / Hide settings added in Theme-Options.</li></ol> </li>
+	<li class="upsell-enigma">  <div class="versionhd"> Version: 1.8.4 - </div>
+		<ol> <li>Menu Ipad/Mobile Issue Fixed.</li></ol></li>
+	<li class="upsell-enigma"> <div class="versionhd"> Version: 1.8.3 - </div>
+		<ol> <li> RTL Support. </li> <li> Breadcrumb Fix.</li><li> HTML W3C Validated.</li></ol></li>				
+	<li class="upsell-enigma"> <div class="versionhd"> Version: 1.8.2 - </div>
+		<ol> <li>Custom Static Front-Page on Page. </li> </ol></li>
+
+	<li class="upsell-enigma"> <div class="versionhd"> Version: 1.8 - </div>
+		<ol> <li> Custom Static Front-Page. </li></ol></li>				
+	<li class="upsell-enigma"> <div class="versionhd"> Version: 1.7.2 - </div>
+		<ol> <li> Unminified JS. </li></ol> </li>
+	<li class="upsell-enigma"> <div class="versionhd"> Version: 1.7.1 - </div>
+		<ol> <li> Title Repetition Removed. </li><li> Unused JS file removed. </li><li> Page with Left Sidebar added. </li></ol></li>
+	<li class="upsell-enigma"> <div class="versionhd"> Version: 1.7 - </div>
+		<ol> <li> Editor added in Theme-Options. </li><li>Discount Coupon Removed.</li><li> FA link updated.</li><li> Portfolio Link Title fixed.</li></ol> </li>
+	<li class="upsell-enigma">  <div class="versionhd"> Version: 1.6.1 - </div>
+		<ol> <li> Minor Translated String. </li></ol> </li>
+	<li class="upsell-enigma">  <div class="versionhd"> Version: 1.6 - </div>
+		<ol> <li> Snow Effects in Theme-Options. </li><li> Two More SOcial Icons.</li><li> iPad Drop-Down Fixed.</li></ol></li>
+	<li class="upsell-enigma"> <div class="versionhd"> Version: 1.5.1 - </div>
+		<ol> <li> Minor FIX in blog file. </li><li>Log image to add css for mobile view</li></ol></li>				
+	<li class="upsell-enigma"> <div class="versionhd"> Version: 1.5 - </div>
+		<ol> <li> Minor FIX. </li></ol> </li>
+	<li class="upsell-enigma"> <div class="versionhd"> Version: 1.4.3 - </div>
+		<ol> <li> DATE Format Issue Fixed. </li></ol></li>
+	<li class="upsell-enigma"> <div class="versionhd"> Version: 1.4.2 - </div>
+		<ol> <li> All Issue Raised By Reviewer Fixed. </li><li> iPAD menu Issue Fixed. </li></ol> </li>
+	<li class="upsell-enigma">  <div class="versionhd"> Version: 1.4 - </div>
+		<ol> <li> Child theme ready. </li><li> Social media link modify with #. ( Advise by gpriday )</li><li>Menu Implementation for mobiles.</li></ol> </li>
+	<li class="upsell-enigma">  <div class="versionhd"> Version: 1.3 - </div>
+		<ol> <li>Top Menu Implementation.</li><li> Woo-commerce Ready.</li><li> Full-Width Page.</li><li>Telephone Icon Issue Fixed. </li><li> Search URL issue Fixed.</li><li> Admin side Image Added.</li></ol></li>
+	<li class="upsell-enigma"> <div class="versionhd"> Version: 1.2 - </div>
+		<ol> <li> Sane Default Concept added. </li></ol></li>				
+	<li class="upsell-enigma"> <div class="versionhd"> Version: 1.1 - </div>
+		<ol> <li> comment_function Issue fixed.</li><li>White Space Issue Fixed. </li><li>Portfolio Check box Enable. </li></ol> </li>
+	<li class="upsell-enigma"> <div class="versionhd"> Version: 1.0 - </div>
+		<ol> <li> Rest all issue fixed. </li></ol></li>
+	<li class="upsell-enigma"> <div class="versionhd"> Version 0.99 - </div>
+		<ol> <li> Issue raised after first review removed here. </li></ol> </li>
+	<li class="upsell-enigma">  <div class="versionhd">Version 0.9.5 released </div></li>
+			</ul>
+			</div>
+			<div class="col-md-2 col-sm-6 upsell-btn">					
+					<a style="margin-bottom:20px;margin-left:20px;" href="<?php echo esc_url(get_template_directory_uri()) ?>/readme.txt" target="blank" class="btn btn-success btn"><?php _e('Changelog','enigma'); ?> </a>
+			</div>
+		</label>
+		<?php
+	}
+}
+endif;
 ?>
