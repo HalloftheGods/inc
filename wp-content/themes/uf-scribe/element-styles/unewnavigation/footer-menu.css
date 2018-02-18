@@ -1,0 +1,9 @@
+#page .footer-menu ul.menu > li.menu-item {
+    display: block;
+}
+#page .footer-menu ul.menu > li.menu-item > a {
+    padding-left: 0;
+}
+
+
+/* 603246-1510379400-ai */

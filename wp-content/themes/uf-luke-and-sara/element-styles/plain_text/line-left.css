@@ -1,0 +1,11 @@
+#page .line-left.upfront-plain_txt h1:after {
+    content: "";
+    width: 180px;
+    height: 1px;
+    display: block;
+    margin-top: 25px;
+    background: #ufc0;
+}
+
+
+/* 603246-1510379344-ai */

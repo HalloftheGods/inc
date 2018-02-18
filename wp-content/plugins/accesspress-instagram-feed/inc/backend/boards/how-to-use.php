@@ -3,7 +3,7 @@
 
     <div class="apsp-sub-title">Plugin configuration video</div>
     <iframe width="700" height="315" src="https://www.youtube.com/embed/qZqV0Y8AVTA" frameborder="0" allowfullscreen></iframe>
-    
+
     <div class="apsp-sub-title">Instagram 4 Different Layout Shortcode</div>
     <div class="apsc-tab-wrapper">
     	<div class="apsp-sub-title">Mosaic View Layout</div>

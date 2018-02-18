@@ -2,7 +2,7 @@
 Contributors: themeisle, codeinwp, rodicaelena, hardeepasrani, pirateforms, rozroz
 Tags:  contact form, contact form plugin, forms, smtp, custom form, subscribe form, feedback form, wordpress contact form
 Requires at least: 3.0
-Tested up to: 4.8
+Tested up to: 4.9
 Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -17,7 +17,7 @@ This is an easy-to-use WordPress contact form with captcha plugin. To create a c
 > **Time-saving features available in the FULL version:**
 >
 > * Create multiple forms
-> * Mailchimp Integration
+> * Mailchimp, GetResponse, Aweber, Sendinblue Integration
 > * Custom fields
 > * Developer friendly
 > * 12 months Support & Updates
@@ -86,6 +86,8 @@ This plugin started as a fork of https://wordpress.org/plugins/proper-contact-fo
 
 == Frequently Asked Questions ==
 
+
+
 = How I can get support for this contact form plugin ? =
 
 You can learn more about PirateForms and ask for help by <a href="https://themeisle.com/contact/"  >visiting ThemeIsle website</a>.
@@ -113,7 +115,58 @@ You can follow the full documentation [here](http://docs.themeisle.com/article/4
 [http://docs.themeisle.com/article/663-what-actions-and-filters-are-available-in-pirate-forms](http://docs.themeisle.com/article/663-what-actions-and-filters-are-available-in-pirate-forms)
 
 
-== Installation ==
+= Emails are not being sent, what can i do ? = 
+ [http://docs.themeisle.com/article/690-emails-are-not-being-sent-what-can-i-do](http://docs.themeisle.com/article/690-emails-are-not-being-sent-what-can-i-do) 
+
+ = Why do I not receive any emails? - Pirate Forms = 
+ [http://docs.themeisle.com/article/729-why-do-i-not-receive-any-emails-pirate-forms](http://docs.themeisle.com/article/729-why-do-i-not-receive-any-emails-pirate-forms) 
+
+ = How to add reCaptcha  to a form in Pirate Forms = 
+ [http://docs.themeisle.com/article/731-how-to-add-recaptcha-to-a-form-in-pirate-forms](http://docs.themeisle.com/article/731-how-to-add-recaptcha-to-a-form-in-pirate-forms) 
+
+ = How to add Dropdown menu in Subject Field in Pirate Forms = 
+ [http://docs.themeisle.com/article/725-how-to-add-dropdown-menu-in-subject-field-in-pirate-forms](http://docs.themeisle.com/article/725-how-to-add-dropdown-menu-in-subject-field-in-pirate-forms) 
+
+ = How to save contacts in Mailchimp list in Pirate Forms = 
+ [http://docs.themeisle.com/article/722-pirate-forms-how-to-save-contacts-in-mailchimp-list](http://docs.themeisle.com/article/722-pirate-forms-how-to-save-contacts-in-mailchimp-list) 
+
+ = How to create a Form Widget in Pirate Forms = 
+ [http://docs.themeisle.com/article/723-pirate-forms-how-to-create-a-form-widget](http://docs.themeisle.com/article/723-pirate-forms-how-to-create-a-form-widget) 
+
+ = How to create a subscription form in Pirate Forms = 
+ [http://docs.themeisle.com/article/721-pirate-forms-how-to-create-a-subscription-form](http://docs.themeisle.com/article/721-pirate-forms-how-to-create-a-subscription-form) 
+
+ = How to create multiple forms in Pirate Forms = 
+ [http://docs.themeisle.com/article/730-how-to-create-multiple-forms-in-pirate-forms](http://docs.themeisle.com/article/730-how-to-create-multiple-forms-in-pirate-forms) 
+
+ = How to add multiple upload fields in Pirate Forms = 
+ [http://docs.themeisle.com/article/734-how-to-add-multiple-upload-fields-in-pirate-forms](http://docs.themeisle.com/article/734-how-to-add-multiple-upload-fields-in-pirate-forms) 
+
+ = How to add a spam trap in a form in Pirate Forms = 
+ [http://docs.themeisle.com/article/732-how-to-add-a-spam-trap-in-a-form-in-pirate-forms](http://docs.themeisle.com/article/732-how-to-add-a-spam-trap-in-a-form-in-pirate-forms) 
+
+ = How to change default confirmation email content in Pirate Forms = 
+ [http://docs.themeisle.com/article/724-how-to-change-default-email-content-in-pirate-forms](http://docs.themeisle.com/article/724-how-to-change-default-email-content-in-pirate-forms) 
+
+ = How to add checkbox field in Pirate Forms = 
+ [http://docs.themeisle.com/article/733-how-to-add-checkbox-field-in-pirate-forms](http://docs.themeisle.com/article/733-how-to-add-checkbox-field-in-pirate-forms) 
+
+ = How can I change HTML of default form in Pirate Forms = 
+ [http://docs.themeisle.com/article/745-how-can-i-change-html-of-default-form-in-pirate-forms](http://docs.themeisle.com/article/745-how-can-i-change-html-of-default-form-in-pirate-forms) 
+
+ = How to add attributes to form in Pirate Forms = 
+ [http://docs.themeisle.com/article/752-how-to-add-attributes-to-form-in-pirate-forms](http://docs.themeisle.com/article/752-how-to-add-attributes-to-form-in-pirate-forms) 
+
+ = How to change default email content in Pirate forms = 
+ [http://docs.themeisle.com/article/779-how-to-change-default-email-content-in-pirate-forms](http://docs.themeisle.com/article/779-how-to-change-default-email-content-in-pirate-forms) 
+
+ = How to change default email content per form in Pirate forms = 
+ [http://docs.themeisle.com/article/780-how-to-change-default-email-content-per-form-in-pirate-forms](http://docs.themeisle.com/article/780-how-to-change-default-email-content-per-form-in-pirate-forms) 
+
+ = How to install and use extended version of Pirate Forms = 
+ [http://docs.themeisle.com/article/787-how-to-install-and-use-extended-version-of-pirate-forms](http://docs.themeisle.com/article/787-how-to-install-and-use-extended-version-of-pirate-forms) 
+
+ == Installation ==
 
 Activating the Pirate Contact Form plugin is just like any other plugin. If you've uploaded the plugin package to your server already, skip to step 5 below:
 
@@ -134,6 +187,45 @@ Activating the Pirate Contact Form plugin is just like any other plugin. If you'
 4. Screenshot 4. Enabling SMTP
 
 == Changelog ==
+= 2.3.3 - 2018-01-06  = 
+
+* Fix double reCAPTCHA box bug.
+* Fix custom spam trap alignement error.
+
+
+= 2.3.2 - 2017-12-28  = 
+
+* Fix for tooltip admin behavior.
+
+
+= 2.3.1 - 2017-12-28  = 
+
+* Improves layout and compatibility with various themes.
+* Improves form default email format.
+* Fix issues with various special characters in the magic tag fields.
+
+
+= 2.3.0 - 2017-11-27  = 
+
+* Adds email content wysiwyg editor. 
+* Improves layout for custom spam trap.
+
+
+= 2.2.5 - 2017-11-16  = 
+
+* Adds compatibility with WordPress 4.9
+* Minor improvement for toggle the password in the admin form fields.
+
+
+= 2.2.4 - 2017-11-13  = 
+
+* Improved assets loading, loading them only they are necessary. 
+* Remove hide/show effect for reCaptcha.
+* Add toggle for password field.
+* Add new docs, keeping them in sync with HelpScout . 
+* Adds more integration with the pro version.
+
+
 = 2.2.3 - 2017-10-24  = 
 
 * Improves compatibility with Hestia theme.

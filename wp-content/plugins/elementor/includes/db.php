@@ -24,6 +24,7 @@ class DB {
 	/**
 	 * Save builder method.
 	 *
+	 * @access public
 	 * @since 1.0.0
 	 *
 	 * @param int    $post_id
@@ -84,6 +85,7 @@ class DB {
 	/**
 	 * Get & Parse the builder from DB.
 	 *
+	 * @access public
 	 * @since 1.0.0
 	 *
 	 * @param int    $post_id
@@ -101,16 +103,33 @@ class DB {
 		return $editor_data;
 	}
 
+	/**
+	 * @since 1.0.0
+	 * @access protected
+	 *
+	 * @param integer $post_id
+	 * @param string $key
+	 *
+	 * @return array
+	 */
 	protected function _get_json_meta( $post_id, $key ) {
 		$meta = get_post_meta( $post_id, $key, true );
 
-		if ( is_string( $meta ) && ! empty( $meta ) ) {
-			$meta = json_decode( $meta, true );
+		if ( is_string( $meta ) ) {
+			if ( empty( $meta ) ) {
+				$meta = [];
+			} else {
+				$meta = json_decode( $meta, true );
+			}
 		}
 
 		return $meta;
 	}
 
+	/**
+	 * @since 1.0.0
+	 * @access public
+	*/
 	public function get_plain_editor( $post_id, $status = self::STATUS_PUBLISH ) {
 		$data = $this->_get_json_meta( $post_id, '_elementor_data' );
 
@@ -129,6 +148,10 @@ class DB {
 		return $data;
 	}
 
+	/**
+	 * @since 1.0.0
+	 * @access protected
+	*/
 	protected function _get_new_editor_from_wp_editor( $post_id ) {
 		$post = get_post( $post_id );
 
@@ -166,6 +189,7 @@ class DB {
 	/**
 	 * Remove draft data from DB.
 	 *
+	 * @access public
 	 * @since 1.0.0
 	 *
 	 * @param $post_id
@@ -179,6 +203,7 @@ class DB {
 	/**
 	 * Set whether the page is elementor page or not
 	 *
+	 * @access public
 	 * @since 1.5.0
 	 *
 	 * @param int  $post_id
@@ -193,6 +218,10 @@ class DB {
 		}
 	}
 
+	/**
+	 * @since 1.0.0
+	 * @access private
+	*/
 	private function _render_element_plain_content( $element_data ) {
 		if ( 'widget' === $element_data['elType'] ) {
 			/** @var Widget_Base $widget */
@@ -210,6 +239,10 @@ class DB {
 		}
 	}
 
+	/**
+	 * @since 1.0.0
+	 * @access private
+	*/
 	private function _save_plain_text( $post_id ) {
 		ob_start();
 
@@ -233,6 +266,8 @@ class DB {
 		// Remove empty lines.
 		$plain_text = preg_replace( '/(^[\r\n]*|[\r\n]+)[\s\t]*[\r\n]+/', "\n", $plain_text );
 
+		$plain_text = trim( $plain_text );
+
 		wp_update_post(
 			[
 				'ID' => $post_id,
@@ -244,6 +279,7 @@ class DB {
 	/**
 	 * Sanitize posted data.
 	 *
+	 * @access private
 	 * @since 1.0.0
 	 *
 	 * @param array $data
@@ -268,6 +304,10 @@ class DB {
 		return $editor_data;
 	}
 
+	/**
+	 * @since 1.0.0
+	 * @access public
+	*/
 	public function iterate_data( $data_container, $callback ) {
 		if ( isset( $data_container['elType'] ) ) {
 			if ( ! empty( $data_container['elements'] ) ) {
@@ -290,6 +330,10 @@ class DB {
 		return $data_container;
 	}
 
+	/**
+	 * @since 1.1.0
+	 * @access public
+	*/
 	public function copy_elementor_meta( $from_post_id, $to_post_id ) {
 		$from_post_meta = get_post_meta( $from_post_id );
 
@@ -311,17 +355,26 @@ class DB {
 		}
 	}
 
+	/**
+	 * @since 1.0.10
+	 * @access public
+	*/
 	public function is_built_with_elementor( $post_id ) {
 		return ! ! get_post_meta( $post_id, '_elementor_edit_mode', true );
 	}
 
 	/**
+	 * @access public
 	 * @deprecated 1.4.0
 	 */
 	public function has_elementor_in_post( $post_id ) {
 		return $this->is_built_with_elementor( $post_id );
 	}
 
+	/**
+	 * @since 1.5.0
+	 * @access public
+	*/
 	public function switch_to_post( $post_id ) {
 		// If is already switched, or is the same post, return.
 		if ( get_the_ID() === $post_id ) {
@@ -338,6 +391,10 @@ class DB {
 		setup_postdata( $GLOBALS['post'] );
 	}
 
+	/**
+	 * @since 1.5.0
+	 * @access public
+	*/
 	public function restore_current_post() {
 		$data = array_pop( $this->switched_post_data );
 

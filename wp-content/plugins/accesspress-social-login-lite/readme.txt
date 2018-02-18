@@ -3,8 +3,8 @@ Contributors: Access Keys
 Tags: social,  login, social login, facebook, twitter, google, social connect, social network login, register, login with, signin, oauth, authorize, oauth
 Donate link: http://accesspressthemes.com/donation/
 Requires at least: 3.8
-Tested up to: 4.7
-Stable tag: 3.2.8
+Tested up to: 4.9
+Stable tag: 3.3.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -137,6 +137,13 @@ Yes. You can use the AccessPress social login lite anywhere by using shortcode i
 4. Backend Other settings Section.
 
 == Changelog ==
+= 3.3.0 =
+* Updated the information for the creation of facebook app for social login in note section.
+
+= 3.2.9 =
+* Done the plugin compactibility tests with wordpress version 4.8
+* Removal of unncessary commented codes from the plugin.
+
 = 3.2.8 =
 * Done the checking if there already exist the google oauth class as it's creating error if other plugin already included it.
 

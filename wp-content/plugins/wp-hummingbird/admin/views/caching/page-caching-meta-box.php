@@ -30,7 +30,7 @@
 		<div class="col-third">
 			<strong><?php esc_html_e( 'Page Types', 'wphb' ); ?></strong>
 			<span class="sub">
-				<?php esc_html_e( 'Select which page types you wish to cache. Note: You can exclude individual post/pages in the WordPress editor.', 'wphb' ); ?>
+				<?php esc_html_e( 'Select which page types you wish to cache. Note: You can exclude individual post/pages with URL string rules in Exclusions section below.', 'wphb' ); ?>
 			</span>
 		</div>
 		<div class="col-two-third">
@@ -105,7 +105,7 @@
 			</span>
 			<label for="logged-in"><?php esc_html_e( 'Include logged in users', 'wphb' ); ?></label>
 			<span class="sub">
-				<?php esc_html_e( 'Not caching pages for logged in users can reduce load on your server.', 'wphb' ); ?>
+				<?php esc_html_e( 'Caching pages for logged in users can reduce load on your server, but can cause strange behavior with some themes/plugins.', 'wphb' ); ?>
 			</span>
 			<div class="clear mline"></div>
 
@@ -125,9 +125,21 @@
 				<input type="checkbox" class="toggle-checkbox" name="settings[clear-update]" value="1" id="clear-update" <?php checked( $settings['settings']['clear_update'] ); ?>>
 				<label class="toggle-label small" for="clear-update" aria-hidden="true"></label>
 			</span>
-			<label for="clear-update"><?php esc_html_e( 'Clear cache when post/page is updated', 'wphb' ); ?></label>
+			<label for="clear-update"><?php esc_html_e( 'Clear full cache when post/page is updated', 'wphb' ); ?></label>
 			<span class="sub">
-				<?php esc_html_e( 'If one of your pages or posts gets updated, we’ll regenerate the cache for that page instantly.', 'wphb' ); ?>
+				<?php esc_html_e( 'If one of your pages or posts gets updated, turning this setting on will also regenerate all cached archives and taxonomies for all post types.', 'wphb' ); ?>
+			</span>
+			<div class="clear mline"></div>
+
+			<span class="toggle">
+				<input type="hidden" name="debug-log" value="0">
+				<input type="checkbox" class="toggle-checkbox" name="settings[debug-log]" value="1" id="debug-log" <?php checked( $settings['settings']['debug_log'] ); ?>>
+				<label class="toggle-label small" for="debug-log" aria-hidden="true"></label>
+			</span>
+			<label for="clear-update"><?php esc_html_e( 'Enable debug log', 'wphb' ); ?></label>
+			<span class="sub">
+				<?php esc_html_e( 'Debug log will be located in ', 'wphb' ); ?>
+				<?php echo WP_CONTENT_DIR . '/wp-content/wphb-cache/page-caching.log'; ?>
 			</span>
 
 		</div><!-- end col-two-third -->
@@ -147,7 +159,7 @@
 			</span>
 			<textarea name="url_strings"><?php foreach ( $settings['exclude']['url_strings'] as $url_string ) { echo $url_string . PHP_EOL; }?></textarea>
 			<span class="sub with-bottom-border">
-				<?php esc_html_e( 'Accepts regular expression syntax. For example, if you want to not cache any pages that are nested under your Forums area you might add "\/forums\/" as a rule. When Hummingbird goes to cache pages, she will ignore any URL that contains "/forums/". To exclude a specific page you might add "/forums/thread-title".', 'wphb' ); ?>
+				<?php esc_html_e( 'Accepts regular expression syntax. For example, if you want to not cache any pages that are nested under your Forums area you might add "\/forums\/" as a rule. When Hummingbird goes to cache pages, she will ignore any URL that contains "/forums/". To exclude a specific page you might add "\/forums\/thread-title".', 'wphb' ); ?>
 			</span>
 			<h4><?php esc_html_e( 'User agents', 'wphb' ); ?></h4>
 			<span class="sub">

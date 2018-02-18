@@ -37,6 +37,7 @@ $current_user = wp_get_current_user();
 $dd = get_option('w3all_phpbb_cookie');
 $phpbb_on_template_iframe = get_option( 'w3all_iframe_phpbb_link_yn' );
 $wp_w3all_forum_folder_wp = get_option('w3all_forum_template_wppage');
+$w3all_url_to_cms = get_option( 'w3all_url_to_cms' );
 
 if( preg_match('/[^0-9]/',$w3phpbbuid) OR preg_match('/[^a-z]/',$w3phpbbwatch) OR preg_match('/[^a-z]/',$w3phpbbunwatch) OR preg_match('/[^A-Za-z]/',$w3iu_folder) OR preg_match('/[^A-Za-z]/',$w3iu) OR preg_match('/[^0-9]/',$w3phpbb_start) OR preg_match('/[^0-9]/',$w3topic_id) OR preg_match('/[^0-9]/',$w3phpbb_viewtopic) OR preg_match('/[^0-9]/',$w3phpbb_viewforum) OR preg_match('/[^0-9]/',$w3forum_id) OR preg_match('/[^0-9]/',$w3post_id) OR preg_match('/[^0-9A-Za-z]/',$w3mode) OR preg_match('/[^0-9A-Za-z]/',$w3phpbbsid) ){
 

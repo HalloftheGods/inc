@@ -3,8 +3,8 @@ Contributors: weblizar
 Donate link: http://www.weblizar.com/
 Tags: custom login page, custom admin login, custom login, customize wordpress login page, wordpress login
 Requires at least: 4.0
-Tested up to: 4.8.2
-Stable tag: 2.5.4
+Tested up to: 4.9.1
+Stable tag: 2.5.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -89,14 +89,14 @@ Theere you able update plugin design with unlimited colours. Colour option is av
 
 ### Translations By Our Plugin Users:
 
-* Italian(it_IT) by [Giovanni Caputo](http://giovannicaputo.netsons.org)
-* Hindi(hi_HI) by [Infigo Software](http://infigosoft.com)
-* German(de_DE) or Deutsch by Markus Petautschnig aka X00LA
-* Portuguese(pt_BR) by An User
-* French Translation by [Gilles Santacreu](http://www.boursikoter.com/)
+* Italian Translation(it_IT) by [Giovanni Caputo](http://giovannicaputo.netsons.org)
+* Hindi Translation (hi_HI) by [Infigo Software](http://infigosoft.com)
+* German Translation(de_DE) or Deutsch by Markus Petautschnig aka X00LA
+* French Translation (fr_FR) by [Gilles Santacreu](http://www.boursikoter.com/)
 * Dutch Translation by [Markus P.](https://plus.google.com/+MarkusPetautschnig78)
 * Spanish Translation by [Jose Maria Bescos](http://www.ibidem-translations.com/spanish.php)
 * Polish Translation by [Maciej Janas](http://kowary.pl/)
+* Portuguese Translation (pt_BR) by [Rodrigues Santana](https://www.blupixel.com.br)
 
 Please help us to translate this plugin in all WordPress available languages and send us your translated file to us at *lizarweb at gmail dot com*.
 
@@ -120,12 +120,15 @@ If you have any question contact us at here: [Plugin Support Forum ](http://word
 7. http://texasbutter.com Made by Shawn McNair
 8. http://www.naturesfolio.com Made by Sheila
 9. Made by Mary Job
-10. Admin Setting Dashboard
+10. http://amirasghari.com Made by Dr. Amir Asghari
+11. Admin Setting Dashboard
  
 == Changelog ==
 
 For more information, see [Weblizar](http://wwww.weblizar.com/)
 
+= 2.5.6 - Plugin tested with latest WordPress 4.9.1 and working perfect, feedback and review appreciated
+= 2.5.5 - Portuguese Translation updaed by Rodrigues Santana
 = 2.5.4 - Plugin code indented and made the code clean + Fomr Inner Social Icons Text Changed
 = 2.5.3.3 - Added New Language Contribution - Polish (Polski)
 = 2.5.3.2 - Added New Language Contribution - Spanish (Espanol)

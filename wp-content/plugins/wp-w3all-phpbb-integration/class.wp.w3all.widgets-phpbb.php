@@ -50,7 +50,7 @@ public function form( $instance ) {
 
 public function wp_w3all_to_phpbb_form($display_phpbb_user_info_yn = 0) {
 	
-	    global $w3all_url_to_cms;
+	    global $w3all_url_to_cms, $w3all_custom_output_files;
 	    
 		//$phpbb_config = WP_w3all_phpbb::wp_w3all_phpbb_config_init();
 		//$phpbb_config = unserialize(W3PHPBBCONFIG);
@@ -58,10 +58,9 @@ public function wp_w3all_to_phpbb_form($display_phpbb_user_info_yn = 0) {
 		 if ( is_user_logged_in() && defined("W3PHPBBUSESSION") ) {
         $phpbb_user_session = unserialize(W3PHPBBUSESSION);
      }
-    
-		$file = WPW3ALL_PLUGIN_DIR . 'views/phpbb_login_form.php';
-		
-		include( $file );
+     
+		 $file = WPW3ALL_PLUGIN_DIR . 'views/phpbb_login_form.php';
+	    include( $file );
 
 }
 
@@ -136,7 +135,7 @@ public function update( $new_instance, $old_instance ) {
 
 public function wp_w3all_phpbb_last_topics($post_text, $topics_number, $text_words) {
 	
-  global $w3all_url_to_cms, $w3all_get_phpbb_avatar_yn, $w3all_last_t_avatar_yn, $w3all_last_t_avatar_dim, $w3all_phpbb_widget_mark_ru_yn;
+  global $w3all_url_to_cms, $w3all_get_phpbb_avatar_yn, $w3all_last_t_avatar_yn, $w3all_last_t_avatar_dim, $w3all_phpbb_widget_mark_ru_yn, $w3all_custom_output_files;
 
   $wp_w3all_post_text = $post_text;
   $wp_w3all_text_words = $text_words;
@@ -152,10 +151,15 @@ public function wp_w3all_phpbb_last_topics($post_text, $topics_number, $text_wor
   } else {
 	 $last_topics =	WP_w3all_phpbb::last_forums_topics_res($topics_number);
 	}
-		$file = WPW3ALL_PLUGIN_DIR . 'views/phpbb_last_topics.php';
-	   include( $file );
-}
 
+	  if( $w3all_custom_output_files == 1 ) {
+	   $file = ABSPATH . 'wp-content/plugins/wp-w3all-config/phpbb_last_topics.php';
+		  include($file);
+	  } else {
+		 $file = WPW3ALL_PLUGIN_DIR . 'views/phpbb_last_topics.php';
+	    include( $file );
+	  }
+}
 
 } // END CLASS
 

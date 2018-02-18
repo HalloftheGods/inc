@@ -198,7 +198,7 @@ class es_cls_registerhook {
 						'es_subscriber_delete_record'   => _x( 'Do you want to delete this record?', 'view-subscriber-enhanced-select', ES_TDOMAIN ),
 						'es_subscriber_bulk_action'     => _x( 'Please select the bulk action.', 'view-subscriber-enhanced-select', ES_TDOMAIN ),
 						'es_subscriber_confirm_delete'  => _x( 'Are you sure you want to delete selected records?', 'view-subscriber-enhanced-select', ES_TDOMAIN ),
-						'es_subscriber_resend_email'    => _x( 'Do you want to resend confirmation email? \nAlso please note, this will update subscriber current status to \'Unconfirmed\'.', 'view-subscriber-enhanced-select', ES_TDOMAIN ),
+						'es_subscriber_resend_email'    => _x( 'Do you want to resend confirmation email? Also please note, this will update subscriber current status to \'Unconfirmed\'.', 'view-subscriber-enhanced-select', ES_TDOMAIN ),
 						'es_subscriber_new_group'       => _x( 'Please select new subscriber group.', 'view-subscriber-enhanced-select', ES_TDOMAIN ),
 						'es_subscriber_new_status'	    => _x( 'Please select new status for subscribers', 'view-subscriber-enhanced-select', ES_TDOMAIN ),
 						'es_subscriber_group_update'    => _x( 'Do you want to update subscribers group?', 'view-subscriber-enhanced-select', ES_TDOMAIN ),
@@ -207,21 +207,12 @@ class es_cls_registerhook {
 					);
 					wp_localize_script( 'es-view-subscribers', 'es_view_subscriber_notices', $es_select_params );
 					break;
-				case 'es-compose':
-					wp_register_script( 'es-compose', ES_URL . 'compose/compose.js', '', '', true );
-					wp_enqueue_script( 'es-compose' );
-					$es_select_params = array(
-						'es_configuration_name'     => _x( 'Please enter the Email Subject.', 'compose-enhanced-select', ES_TDOMAIN ),
-						'es_compose_delete_record'  => _x( 'Do you want to delete this record?', 'compose-enhanced-select', ES_TDOMAIN )
-					);
-					wp_localize_script( 'es-compose', 'es_compose_notices', $es_select_params );
-					break;
 				case 'es-notification':
 					wp_register_script( 'es-notification', ES_URL . 'notification/notification.js', '', '', true );
 					wp_enqueue_script( 'es-notification' );
 					$es_select_params = array(
 						'es_notification_select_group'  => _x( 'Please select subscribers group.', 'notification-enhanced-select', ES_TDOMAIN ),
-						'es_notification_mail_subject'  => _x( 'Please select notification mail subject. Use compose menu to create new.', 'notification-enhanced-select', ES_TDOMAIN ),
+						'es_notification_mail_subject'  => _x( 'Please select notification mail subject. Use templates menu to create new.', 'notification-enhanced-select', ES_TDOMAIN ),
 						'es_notification_status'        => _x( 'Please select notification status.', 'notification-enhanced-select', ES_TDOMAIN ),
 						'es_notification_delete_record' => _x( 'Do you want to delete this record?', 'notification-enhanced-select', ES_TDOMAIN )
 					);
@@ -370,6 +361,181 @@ class es_cls_registerhook {
 		if ( get_option( 'current_sa_email_subscribers_db_version' ) === '3.3.6' ) {
 			es_cls_registerhook::es_upgrade_database_for_3_4_0();
 		}
+	}
+
+	/**
+	 * To update sync email option to remove Commented user & it's group - ig_es_sync_wp_users
+	 * ES version 3.2 onwards
+	 */
+	public static function es_upgrade_database_for_3_2() {
+
+		$sync_subscribers = get_option( 'ig_es_sync_wp_users' );
+
+		$es_unserialized_data = maybe_unserialize($sync_subscribers);
+		unset($es_unserialized_data['es_commented']);
+		unset($es_unserialized_data['es_commented_group']);
+
+		$es_serialized_data = serialize($es_unserialized_data);
+		update_option( 'ig_es_sync_wp_users', $es_serialized_data );
+
+		update_option( 'current_sa_email_subscribers_db_version', '3.2' );
+	}
+
+	/**
+	 * To rename a few terms in compose & reports menu
+	 * ES version 3.2.7 onwards
+	 */
+	public static function es_upgrade_database_for_3_2_7() {
+
+		global $wpdb;
+
+		// Compose table
+		$template_table_exists = $wpdb->query( "SHOW TABLES LIKE '{$wpdb->prefix}es_templatetable'" );
+		if ( $template_table_exists > 0 ) {
+			$wpdb->query( "UPDATE {$wpdb->prefix}es_templatetable
+						   SET es_email_type =
+						   ( CASE
+								WHEN es_email_type = 'Static Template' THEN 'Newsletter'
+								WHEN es_email_type = 'Dynamic Template' THEN 'Post Notification'
+								ELSE es_email_type
+							 END ) " );
+		}
+
+		// Sent Details table
+		$wpdb->query( "UPDATE {$wpdb->prefix}es_sentdetails
+					   SET es_sent_type =
+					   ( CASE
+							WHEN es_sent_type = 'Instant Mail' THEN 'Immediately'
+							WHEN es_sent_type = 'Cron Mail' THEN 'Cron'
+							ELSE es_sent_type
+						 END ),
+						   es_sent_source =
+					   ( CASE
+							WHEN es_sent_source = 'manual' THEN 'Newsletter'
+							WHEN es_sent_source = 'notification' THEN 'Post Notification'
+							ELSE es_sent_source
+					   END ) " );
+
+		// Delivery Reports table
+		$wpdb->query( "UPDATE {$wpdb->prefix}es_deliverreport
+					   SET es_deliver_senttype =
+					   ( CASE
+							WHEN es_deliver_senttype = 'Instant Mail' THEN 'Immediately'
+							WHEN es_deliver_senttype = 'Cron Mail' THEN 'Cron'
+							ELSE es_deliver_senttype
+						 END ) " );
+
+		update_option( 'current_sa_email_subscribers_db_version', '3.2.7' );
+	}
+
+	/**
+	 * To migrate Email Settings data from custom pluginconfig table to wordpress options table and to update user roles
+	 * ES version 3.3 onwards
+	 */
+	public static function es_upgrade_database_for_3_3() {
+		global $wpdb;
+
+		$settings_to_rename = array(
+									'es_c_fromname' 		=> 'ig_es_fromname',
+									'es_c_fromemail' 		=> 'ig_es_fromemail',
+									'es_c_mailtype' 		=> 'ig_es_emailtype',
+									'es_c_adminmailoption' 	=> 'ig_es_notifyadmin',
+									'es_c_adminemail' 		=> 'ig_es_adminemail',
+									'es_c_adminmailsubject' => 'ig_es_admin_new_sub_subject',
+									'es_c_adminmailcontant' => 'ig_es_admin_new_sub_content',
+									'es_c_usermailoption' 	=> 'ig_es_welcomeemail',
+									'es_c_usermailsubject' 	=> 'ig_es_welcomesubject',
+									'es_c_usermailcontant' 	=> 'ig_es_welcomecontent',
+									'es_c_optinoption' 		=> 'ig_es_optintype',
+									'es_c_optinsubject' 	=> 'ig_es_confirmsubject',
+									'es_c_optincontent' 	=> 'ig_es_confirmcontent',
+									'es_c_optinlink' 		=> 'ig_es_optinlink',
+									'es_c_unsublink' 		=> 'ig_es_unsublink',
+									'es_c_unsubtext' 		=> 'ig_es_unsubcontent',
+									'es_c_unsubhtml' 		=> 'ig_es_unsubtext',
+									'es_c_subhtml' 			=> 'ig_es_successmsg',
+									'es_c_message1' 		=> 'ig_es_suberror',
+									'es_c_message2' 		=> 'ig_es_unsuberror',
+								);
+
+		$options_to_rename = array(
+									'es_c_post_image_size' 		=> 'ig_es_post_image_size',
+									'es_c_sentreport' 			=> 'ig_es_sentreport',
+									'es_c_sentreport_subject' 	=> 'ig_es_sentreport_subject',
+									'es_c_rolesandcapabilities' => 'ig_es_rolesandcapabilities',
+									'es_c_cronurl' 				=> 'ig_es_cronurl',
+									'es_cron_mailcount' 		=> 'ig_es_cron_mailcount',
+									'es_cron_adminmail' 		=> 'ig_es_cron_adminmail',
+									'es_c_emailsubscribers' 	=> 'ig_es_sync_wp_users',
+								);
+
+		// Rename options that were previously stored
+		foreach ( $options_to_rename as $old_option_name => $new_option_name ) {
+			$option_value = get_option( $old_option_name );
+			if ( $option_value ) {
+				update_option( $new_option_name, $option_value );
+				delete_option( $old_option_name );
+			}
+		}
+
+		// Do not pull data for new users as there is no pluginconfig table created on activation
+		$table_exists = $wpdb->query( "SHOW TABLES LIKE '{$wpdb->prefix}es_pluginconfig'" );
+
+		if ( $table_exists > 0 ) {
+			// Pull out ES settings data of existing users and move them to options table
+			$settings_data = es_cls_settings::es_setting_select(1);
+			if ( ! empty( $settings_data ) ) {
+				foreach ( $settings_data as $name => $value ) {
+					if( array_key_exists( $name, $settings_to_rename ) ){
+						update_option( $settings_to_rename[ $name ], $value );
+					}
+				}
+			}
+		}
+
+		//Update User Roles Settings
+		$es_c_rolesandcapabilities = get_option( 'ig_es_rolesandcapabilities', 'norecord' );
+
+		if ( $es_c_rolesandcapabilities != 'norecord' ) {
+			$remove_roles = array( 'es_roles_setting', 'es_roles_help' );
+			foreach ( $es_c_rolesandcapabilities as $role_name => $role_value ) {
+				if ( in_array( $role_name, $remove_roles ) ) {
+					unset( $es_c_rolesandcapabilities[$role_name] );
+				}
+			}
+			update_option( 'ig_es_rolesandcapabilities', $es_c_rolesandcapabilities );
+		}
+
+		update_option( 'current_sa_email_subscribers_db_version', '3.3' );
+	}
+
+	/**
+	 * To alter templatable for extra slug column - to support new template designs
+	 * ES version 3.3.6 onwards
+	 */
+	public static function es_upgrade_database_for_3_3_6() {
+
+		global $wpdb;
+
+		$template_table_exists = $wpdb->query( "SHOW TABLES LIKE '{$wpdb->prefix}es_templatetable'" );
+		if ( $template_table_exists > 0 ) {
+
+			// To check if column es_templ_slug exists or not
+			$es_template_col = "SHOW COLUMNS FROM {$wpdb->prefix}es_templatetable LIKE 'es_templ_slug' ";
+			$results_template_col = $wpdb->get_results($es_template_col, 'ARRAY_A');
+			$template_num_rows = $wpdb->num_rows;
+
+			// If column doesn't exists, then insert it
+			if ( $template_num_rows != '1' ) {
+				// Template table
+				$wpdb->query( "ALTER TABLE {$wpdb->prefix}es_templatetable
+								ADD COLUMN `es_templ_slug` VARCHAR(255) NULL
+								AFTER `es_email_type` " );
+			}
+		}
+
+		update_option( 'current_sa_email_subscribers_db_version', '3.3.6' );
+
 	}
 
 	/**
@@ -529,561 +695,59 @@ class es_cls_registerhook {
 
 	}
 
-	/**
-	 * To alter templatable for extra slug column - to support new template designs
-	 * ES version 3.3.6 onwards
-	 */
-	public static function es_upgrade_database_for_3_3_6() {
-
-		global $wpdb;
-
-		$template_table_exists = $wpdb->query( "SHOW TABLES LIKE '{$wpdb->prefix}es_templatetable'" );
-		if ( $template_table_exists > 0 ) {
-
-			// To check if column es_templ_slug exists or not
-			$es_template_col = "SHOW COLUMNS FROM {$wpdb->prefix}es_templatetable LIKE 'es_templ_slug' ";
-			$results_template_col = $wpdb->get_results($es_template_col, 'ARRAY_A');
-			$template_num_rows = $wpdb->num_rows;
-
-			// If column doesn't exists, then insert it
-			if ( $template_num_rows != '1' ) {
-				// Template table
-				$wpdb->query( "ALTER TABLE {$wpdb->prefix}es_templatetable
-								ADD COLUMN `es_templ_slug` VARCHAR(255) NULL
-								AFTER `es_email_type` " );
-			}
-		}
-
-		update_option( 'current_sa_email_subscribers_db_version', '3.3.6' );
-
-	}
-
-	/**
-	 * To update sync email option to remove Commented user & it's group - ig_es_sync_wp_users
-	 * ES version 3.2 onwards
-	 */
-	public static function es_upgrade_database_for_3_2() {
-
-		$sync_subscribers = get_option( 'ig_es_sync_wp_users' );
-
-		$es_unserialized_data = maybe_unserialize($sync_subscribers);
-		unset($es_unserialized_data['es_commented']);
-		unset($es_unserialized_data['es_commented_group']);
-
-		$es_serialized_data = serialize($es_unserialized_data);
-		update_option( 'ig_es_sync_wp_users', $es_serialized_data );
-
-		update_option( 'current_sa_email_subscribers_db_version', '3.2' );
-	}
-
-	/**
-	 * To rename a few terms in compose & reports menu
-	 * ES version 3.2.7 onwards
-	 */
-	public static function es_upgrade_database_for_3_2_7() {
-
-		global $wpdb;
-
-		// Compose table
-		$template_table_exists = $wpdb->query( "SHOW TABLES LIKE '{$wpdb->prefix}es_templatetable'" );
-		if ( $template_table_exists > 0 ) {
-			$wpdb->query( "UPDATE {$wpdb->prefix}es_templatetable
-						   SET es_email_type =
-						   ( CASE
-								WHEN es_email_type = 'Static Template' THEN 'Newsletter'
-								WHEN es_email_type = 'Dynamic Template' THEN 'Post Notification'
-								ELSE es_email_type
-							 END ) " );
-		}
-
-		// Sent Details table
-		$wpdb->query( "UPDATE {$wpdb->prefix}es_sentdetails
-					   SET es_sent_type =
-					   ( CASE
-							WHEN es_sent_type = 'Instant Mail' THEN 'Immediately'
-							WHEN es_sent_type = 'Cron Mail' THEN 'Cron'
-							ELSE es_sent_type
-						 END ),
-						   es_sent_source =
-					   ( CASE
-							WHEN es_sent_source = 'manual' THEN 'Newsletter'
-							WHEN es_sent_source = 'notification' THEN 'Post Notification'
-							ELSE es_sent_source
-					   END ) " );
-
-		// Delivery Reports table
-		$wpdb->query( "UPDATE {$wpdb->prefix}es_deliverreport
-					   SET es_deliver_senttype =
-					   ( CASE
-							WHEN es_deliver_senttype = 'Instant Mail' THEN 'Immediately'
-							WHEN es_deliver_senttype = 'Cron Mail' THEN 'Cron'
-							ELSE es_deliver_senttype
-						 END ) " );
-
-		update_option( 'current_sa_email_subscribers_db_version', '3.2.7' );
-	}
-
-	/**
-	 * To migrate Email Settings data from custom pluginconfig table to wordpress options table and to update user roles
-	 * ES version 3.3 onwards
-	 */
-	public static function es_upgrade_database_for_3_3() {
-		global $wpdb;
-
-		$settings_to_rename = array(
-			'es_c_fromname' => 'ig_es_fromname',
-			'es_c_fromemail' => 'ig_es_fromemail',
-			'es_c_mailtype' => 'ig_es_emailtype',
-			'es_c_adminmailoption' => 'ig_es_notifyadmin',
-			'es_c_adminemail' => 'ig_es_adminemail',
-			'es_c_adminmailsubject' => 'ig_es_admin_new_sub_subject',
-			'es_c_adminmailcontant' => 'ig_es_admin_new_sub_content',
-			'es_c_usermailoption' => 'ig_es_welcomeemail',
-			'es_c_usermailsubject' => 'ig_es_welcomesubject',
-			'es_c_usermailcontant' => 'ig_es_welcomecontent',
-			'es_c_optinoption' => 'ig_es_optintype',
-			'es_c_optinsubject' => 'ig_es_confirmsubject',
-			'es_c_optincontent' => 'ig_es_confirmcontent',
-			'es_c_optinlink' => 'ig_es_optinlink',
-			'es_c_unsublink' => 'ig_es_unsublink',
-			'es_c_unsubtext' => 'ig_es_unsubcontent',
-			'es_c_unsubhtml' => 'ig_es_unsubtext',
-			'es_c_subhtml' => 'ig_es_successmsg',
-			'es_c_message1' => 'ig_es_suberror',
-			'es_c_message2' => 'ig_es_unsuberror',
-		);
-
-		$options_to_rename = array(
-			'es_c_post_image_size' => 'ig_es_post_image_size',
-			'es_c_sentreport' => 'ig_es_sentreport',
-			'es_c_sentreport_subject' => 'ig_es_sentreport_subject',
-			'es_c_rolesandcapabilities' => 'ig_es_rolesandcapabilities',
-			'es_c_cronurl' => 'ig_es_cronurl',
-			'es_cron_mailcount' => 'ig_es_cron_mailcount',
-			'es_cron_adminmail' => 'ig_es_cron_adminmail',
-			'es_c_emailsubscribers' => 'ig_es_sync_wp_users',
-		);
-
-		// Rename options that were previously stored
-		foreach ( $options_to_rename as $old_option_name => $new_option_name ) {
-			$option_value = get_option( $old_option_name );
-			if ( $option_value ) {
-				update_option( $new_option_name, $option_value );
-				delete_option( $old_option_name );
-			}
-		}
-
-		// Do not pull data for new users as there is no pluginconfig table created on activation
-		$table_exists = $wpdb->query( "SHOW TABLES LIKE '{$wpdb->prefix}es_pluginconfig'" );
-
-		if ( $table_exists > 0 ) {
-
-			// Pull out ES settings data of existing users and move them to options table
-			$settings_data = es_cls_settings::es_setting_select(1);
-
-			if ( ! empty( $settings_data ) ) {
-				foreach ( $settings_data as $name => $value ) {
-					if( array_key_exists( $name, $settings_to_rename ) ){
-						update_option( $settings_to_rename[ $name ], $value );
-					}
-				}
-			}
-		}
-
-		//Update User Roles Settings
-		$es_c_rolesandcapabilities = get_option( 'ig_es_rolesandcapabilities', 'norecord' );
-
-		if ( $es_c_rolesandcapabilities != 'norecord' ) {
-			$remove_roles = array( 'es_roles_setting', 'es_roles_help' );
-
-			foreach ( $es_c_rolesandcapabilities as $role_name => $role_value ) {
-				if ( in_array( $role_name, $remove_roles ) ) {
-					unset( $es_c_rolesandcapabilities[$role_name] );
-				}
-			}
-			update_option( 'ig_es_rolesandcapabilities', $es_c_rolesandcapabilities );
-		}
-
-		update_option( 'current_sa_email_subscribers_db_version', '3.3' );
-	}
-
 	// Function to show any notices in admin section
 	public static function es_add_admin_notices() {
 
 		$screen = get_current_screen();
-		if( stripos($screen->id, 'email-subscribers' ) === false ) return;
+		if ( !in_array( $screen->id, array( 'toplevel_page_es-view-subscribers', 'edit-es_template', 'email-subscribers_page_es-notification', 'email-subscribers_page_es-notification', 'email-subscribers_page_es-sendemail', 'email-subscribers_page_es-settings', 'email-subscribers_page_es-sentmail', 'email-subscribers_page_es-general-information' ), true ) ) return;
 
-		// To show notice for keywords change
-		$es_keyword_change_notice_email_subscribers = get_option( 'es_keyword_change_notice_email_subscribers' );
-		if ( $es_keyword_change_notice_email_subscribers != 'no' ) {
-			$url = 'https://www.icegram.com/documentation/es-what-are-the-available-keywords-in-the-post-notifications/?utm_source=es&utm_medium=in_app_banner&utm_campaign=view_banner';
-			$admin_notice_text_for_keyword_update = __( 'Keyword structure has been simplified. All your previously set keywords have been automatically updated to the new structure.', ES_TDOMAIN );
-			echo '<div class="notice notice-warning"><p>'.$admin_notice_text_for_keyword_update.'<a target="_blank" style="display:inline-block" class="es-admin-btn" href="'.$url.'">'.__( 'Check the updated structure', ES_TDOMAIN ).'</a><a style="display:inline-block" class="es-admin-btn es-admin-btn-secondary" href="?dismiss_admin_notice=1&option_name=es_keyword_change_notice">'.__( 'Okay, I got it.', ES_TDOMAIN ).'</a></p></div>';
-		}
-
-		if( get_option('es_survey_done') == 1 ) return;
-
-		?>
-		<style type="text/css">
-			a.es-admin-btn {
-				margin-left: 10px;
-				padding: 4px 8px;
-				position: relative;
-				text-decoration: none;
-				border: none;
-				-webkit-border-radius: 2px;
-				border-radius: 2px;
-				background: #e0e0e0;
-				text-shadow: none;
-				font-weight: 600;
-				font-size: 13px;
-			}
-			a.es-admin-btn-secondary {
-				background: #fafafa;
-				margin-left: 20px;
-				font-weight: 400;
-			}
-			a.es-admin-btn:hover {
-				color: #FFF;
-				background-color: #363b3f;
-			}
-			.es-form-container .es-form-field {
-				display: inline-block;
-			}
-			.es-form-container .es-form-field:not(:first-child) {
-				margin-left: 4%;
-			}
-			.es-form-container {
-				background-color: rgb(42, 2, 86) !important;
-				border-radius: 0.618em;
-				margin-top: 1%;
-				padding: 1em 1em 0.5em 1em;
-				box-shadow: 0 0 7px 0 rgba(0, 0, 0, .2);
-				color: #FFF;
-				font-size: 1.1em;
-			}
-			.es-form-wrapper {
-				margin-bottom:0.4em;
-			}
-			.es-form-headline div.es-mainheadline {
-				font-weight: bold;
-				font-size: 1.618em;
-				line-height: 1.8em;
-			}
-			.es-form-headline div.es-subheadline {
-				padding-bottom: 0.4em;
-				font-family: Georgia, Palatino, serif;
-				font-size: 1.2em;
-				color: #d4a000;
-			}
-			.es-survey-ques {
-				font-size:1.1em;
-				padding-bottom: 0.3em;
-			}
-			.es-form-field label {
-				font-size:0.9em;
-				margin-left: 0.2em;
-			}
-			.es-survey-next,.es-button {
-				box-shadow: 0 1px 0 #03a025;
-				font-weight: bold;
-				height: 2em;
-				line-height: 1em;
-			}
-			.es-survey-next,.es-button.primary {
-				color: #FFFFFF!important;
-				border-color: #a7c53c !important;
-				background: #a7c53c !important;
-				box-shadow: none;
-				padding: 0 3.6em;
-			}
-			.es-heading {
-				font-size: 1.218em;
-				padding-bottom: 0.5em;
-				padding-top: 0.5em;
-				display: block;
-				font-weight: bold;
-				color: #ffd3a2;
-			}
-			.es-button.secondary {
-				color: #545454!important;
-				border-color: #d9dcda!important;
-				background: rgba(243, 243, 243, 0.83) !important;
-			}
-			.es-loader-wrapper {
-				position: absolute;
-				display: none;
-				left: 50%;
-				margin-top: 0.4em;
-				margin-left: 4em;
-			}
-			.es-loader-wrapper img {
-				width: 60%;
-			}
-			.es-msg-wrap {
-				display: none;
-				text-align: center;
-			}
-			.es-msg-wrap .es-msg-text {
-				padding: 1%;
-				font-size: 2em;
-			}
-			.es-form-field.es-left {
-				margin-bottom: 0.6em;
-				width: 29%;
-				display: inline-block;
-				float: left;
-			}
-			.es-form-field.es-right {
-				margin-left: 3%;
-				width: 67%;
-				display: inline-block;
-			}
-			.es-profile-txt:before {
-				font-family: dashicons;
-				content: "\f345";
-				vertical-align: middle;
-			}
-			.es-profile-txt {
-				font-size: 0.9em; 
-			}
-			.es-right-info .es-right {
-				width: 50%;
-				display: inline-block;
-				float: right;
-				margin-top: 2em;
-			}
-			.es-right-info .es-left {
-				width: 50%;
-				display: inline-block;
-			}
-			.es-form-wrapper form {
-				margin-top: 0.6em;
-			}
-			.es-right-info label {
-				padding: 0 0.5em 0 0;
-				font-size: 0.8em;
-				text-transform: uppercase;
-				color: rgba(239, 239, 239, 0.98);
-			}
-			.es-list-item {
-				margin-bottom: 0.9em;
-				display: none;
-				margin-top: 0.5em;
-			}
-			.es-rocket {
-				position: absolute;
-				top: 1.5em;
-				right: 5%;
-			}
-			#es-no {
-				box-shadow: none;
-				cursor: pointer;
-				color: #c3bfbf;
-				text-decoration: underline;
-				width: 100%;
-				display: inline-block;
-				margin: 0 auto;
-				margin-left: 11em;
-				margin-top: 0.2em;
-			}
-			.es-clearfix:after {
-				content: ".";
-				display: block;
-				clear: both;
-				visibility: hidden;
-				line-height: 0;
-				height: 0;
-			}
-			.es-survey-next {
-			   text-decoration: none;
-			   color: #fff;
-			   margin-top: -1em!important;
-			}
-		</style>
-		<script type="text/javascript">
-			jQuery(function() {
-				jQuery('.es-list-item:nth-child(2)').show();
-				jQuery('.es-list-item:nth-child(2)').addClass('current');
-				jQuery('.es-form-container').on('click', '.es-survey-next', function(){
-					jQuery('.es-list-item.current').hide();
-					jQuery('.es-list-item.current').next().show().addClass('current');
-					jQuery('.es-list-item.current').prev('.es-list-item').hide();
-					if(jQuery('.es-list-item.current').is(':last-child')){
-						jQuery('.es-survey-next').hide();
-
-					}
-				});
-
-			});
-		</script>
-
-		<?php
-
-		// 13th June 17 - 0.1
-		// updated on 5th July 17 - 0.2
-		// updated on 26th July 17 - 0.2
-		// updated on 21st Aug 17 - 0.3
-		$es_data = es_cls_dbquery::es_survey_res();
-
-		// Check days passed from this update (v3.3.4)
 		$timezone_format = _x('Y-m-d', 'timezone date format');
-		$es_current_date = date_i18n($timezone_format);
-		$es_update_date = get_option('ig_es_update_v_3_3_4_date');
+		$es_current_date = strtotime(date_i18n($timezone_format));
+		$es_offer_start = strtotime("2017-12-18");
+		$es_offer_end = strtotime("2017-12-26");
 
-		if ( $es_update_date === false ) {
-			$es_update_date = $es_current_date;
-			add_option( 'ig_es_update_v_3_3_4_date',$es_update_date );
+		$total_subscribers = es_cls_dbquery::es_view_subscriber_count(0);
+
+		if( ($es_current_date >= $es_offer_start) && ($es_current_date <= $es_offer_end) && $total_subscribers > '10' ) {
+			include_once( 'es-offer.php' );
+		} else {
+			// To show notice for Compose & Keywords change
+			$es_keyword_change_notice_email_subscribers = get_option( 'es_keyword_change_notice_email_subscribers' );
+			if ( $es_keyword_change_notice_email_subscribers != 'no' ) {
+
+				?>
+				<style type="text/css">
+					a.es-admin-btn {
+						margin-left: 10px;
+						padding: 4px 8px;
+						position: relative;
+						text-decoration: none;
+						border: none;
+						-webkit-border-radius: 2px;
+						border-radius: 2px;
+						background: #e0e0e0;
+						text-shadow: none;
+						font-weight: 600;
+						font-size: 13px;
+					}
+					a.es-admin-btn:hover {
+						color: #FFF;
+						background-color: #363b3f;
+					}
+					a.es-admin-btn-secondary {
+						background: #fafafa;
+						margin-left: 20px;
+						font-weight: 400;
+					}
+				</style>
+				<?php
+
+				$url = 'https://www.icegram.com/email-subscribers-gets-more-user-friendly/?utm_source=es&utm_medium=in_app_banner&utm_campaign=view_banner';
+				$admin_notice_text_for_keyword_update = __( 'Compose is now changed to <b>Templates</b> and Keyword structure has been simplified. All your previously created templates and keywords have been automatically updated to the new structure.<br>', ES_TDOMAIN );
+				echo '<div class="notice notice-warning"><p>'.$admin_notice_text_for_keyword_update.'<a target="_blank" style="display:inline-block" class="es-admin-btn" href="'.$url.'">'.__( 'Check all the changes&nbsp;&nbsp;', ES_TDOMAIN ).'</a><a style="display:inline-block" class="es-admin-btn es-admin-btn-secondary" href="?dismiss_admin_notice=1&option_name=es_keyword_change_notice">'.__( 'No thanks, I know about it already.', ES_TDOMAIN ).'</a></p></div>';
+			}
+			
 		}
-
-		$date_diff = floor( ( strtotime($es_current_date) - strtotime($es_update_date) ) / (3600 * 24) );
-		if($date_diff < 30) return;
-
-		?>
-
-		<div class="es-form-container wrap">
-			<div class="es-form-wrapper">
-				<div class="es-form-headline">
-					<div class="es-mainheadline"><?php echo __( 'Email Subscribers', ES_TDOMAIN ); ?> <u><?php echo __( 'is getting even better!', ES_TDOMAIN ); ?></u></div>
-					<div class="es-subheadline"><?php echo __( 'But I need you to', ES_TDOMAIN ); ?> <strong><?php echo __( 'help me prioritize', ES_TDOMAIN ); ?></strong>! <?php echo __( 'Please send your response today.', ES_TDOMAIN ); ?></div>
-				</div>
-				<form name="es-survey-form" action="#" method="POST" accept-charset="utf-8">
-					<div class="es-container-1 es-clearfix">	
-						<div class="es-form-field es-left">
-							<div class="es-profile">
-								<div class="es-profile-info">
-									<div class="es-heading"><?php echo __( "Here's how you use ES:",ES_TDOMAIN ); ?></div>
-									<ul style="margin: 0 0.5em;">
-										<li class="es-profile-txt">
-											<?php 
-												if( $es_data['post_notification'] > $es_data['newsletter'] ) {
-													echo __( 'Post Notifications more often than Newsletter', ES_TDOMAIN );
-												} else if($es_data['newsletter'] > $es_data['post_notification']){
-													echo __( 'Newsletter more often than Post Notifications', ES_TDOMAIN );
-												} else{
-													echo __( 'Post Notification &amp; Newsletter equally', ES_TDOMAIN );
-												}
-											?>
-										</li>
-										<li class="es-profile-txt"> <?php echo __('Have ',ES_TDOMAIN ) .$es_data['es_active_subscribers'] . __(' Active Subscribers', ES_TDOMAIN); ?></li>
-										<li class="es-profile-txt"> <?php echo __('Post ',ES_TDOMAIN ) .$es_data['es_avg_post_cnt'] . __(' blog per week', ES_TDOMAIN); ?></li>
-										<li class="es-profile-txt">
-											<?php 
-												if( $es_data['cron'] > $es_data['immediately'] ) {
-													echo __( 'Send emails via Cron', ES_TDOMAIN );
-												} else {
-													echo __( 'Send emails Immediately', ES_TDOMAIN );
-												}
-											?>
-										</li>
-										<li class="es-profile-txt">
-											<?php 
-												if ( $es_data['es_opt_in_type'] == 'Double Opt In' ) {
-													echo __( 'Using Double Opt In', ES_TDOMAIN );
-												} else {
-													echo __( 'Using Single Opt In', ES_TDOMAIN );
-												}
-											?>
-										</li>
-										<input type="hidden" name="es_data[data][post_notification]" value="<?php echo $es_data['post_notification']; ?>">
-										<input type="hidden" name="es_data[data][newsletter]" value="<?php echo $es_data['newsletter']; ?>">
-										<input type="hidden" name="es_data[data][cron]" value="<?php echo $es_data['cron']; ?>">
-										<input type="hidden" name="es_data[data][immediately]" value="<?php echo $es_data['immediately']; ?>">
-										<input type="hidden" name="es_data[data][es_active_subscribers]" value="<?php echo $es_data['es_active_subscribers']; ?>">
-										<input type="hidden" name="es_data[data][es_total_subscribers]" value="<?php echo $es_data['es_total_subscribers']; ?>">
-										<input type="hidden" name="es_data[data][es_avg_post_cnt]" value="<?php echo $es_data['es_avg_post_cnt']; ?>">
-										<input type="hidden" name="es_data[data][es_opt_in_type]" value="<?php echo $es_data['es_opt_in_type']; ?>">
-										<input type="hidden" name="es_data[es-survey-version]" value="0.3">
-									</ul>
-								</div>
-							</div>
-						</div>
-						<div class="es-form-field es-right">
-							<div class="es-heading"><?php echo __( 'How soon do you want these new features?', ES_TDOMAIN ); ?></div>
-							<div class="es-right-info">
-								<div class="es-left">
-									<ul style="margin-top:0;"><span class="es-counter">
-										<li class="es-list-item"><?php echo __( 'Beautiful Email Designs', ES_TDOMAIN ); ?><br>
-											<label title="days"><input checked="" type="radio" name="es_data[design_tmpl]" value="0"><?php echo __( 'Right now!', ES_TDOMAIN ); ?></label>
-											<label title="days"><input type="radio" name="es_data[design_tmpl]" value="1"><?php echo __( 'Soon', ES_TDOMAIN ); ?></label>
-											<label title="days"><input type="radio" name="es_data[design_tmpl]" value="2"><?php echo __( 'Later', ES_TDOMAIN ); ?></label>
-										</li>
-										<li class="es-list-item"><?php echo __( 'Spam Check, Scheduling... (Better Email Delivery)', ES_TDOMAIN); ?><br>
-											<label title="days"><input type="radio" name="es_data[email_control]" value="0"><?php echo __( 'Right now!', ES_TDOMAIN ); ?></label>
-											<label title="days"><input checked="" type="radio" name="es_data[email_control]" value="1"><?php echo __( 'Soon', ES_TDOMAIN ); ?></label>
-											<label title="days"><input type="radio" name="es_data[email_control]" value="2"><?php echo __( 'Later', ES_TDOMAIN ); ?></label>
-										</li>
-										<li class="es-list-item"><?php echo __( 'Discard Fake / Bouncing Emails', ES_TDOMAIN); ?><br>
-											<label title="days"><input type="radio" name="es_data[cleanup]" value="0"><?php echo __( 'Right now!', ES_TDOMAIN ); ?></label>
-											<label title="days"><input checked="" type="radio" name="es_data[cleanup]" value="1"><?php echo __( 'Soon', ES_TDOMAIN ); ?></label>
-											<label title="days"><input type="radio" name="es_data[cleanup]" value="2"><?php echo __( 'Later', ES_TDOMAIN ); ?></label>
-										</li>
-										<li class="es-list-item"><?php echo __( 'Advanced Reporting', ES_TDOMAIN ); ?><br>
-											<label title="days"><input type="radio" name="es_data[report]" value="0"><?php echo __( 'Right now!', ES_TDOMAIN ); ?></label>
-											<label title="days"><input type="radio" name="es_data[report]" value="1"><?php echo __( 'Soon', ES_TDOMAIN ); ?></label>
-											<label title="days"><input checked="" type="radio" name="es_data[report]" value="2"><?php echo __( 'Later', ES_TDOMAIN ); ?></label>
-										</li>
-										<li class="es-list-item">
-											<div>
-												<input style="width: 70%;vertical-align: middle;display: inline-block;" placeholder="Enter your email to get early access" type="email" name="es_data[email]" value="<?php echo get_option( 'admin_email' ); ?>">
-												<div class="" style="display: inline-block;margin-left: 0.4em;width: 23%;vertical-align: middle;">
-													<input data-val="yes" type="submit" id="es-yes" value="Alright, Send It All" class="es-button button primary">
-												</div>
-												<div class="es-loader-wrapper"><img src="<?php echo ES_URL ?>images/spinner-2x.gif"></div>
-												<a id="es-no" data-val="no" class=""><?php echo __( 'Nah, I don\'t like improvements', ES_TDOMAIN ); ?></a>
-											</div>
-										</li>
-									</ul>
-								</div>
-								<div class="es-right">
-									<a href="#" class="es-survey-next button primary"><?php echo __( 'Next', ES_TDOMAIN ); ?> </a>
-								</div>
-							</div>
-						</div>
-					</div>
-				</form>
-				<div class="es-rocket"><img src="<?php echo ES_URL?>images/es-growth-rocket.png"/></div>
-			</div>
-			<div class="es-msg-wrap">
-				<div class="es-logo-wrapper"><img style="width:5%;" src="<?php echo ES_URL ?>images/es-logo-128x128.png"></div>
-				<div class="es-msg-text es-yes"><?php echo __( 'Thank you!', ES_TDOMAIN ); ?></div>
-				<div class="es-msg-text es-no"><?php echo __( 'No issues, have a nice day!', ES_TDOMAIN ); ?></div>
-			</div>
-		</div>
-
-		<script type="text/javascript">
-			jQuery(function () {
-				jQuery("form[name=es-survey-form]").on('click','.es-button, #es-no',function(e){
-					e.preventDefault();
-					jQuery("form[name=es-survey-form]").find('.es-loader-wrapper').show();
-					var params = jQuery("form[name=es-survey-form]").serializeArray();
-					var that = this;
-					params.push({name: 'btn-val', value: jQuery(this).data('val') });
-					params.push({name: 'action', value: 'es_submit_survey' });
-					jQuery.ajax({
-							method: 'POST',
-							type: 'text',
-							url: "<?php echo admin_url( 'admin-ajax.php' ); ?>",
-							data: params,
-							success: function(response) {  
-								jQuery("form[name=es-survey-form]").find('.es-loader-wrapper').hide();
-								jQuery(".es-msg-wrap").show('slow');
-								if( jQuery(that).attr('id') =='es-no'){
-									jQuery(".es-msg-wrap .es-yes").hide();
-								}else{
-									jQuery(".es-msg-wrap .es-no").hide();
-								}
-								jQuery(".es-form-wrapper").hide('slow');
-								setTimeout(function(){
-										jQuery(".es-form-container").hide('slow');
-								}, 5000);
-							}
-					});
-				})
-
-			});
-		</script>
-		<?php
 
 	}
 
@@ -1094,67 +758,27 @@ class es_cls_registerhook {
 			$option_name = sanitize_text_field($_GET['option_name']);
 			update_option( $option_name.'_email_subscribers', 'no' );
 
-			$referer = wp_get_referer();
-			wp_safe_redirect( $referer );
-			exit();
-		}
-
-	}
-
-	public static function es_submit_survey() {
-
-		$url = 'https://www.icegram.com/wp-admin/admin-ajax.php';
-
-		if( !empty($_POST['btn-val']) &&  $_POST['btn-val'] == 'no' ) {
-			update_option('es_survey_done', true);
-			exit();
-		}
-
-		if( !empty( $_POST ) ) {
-			$params = $_POST;
-			$params['domain'] = home_url();
-		} else {
-			exit();
-		}
-
-		$method = 'POST';
-		$qs = http_build_query( $params );
-
-		$options = array(
-			'timeout' => 15,
-			'method' => $method
-		);
-
-		if ( $method == 'POST' ) {
-			$options['body'] = $qs;
-		} else {
-			if ( strpos( $url, '?' ) !== false ) {
-				$url .= '&'.$qs;
+			$timezone_format = _x('Y-m-d', 'timezone date format');
+			$es_current_date = strtotime(date_i18n($timezone_format));
+			$es_offer_start = strtotime("2017-12-18");
+			$es_offer_end = strtotime("2017-12-26");
+			if( ($es_current_date >= $es_offer_start) && ($es_current_date <= $es_offer_end) ) {
+				header("Location: https://www.icegram.com/?utm_source=in_app&utm_medium=ig_banner&utm_campaign=christmas2017_30");
+				exit();
 			} else {
-				$url .= '?'.$qs;
+				$referer = wp_get_referer();
+				wp_safe_redirect( $referer );
+				exit();
 			}
 		}
 
-		$response = wp_remote_request( $url, $options );
-		if ( wp_remote_retrieve_response_code( $response ) == 200 ) {
-			$data = json_decode($response['body'], true);
-			if ( empty($data['error']) ) {
-				if(!empty($data) && !empty($data['success'])){
-					update_option('es_survey_done', true);
-				}
-				echo ( json_encode($data) );
-				exit();                
-			}
-		}
-		exit();
 	}
-
 
 	public static function es_footer_text($es_rating_text) {
 
 		global $post;
 
-		if ( ( isset($_GET['page']) && ( $_GET['page'] == 'es-view-subscribers' || $_GET['page'] == 'es-compose' || $_GET['page'] == 'es-notification' || $_GET['page'] == 'es-sendemail' || $_GET['page'] == 'es-settings' || $_GET['page'] == 'es-sentmail' || $_GET['page'] == 'es-general-information' ) ) || (is_object($post) && $post->post_type == 'es_template') ) {
+		if ( ( isset($_GET['page']) && ( $_GET['page'] == 'es-view-subscribers' || $_GET['page'] == 'es-notification' || $_GET['page'] == 'es-sendemail' || $_GET['page'] == 'es-settings' || $_GET['page'] == 'es-sentmail' || $_GET['page'] == 'es-general-information' ) ) || (is_object($post) && $post->post_type == 'es_template') ) {
 			$es_rating_text = __( 'If you like <strong>Email Subscribers</strong>, please consider leaving us a <a target="_blank" href="https://wordpress.org/support/plugin/email-subscribers/reviews/?filter=5#new-post">&#9733;&#9733;&#9733;&#9733;&#9733;</a> rating. A huge thank you from Icegram in advance!', ES_TDOMAIN );
 		}
 
@@ -1197,10 +821,11 @@ class es_cls_registerhook {
 
 		$args = array(
 			'labels'             => $labels,
-            'public'             => true,
+			'public'             => true,
 			'publicly_queryable' => false,
+			'exclude_from_search' => true,
 			'show_ui'            => true,
-            'show_in_menu'       => 'edit.php?post_type=es_template',
+			'show_in_menu'       => 'edit.php?post_type=es_template',
 			'query_var'          => true,
 			'rewrite'            => array( 'slug' => 'es_template' ),
 			'capability_type'    => 'post',
@@ -1255,20 +880,20 @@ class es_cls_registerhook {
 		return $column; 
 	}
 
-	public static function es_add_admin_css() {
+	public static function es_add_admin_css(){
 
 		global $current_screen;
 
 		if($current_screen->post_type != 'es_template') return;
 
-		?>
+	?>
 		<style type="text/css">
 			.column-es_templ_thumbnail, #es_templ_thumbnail,
 			.column-es_templ_type, #es_templ_type {
 				text-align: center !important;
 			}
 		</style>
-		<?php
+	<?php
 	}
 
 	public static function es_add_template_action( $actions, $post ) {
@@ -1293,16 +918,16 @@ class es_cls_registerhook {
 			$es_templ_type = get_post_meta($post->ID, 'es_template_type', true);
 		}
 		?>
-		<p style="margin-top: 0em; !important;">
-			<?php echo __( 'Available Keyword for Post Notification: {{POSTTITLE}}', ES_TDOMAIN ); ?>
-		</p>
-		<p>
-			<label for="tag-link"><?php echo __( 'Select your Email Template Type', ES_TDOMAIN ); ?></label><br/>
-			<select name="es_template_type" id="es_template_type">
-				<option value='Newsletter' <?php if( $es_templ_type == 'Newsletter' ) { echo 'selected="selected"' ; } ?>><?php echo __( 'Newsletter', ES_TDOMAIN ); ?></option>
-				<option value='Post Notification' <?php if( $es_templ_type == 'Post Notification' ) { echo 'selected="selected"' ; } ?>><?php echo __( 'Post Notification', ES_TDOMAIN ); ?></option>
-			</select>
-		</p>
+			<p style="margin-top: 0em; !important;">
+				<?php echo __( 'Available Keyword for Post Notification: {{POSTTITLE}}', ES_TDOMAIN ); ?>
+			</p>
+			<p>
+				<label for="tag-link"><?php echo __( 'Select your Email Template Type', ES_TDOMAIN ); ?></label><br/>
+				<select name="es_template_type" id="es_template_type">
+					<option value='Newsletter' <?php if( $es_templ_type == 'Newsletter' ) { echo 'selected="selected"' ; } ?>><?php echo __( 'Newsletter', ES_TDOMAIN ); ?></option>
+					<option value='Post Notification' <?php if( $es_templ_type == 'Post Notification' ) { echo 'selected="selected"' ; } ?>><?php echo __( 'Post Notification', ES_TDOMAIN ); ?></option>
+				</select>
+			</p>
 		<?php
 	}
 
@@ -1336,7 +961,7 @@ class es_cls_registerhook {
 
 		global $post;
 		if ($post->post_type != 'es_template') return;
-
+		
 		$es_templ_type = get_post_meta($post->ID, 'es_template_type', true);
 		$page = ($es_templ_type == 'Newsletter') ? 'es-sendemail' : 'es-notification';
 		$preview_url = ES_ADMINURL."?page=".$page."&amp;ac=preview&did=".$post->ID;

@@ -121,7 +121,7 @@ if (!defined('COMET_CACHE_CACHE_404_REQUESTS')) {
      *
      * @var string|integer|boolean A boolean-ish value; e.g. `1` or `0`.
      */
-    define('COMET_CACHE_CACHE_404_REQUESTS', '0');
+    define('COMET_CACHE_CACHE_404_REQUESTS', '1');
 }
 if (!defined('COMET_CACHE_CACHE_NONCE_VALUES')) {
     /*
@@ -194,7 +194,7 @@ if (!defined('COMET_CACHE_EXCLUDE_URIS')) {
      *
      * @var string A regular expression; else an empty string.
      */
-    define('COMET_CACHE_EXCLUDE_URIS', '');
+    define('COMET_CACHE_EXCLUDE_URIS', '/(?:[^\/]*?\/cart\/[^\/]*?)/i');
 }
 if (!defined('COMET_CACHE_EXCLUDE_CLIENT_SIDE_URIS')) {
     /*
@@ -204,7 +204,7 @@ if (!defined('COMET_CACHE_EXCLUDE_CLIENT_SIDE_URIS')) {
      *
      * @var string A regular expression; else an empty string.
      */
-    define('COMET_CACHE_EXCLUDE_CLIENT_SIDE_URIS', '');
+    define('COMET_CACHE_EXCLUDE_CLIENT_SIDE_URIS', '/(?:[^\/]*?\/cart\/[^\/]*?)/i');
 }
 if (!defined('COMET_CACHE_EXCLUDE_REFS')) {
     /*

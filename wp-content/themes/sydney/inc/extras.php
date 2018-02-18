@@ -69,3 +69,14 @@ if ( version_compare( $GLOBALS['wp_version'], '4.1', '<' ) ) :
 	}
 	add_action( 'wp_head', 'sydney_render_title' );
 endif;
+
+/**
+ * Support for Yoast SEO breadcrumbs
+ */
+function sydney_yoast_seo_breadcrumbs() {
+	if ( function_exists('yoast_breadcrumb') ) {
+		yoast_breadcrumb('
+		<p class="sydney-breadcrumbs">','</p>
+		');
+	}
+}

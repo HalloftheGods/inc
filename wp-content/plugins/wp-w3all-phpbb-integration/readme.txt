@@ -2,10 +2,10 @@
 Contributors: axewww
 Donate link: http://www.paypal.me/alessionanni/
 Tags: wordpress, phpbb, integration, bridge, template, embed, iframe, include, users, transfer, cms, bulletin, board, forum, phpbb3, wp
-Stable tag: 1.7.7
+Stable tag: 1.7.9
 License: GPLv2 or later
 Requires at least: 4.0.0
-Tested up to: 4.8
+Tested up to: 4.9
 
 WordPress w3all phpBB integration - easy, light, secure, powerful
 
@@ -24,10 +24,10 @@ Integration cookie based between WordPress and phpBB installed on same and subdo
 You can completely ignore this part. Or choose if WP w3all phpBB run in iframe mode and auto embed phpBB into WordPress template: complete the iframe responsive embedded procedure in few steps.
 
 = Wp to phpBB users transfer =
-WordPress users to phpBB transfer, to transfer pre existent WordPress users into phpBB! (phpBB users are auto added in WordPress when they login on WP first time or when they visit WP side, as logged into phpBB)
+WordPress users to phpBB transfer, to transfer pre existent WordPress users into phpBB and vice versa (phpBB users are auto added in WordPress when they login on WP first time or when they visit WP side, as logged into phpBB).
 
 = phpBB avatars into WordPress options =
-Use phpBB avatars to replace WP Gravatars options!
+Use phpBB avatars to replace WP Gravatars options.
 
 = WordPress MUMS ready =
 It is possible to integrate a WP Multisite network, but linking the same phpBB into each subsite.
@@ -36,11 +36,11 @@ It is possible to integrate a WP Multisite network, but linking the same phpBB i
 * [Shortcode to display phpBB posts into WordPress posts/pages as bbcode formatted or plain text](https://www.axew3.com/w3/2017/07/wordpress-shortcode-phpbb-posts-into-wp-post/)
 * [Shortcode to display Last phpBB Topics/Posts into WordPress posts/pages](https://www.axew3.com/w3/2017/09/wordpress-shortcode-last-phpbb-topics-posts-into-wp-post/)
 * Transfer phpBB users into WordPress (not required but available as option)
-* Buddypress profile fields and avatar integration 
+* Buddypress full profile fields and avatar integration (advanced)
 * Check more options and features into WP admin Settings -> WP_w3all (config page) and into [WP w3all phpBB help page](https://www.axew3.com/w3/cms-plugins-scripts/wordpress-plugins-scripts-docs/wordpress-phpbb-integration/)
 
 = Help pages =
-A WP w3all phpBB help page with common questions, easy how to use and answers to be up and running in minutes is available here:
+WP w3all phpBB help page with common questions, how to use and answers to be up and running in minutes is available here:
 [WP w3all phpBB help page](https://www.axew3.com/w3/cms-plugins-scripts/wordpress-plugins-scripts-docs/wordpress-phpbb-integration/)
 
 == Installation ==
@@ -60,6 +60,25 @@ A WP w3all phpBB help page with common questions, easy how to use and answers to
 3. WP w3all auto embed phpBB into your WordPress template
 
 == Changelog ==
+
+= 1.7.9 =
+*Release Date - 15 Dec, 2017*
+
+* Add option: 'Use custom files to display Last Topics Widgets, Login Widget or Last Topics Shortcode content'. The option is (quite well) self explained into WP_w3all config page, on related added option field
+* Fix: avatar bug that may was coming out if no avatars retrieved to display in certain conditions
+* Fix Error: username or email already exist, in case the coming logged phpBB user, or logging in WP, phpBB user, need to be add into WP side
+* Fix: if login is done via phpBB into WP iframed page, redirect to the WP iframed forum page
+* Minor fixes
+* Iframe mode improvements, Common Tasks option, (integration without linking users mode option)?, have been moved to next 1.8.0 version
+
+= 1.7.8 =
+*Release Date - 13 Nov, 2017*
+
+* Fix errors on two queries (in certain conditions)
+* Fix redirect and profile fields update
+* Fix register_uninstall_hook, now correctly wrapped to be executed only one time, when integration start, and not any time the WP admin was loaded
+* Minor fix to add compatibility with old md5 phpBB passwords check if used to login on WP side
+* Minor fixes
 
 = 1.7.7 =
 *Release Date - 28 Sep, 2017*

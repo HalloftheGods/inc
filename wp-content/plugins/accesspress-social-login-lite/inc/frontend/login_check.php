@@ -7,18 +7,6 @@ if( !class_exists( 'APSL_Lite_Login_Check_Class' ) ) {
         //constructor
         function __construct() {
 
-            // if(isset($_REQUEST['error']) || isset($_REQUEST['denied']) || isset($_REQUEST['oauth_problem'])){
-            //    $_SESSION['apsl_login_error_flag'] = 1;
-            //    if(isset($_REQUEST['redirect_to'])){
-            //     $redirect_to = $_REQUEST['redirect_to'];
-            //     echo "<script> window.location.href='$redirect_to'; </script>";
-            //     // APSL_Functions::redirect($_REQUEST['redirect_to']);
-            //    }else{
-            //     echo "You have access denied. Please reauthorize the app to access the login with this site.";
-            //    }
-            //    die();
-            // }
-
             if( isset( $_GET['apsl_login_id'] ) ) {
                 if( isset( $_REQUEST['state'] ) ) {
                     parse_str( base64_decode( $_REQUEST['state'] ), $state_vars );

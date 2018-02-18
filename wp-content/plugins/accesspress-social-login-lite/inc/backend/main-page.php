@@ -111,14 +111,17 @@
                                                         <ul class='apsl-info-lists'>
                                                             <li><b>Please note:</b> We have now updated our facbook sdk version to 5.0 so to make the facebook login work you need to have PHP version 5.4 at least.</li>
                                                             <li>Go to <a href='https://developers.facebook.com/apps' target='_blank'>https://developers.facebook.com/apps</a>.</li>
-                                                            <li>Click on 'Add a New App' button. A popup will open. Then choose website.</li>
-                                                            <li>Now please enter the name of the app as you wish. And please click on “Create New Facebook App ID” button, Again a popup will appear</li>
-                                                            <li>Please enter your contact Email and category as you need.</li>
-                                                            <li>Now click on “Create App ID’ button.</li>
-                                                            <li>Now the popup will disappear and please scroll down and there you will find a input field for your Site URL, there Please enter your site url and enter “Next” button. Now the app is created successfully.</li>
-                                                            <li>Now go to <a href='https://developers.facebook.com/apps' target='_blank'>https://developers.facebook.com/apps</a> there you will find your newly created app and click on the app that you have created. You will be redirected to app dashboard.</li>
-                                                            <li>In the landing page you will find the API version, App ID, App Secret. To view your App secret please click on “Show” button. Those are the required App ID and App Secret to be entered in our plugin settings.</li>
-                                                            <li>After that please go to App Review link just below the alert link there you will find an option to make the app public and select YES. This is very important otherwise your app will not work for all users.</li>
+                                                            <li>click on 'Add a New App' button. A popup will open.</li>
+                                                            <li>Now please enter the name of the app as you wish and enter your contact Email.</li>
+                                                            <li>Now click on "Create App ID" button. Again a popup will appear with security check. Please enter the security and submit.</li>
+                                                            <li>You should now be able to see your App Dashboard. On the left side, you have a navigation panel.</li>
+                                                            <li>Go to Settings-> Basic and choose to Add Platform and choose website.</li>
+                                                            <li>Enter your site URL and Save Changes. Facebook app are site specific so an app can be used only for one website. If you want to use this app for a different site, just change site URL.</li>
+                                                            <li>In the application page in facebook, navigate to Apps >Add Product > Facebook Login >Quickstart >Web > Site URL. Set the site url as your site url(which is given below as a note at the end of this note).</li>
+                                                            <li>And then navigate to Apps > Facebook Login > Settings. Set the Valid OAuth redirect URIs as the site url. And set the Use Strict Mode for Redirect URIs as No.</li>
+                                                            <li>In the landing page you will find the API version, App ID, App Secret. To view your App secret please click on "Show" button. Those are the required App ID and App Secret to be entered in our plugin settings.</li>
+                                                            <li>The next thing is to make this app Public. To do this check your left panel for App Review. You will see Make [Your App Name] Public. Slider the button to enable it.</li>
+                                                            <li>And you are done! You can check for your App ID and App Secret from your Dashboard.</li>
                                                             <li>Site url: <input type='text' value='<?php echo site_url(); ?>' readonly='readonly' /></li>
                                                         </ul>
                                                     </div>

@@ -78,14 +78,21 @@ class PirateForms_HTML {
 				$html   .= esc_html( $args['label']['value'] );
 			}
 			if ( isset( $args['label']['html'] ) ) {
-				$html   .= $args['label']['html'];
+				$span   = $args['label']['html'];
+				if ( strpos( $span, 'dashicons-editor-help' ) !== false && isset( $args['label']['desc'] ) && isset( $args['label']['desc']['value'] ) ) {
+					$class  = isset( $args['label']['desc']['class'] ) ? $args['label']['desc']['class'] : '';
+					$span   = str_replace( '></', '><div style="display: none" class="' . $class . '">' . $args['label']['desc']['value'] . '</div></', $span );
+					unset( $args['label']['desc'] );
+					unset( $args['label']['desc']['value'] );
+				}
+				$html   .= $span;
 			}
 			if ( isset( $args['label']['desc'] ) ) {
 				$html   .= '<div';
 				if ( isset( $args['label']['desc']['class'] ) ) {
 					$html   .= ' class="' . esc_attr( $args['label']['desc']['class'] ) . '"';
 				}
-				$html   .= '>' . esc_html( $args['label']['desc']['value'] ) . '</div>';
+				$html   .= '>' . $args['label']['desc']['value'] . '</div>';
 			}
 			$html   .= '</label>';
 		}
@@ -197,7 +204,7 @@ class PirateForms_HTML {
 			unset( $args['required_msg'] );
 		}
 
-		$html       = '<div class="pirate-forms-file-upload-wrapper"><input type="file" ' . $this->get_common( $args, array( 'value' ) ) . ' style="position: absolute; left: -9999px;" tabindex="-1"><button type="button" class="pirate-forms-file-upload-button" tabindex="-1">' . ( isset( $args['label']['value'] ) ? esc_attr( $args['label']['value'] ) : '' ) . '</button><input type="text" ' . $this->get_common( $text_args ) . ' /></div>';
+		$html       = '<div class="pirate-forms-file-upload-wrapper"><input type="file" ' . $this->get_common( $args, array( 'value' ) ) . ' tabindex="-1"></div>';
 
 		return $this->get_wrap( $args, $html );
 	}
@@ -371,6 +378,18 @@ class PirateForms_HTML {
 	private function button( $args ) {
 		$html       = '<button type="submit" ' . $this->get_common( $args ) . '>' . ( isset( $args['value'] ) ? $args['value'] : '' ) . '</button>';
 
+		return $this->get_wrap( $args, $html );
+	}
+
+	/**
+	 * The WYSIWYG element.
+	 */
+	private function wysiwyg( $args ) {
+		$html       = $this->get_label( $args );
+		$content    = isset( $args['value'] ) && ! empty( $args['value'] ) ? $args['value'] : $args['default'];
+		ob_start();
+		wp_editor( $content, $args['id'], $args['wysiwyg'] );
+		$html .= ob_get_clean();
 		return $this->get_wrap( $args, $html );
 	}
 
