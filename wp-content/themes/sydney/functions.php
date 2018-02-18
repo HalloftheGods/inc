@@ -230,7 +230,7 @@ add_filter( 'excerpt_length', 'sydney_excerpt_length', 999 );
  * Blog layout
  */
 function sydney_blog_layout() {
-	$layout = get_theme_mod('blog_layout','classic');
+	$layout = get_theme_mod('blog_layout','classic-alt');
 	return $layout;
 }
 

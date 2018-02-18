@@ -1,4 +1,4 @@
-/*! elementor - v1.7.12 - 24-10-2017 */
+/*! elementor - v1.8.12 - 03-01-2018 */
 .dialog-widget {
   position: fixed;
   height: 100%;
@@ -11,7 +11,8 @@
 .dialog-widget-content {
   background-color: #fff;
   position: absolute;
-  border-radius: 3px;
+  -webkit-border-radius: 3px;
+          border-radius: 3px;
   -webkit-box-shadow: 2px 8px 23px 3px rgba(0, 0, 0, 0.2);
           box-shadow: 2px 8px 23px 3px rgba(0, 0, 0, 0.2);
   overflow: hidden; }
@@ -51,18 +52,11 @@
 .dialog-close-button {
   cursor: pointer;
   position: absolute;
-  top: 15px;
-  right: 15px;
+  top: 30px;
+  right: 30px;
   font-size: 15px; }
   .dialog-close-button:not(:hover) {
     opacity: .4; }
-
-body.admin-bar .dialog-close-button {
-  top: 30px; }
-
-@media (max-width: 767px) {
-  body.admin-bar .dialog-close-button {
-    top: 40px; } }
 
 .dialog-options-widget .dialog-widget-header,
 .dialog-confirm-widget .dialog-widget-header {
@@ -91,6 +85,13 @@ body.admin-bar .dialog-close-button {
 
 .dialog-alert-widget .dialog-buttons-wrapper > button {
   width: 100%; }
+
+@media (max-width: 767px) {
+  .dialog-close-button {
+    top: 15px;
+    right: 15px; }
+  body.admin-bar .dialog-close-button {
+    top: 40px; } }
 
 .elementor-aspect-ratio-219 .elementor-fit-aspect-ratio {
   padding-bottom: 42.8571%; }
@@ -179,7 +180,8 @@ body.elementor-editor-inactive #elementor-editor {
   display: inline-block;
   line-height: 1;
   border: 1px solid;
-  border-radius: 3px;
+  -webkit-border-radius: 3px;
+          border-radius: 3px;
   outline: none;
   cursor: pointer; }
   .elementor-button .eicon-elementor {
@@ -464,7 +466,8 @@ body.elementor-editor-inactive #elementor-editor {
 
 #elementor-deactivate-feedback-modal .dialog-submit {
   background-color: #9b0a46;
-  border-radius: 3px;
+  -webkit-border-radius: 3px;
+          border-radius: 3px;
   color: #fff;
   line-height: 1;
   padding: 12px 20px;

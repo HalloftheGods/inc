@@ -58,14 +58,15 @@ foreach ( $phpbb_users as $u ) {
   if( !$user_id ){
     	// this is really basic! improve as you like
          if ( $u->group_id == 5 ){
-      	      
       	      $role = 'administrator';
-      	      
+      	      $u_role = 'a:1:{s:13:"administrator";b:1;}';  
             } elseif ( $u->group_id == 4 ){
-            	
             	   $role = 'editor';
-          	  
-               }  else { $role = 'subscriber'; }  // for all others phpBB Groups default to WP subscriber 
+          	     $u_role = 'a:1:{s:6:"editor";b:1;}';
+               }  else { 
+               	 $role = 'subscriber'; 
+               	 $u_role = 'a:1:{s:10:"subscriber";b:1;}'; 
+               	}  // for all others phpBB Groups default to WP subscriber 
                	
      //////// phpBB username chars fix          	   	
      // phpBB need to have users without characters like ' that is not allowed in WP as username? // REVIEW
@@ -87,7 +88,7 @@ foreach ( $phpbb_users as $u ) {
                  'user_pass'        =>  $u->user_password,
                  'user_email'       =>  $u->user_email,
                  'user_registered'  =>  date_i18n( 'Y-m-d H:i:s', $u->user_regdate ),
-                 'role'             =>  $role,
+                 'role'             =>  $role, // in this way not work
                  'user_url'         =>  $u->pf_phpbb_website
                 );
           	} else { // without profile fields array
@@ -96,13 +97,27 @@ foreach ( $phpbb_users as $u ) {
                  'user_pass'        =>  $u->user_password,
                  'user_email'       =>  $u->user_email,
                  'user_registered'  =>  date_i18n( 'Y-m-d H:i:s', $u->user_regdate ),
-                 'role'             =>  $role
+                 'role'             =>  $role // in this way not work
                 );
               }
           
-       if( $not_import_user == 0 ){ 
-          $user_id = wp_insert_user( $userdata );
-        }
+if( $not_import_user == 0 ){
+  $user_id = wp_insert_user( $userdata );
+ if ( ! is_wp_error( $user_id ) ) {
+  if( isset($u_role) && $user_id ){    
+           if ( !is_multisite() ) { // check that this user is correctly activated in wp at this point and add options about roles 
+     $wpu_db_utab = $wpdb->prefix . 'usermeta';
+	   $wpdb->query("UPDATE $wpu_db_utab SET meta_value = '$u_role' WHERE user_id = '$user_id' AND meta_key = 'wp_capabilities'");
+ }  
+           
+  if ( is_multisite() ) {
+	 	 $wpu_db_utab = (is_multisite()) ? WPW3ALL_MAIN_DBPREFIX . 'usermeta' : $wpdb->prefix . 'usermeta';
+	 	 $wpu_db_captab = $wpdb->prefix . 'capabilities';
+	   $wpdb->query("UPDATE $wpu_db_utab SET meta_value = '$u_role' WHERE user_id = '$user_id' AND meta_key = '$wpu_db_captab'");
+   } 
+  }
+ }
+}
         
           if ( ! is_wp_error( $user_id ) ) {
           	 echo "<b>Added user -> <span style=\"color:red\">". $u->username ."</span></b><br />";
@@ -148,6 +163,3 @@ if ( ! empty( $phpbb_users ) ) {
   <input type="hidden" name="start_select" value="<?php echo $start_select;?>" /><br /><br />
 <input type="submit" name="submit" id="submit" class="button button-primary" value="<?php echo $start_or_continue_msg;?>">
 </p></form></div>
-
-
-

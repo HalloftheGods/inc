@@ -3,16 +3,14 @@ Contributors: isabel104
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=R7BHLMCQ437SS
 Tags: product attributes, woocommerce product attributes, woocommerce attributes, woocommerce, attributes
 Requires at least: 3.8
-Tested up to: 4.8-alpha-40406
-Stable tag: 1.6.2
-License: GNU Version 2 or Any Later Version
+Tested up to: 5.0-alpha-42420
+Stable tag: 1.6.4
+License: GNU Version 2 or Any Later Venrsion
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 Show WooCommerce custom product attributes on the Product, Shop, and Cart pages, admin Order Details page and emails.
 
 == Description ==
-
-= Requires WooCommerce 3.0 or above. =
 
 This is an extension for WooCommerce that will show your custom product attributes on the single product page above the "Add to cart" button instead of in the "Additional Information" tab. Your product attributes will also be displayed at several other locations, including on order emails. See the full list, below. This plugin does NOT affect nor include attributes which are used for Variations.
 
@@ -29,9 +27,16 @@ Your product attributes will **also** be displayed at these locations (with opti
 * Grouped product page
 * Shop page (including product category and tag archives) (Off by default. You must enable this option on the settings page.)
 
-Includes a .pot localization file to make this plugin WPML-ready. Also includes language translations files for the Finnish language.
-
 See the [full documentation](https://isabelcastillo.com/docs/woocommerce-show-attributes).
+
+**Languages**
+
+If you want to translate this plugin to your language, you can do so easily [on this page](https://translate.wordpress.org/projects/wp-plugins/woocommerce-show-attributes). After you submit a translation, contact me in the support forum to request approval as a Translation Editor.
+
+**Disclaimer**
+
+I am not affiliated with WooCommerce or Automattic. I provide this plugin as a free service to the WP community because of the many requests that I received for it.
+
 
 == Installation ==
 
@@ -116,6 +121,14 @@ Add this CSS:
 3. The attributes under the product name on the Edit Order page in the admin backend.
 
 == Changelog ==
+
+= 1.6.4 =
+* Fix - Restored missing attributes on the Cart page for variable products.
+
+= 1.6.3 =
+* New - Added WPML translation support.
+* New - Updated the .pot translation file.
+* Tweak - Remove unused duplicate variable.
 
 = 1.6.2 =
 * New - Add PolyLang translation support for attribute names.
@@ -213,6 +226,9 @@ Add this CSS:
 = 1.0 =
 * Initial release.
 == Upgrade Notice ==
+
+= 1.6.4 =
+Fixed missing attributes on the Cart page for variable products.
 
 = 1.6.2 =
 Fixed a fatal error. New PolyLang translation support for attribute names. This plugin requires WooCommerce 3.0 or higher.

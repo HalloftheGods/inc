@@ -3,8 +3,8 @@ Contributors: weblizar
 Donate link: https://www.weblizar.com
 Tags: coming soon, coming soon page, landing page, website launch page, maintenance mode under construction page
 Requires at least: 3.8
-Tested up to: 4.8.2
-Stable tag: 1.1.16
+Tested up to: 4.9.1
+Stable tag: 1.1.18
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -122,7 +122,8 @@ Please use WordPress support forum to ask any query regarding any issue.
 8. Access Control Via User Role
 
 == Changelog ==
-
+= 1.1.18 - version update & Compatibility to WordPress 4.9.1
+= 1.1.17 - version update & Compatibility with WordPress 4.9
 = 1.1.16 - version update
 = 1.1.15 - version update
 = 1.1.14 - version update & Compatibility with WordPress 4.8.2

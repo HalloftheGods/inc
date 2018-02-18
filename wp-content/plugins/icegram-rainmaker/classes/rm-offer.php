@@ -1,41 +1,72 @@
-<?php
-		$screen = get_current_screen(); 
-	        if ( !in_array( $screen->id, array( 'edit-rainmaker_form', 'rainmaker_form','edit-rainmaker_lead','rainmaker_form_page_icegram-rainmaker-support', 'rainmaker_form_page_icegram-rainmaker-upgrade' ), true ) ) return;
-
-		if( get_option('rm_offer_accepted_icegram') == 1 ) return;
+<?php 
+ if( get_option('rm_offer_christmas_done_icegram') == 1 ) return;
 ?>
-		<style type="text/css">
-			.ig-offer-container {
-				background-color: rgb(77,14,39) !important;
-			    margin-top: 1%;
-			    padding: 1em 1em 0.5em 1.6em;
-			    box-shadow: 0 0 7px 0 rgba(0, 0, 0, .2);
-			    color: rgb(200,195,210);
-			    font-size: 1.1em;
-			    height: auto;
-			    max-width: 35%;
-			    margin: 1% auto;
-			    text-align: center;
-			}
-			.ig-offer-wrapper {
-				margin-bottom:0.4em;
-			}
-			.ig-btn-wrapper{
-				margin: 2em 0;
-			}
-		</style>
-		<div class="ig-offer-container wrap">
-			<div class="ig-offer-wrapper">
-				<div class="ig-offer-headline">
-					<div class="ig-mainheadline"><img src="<?php echo  $this->plugin_url ?>../assets/images/halloween.png"/></div>
-				    <div class="" style=" font-size: 1.5em;line-height: 1.4; margin: 1.6em 0;">
-				    	BOO!!! It's the Halloween sale.<br/> Get <span  style="color:#fff;font-weight:bold">flat 20% Off</span> on any Rainmaker plan. <br/><br/>
-						Use coupon code <span  style="color:#fff;font-weight:bold">HALLOWEEN17</span> during checkout!<br/>
-						Offer ends on 31st October, 2017. 
-					</div>
-					<div class="ig-btn-wrapper">
-						<a href="?rm_dismiss_admin_notice=1&rm_option_name=rm_offer_accepted" class="btn" style="cursor:pointer;background: #e94e21;background-image: linear-gradient(to bottom, #e94e21, #ef3124);-webkit-border-radius: 28;-moz-border-radius: 28;border-radius: 27px;font-family: sans-serif;color: #ffffff;font-size: 2em;padding: 0.3em 1.2em;text-decoration: none;">SHOP NOW</a>
-					</div>
-				</div>
-			</div>
-		</div>
+<style type="text/css">
+.ig_offer{
+    width: 90%;
+    height: auto;
+    margin: 1em auto;
+    text-align: center;
+    background-color: #00003a;
+    font-size: 1.2em;
+    /*font-family: sans-serif;*/
+    letter-spacing: 3px;
+    line-height: 1.2em;
+    padding: 2em;
+    background-image: url('<?php echo  $this->plugin_url ?>../assets/images/christmas.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: left;
+}
+.ig_offer_heading{
+    color: #64badd;
+    color: #64ddc1;
+    padding: 1em 0;
+    line-height: 1.2em;
+}
+.ig_main_heading {
+    font-size: 3em;
+    color: #FFFFFF;
+    font-weight: 600;
+    margin-bottom: 0.6em;
+    line-height: 1.2em;
+    position: relative;
+}
+
+.ig_text{
+    font-size: 0.9em;
+}
+.ig_left_text{
+    padding: 0.6em 5.4em 0.6em;
+    color: #8a8a8a;
+}
+.ig_right_text{
+    color: #FFFFFF;
+    font-weight: 600;
+    max-width: 50%;
+    padding: 10px 56px;
+    width: auto;
+    margin: 0;
+    display: inline-block;
+    text-decoration: none;
+    background: #b70f0f;
+}
+.ig_right_text:hover, .ig_right_text:active{
+    color: inherit; 
+}
+.ig_offer_content{
+    margin-left: 15%;
+}
+</style>
+<div class="ig_offer">
+    <div style="float:right;"><img src="<?php echo  $this->plugin_url ?>../assets/images/rainmaker-logo-40.png"  /></div>
+        <div  class="ig_offer_content">
+            <div class="ig_offer_heading">It's time to be merry! </div>
+            <div class="ig_main_heading">Grab FLAT 20% OFF Storewide </div>
+            <div class="ig_text">
+                <div class="ig_left_text" style="font-size:1.1em;">Offer applicable on all premium plans of <span style="color:#64ddc1;font-weight:bold">Icegram, Rainmaker & Email Subscribers</span></div>
+                <a href="?ig_dismiss_admin_notice=1&ig_option_name=rm_offer_christmas_done" target="_blank" class="ig_right_text">Start Shopping</a>
+                <div class="ig_left_text">Offer ends on 26th December, 2017 - so hurry.. </div>
+            </div>
+        </div>
+</div>

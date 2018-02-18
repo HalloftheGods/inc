@@ -4,7 +4,7 @@ defined( 'ABSPATH' ) or die( "No script kiddies please!" );
 Plugin name: AccessPress Instagram Feed
 Plugin URI: https://accesspressthemes.com/wordpress-plugins/accesspress-instagram-feed/
 Description: A plugin to add various instagram widgets with dynamic configuration options.
-Version: 2.2.8
+Version: 2.2.9
 Author: AccessPress Themes
 Author URI: http://accesspressthemes.com
 Text Domain:accesspress-instagram-feed
@@ -14,7 +14,7 @@ License: GPLv2 or later
 
 //Decleration of the necessary constants for plugin
 if( !defined( 'APIF_VERSION' ) ) {
-    define( 'APIF_VERSION', '2.2.8' );
+    define( 'APIF_VERSION', '2.2.9' );
 }
 
 if( !defined( 'APIF_IMAGE_DIR' ) ) {

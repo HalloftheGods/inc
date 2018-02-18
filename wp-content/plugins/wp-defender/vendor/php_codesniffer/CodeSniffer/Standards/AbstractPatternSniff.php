@@ -426,7 +426,7 @@ abstract class PHP_CodeSniffer_Standards_AbstractPatternSniff implements PHP_Cod
 
                     if ($hasError === false && $pattern[($i - 1)]['type'] !== 'newline') {
                         // Make sure they only have 1 newline.
-                        $prev = $phpcsFile->findPrevious($ignoreTokens, ($stackPtr - 1), null, true);		  		 		 	 				 	  	
+                        $prev = $phpcsFile->findPrevious($ignoreTokens, ($stackPtr - 1), null, true);
                         if ($prev !== false && $tokens[$prev]['line'] !== $tokens[$stackPtr]['line']) {
                             $hasError = true;
                         }

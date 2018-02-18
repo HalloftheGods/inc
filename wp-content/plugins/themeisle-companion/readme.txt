@@ -1,8 +1,8 @@
 === Orbit Fox Companion ===
 Contributors: themeisle, codeinwp, rodicaelena, baicusandrei
-Tags: widget, admin, widgets, sharing, reporting, sections, themes
+Tags: widget, admin, widgets, sharing, reporting, sections, themes, stock photos, custom icons, icons, menu icons, stock
 Requires at least: 3.0
-Tested up to: 4.8
+Tested up to: 4.9
 Requires PHP: 5.3
 Stable tag: trunk
 License: GPLv2 or later
@@ -12,13 +12,20 @@ Enhance your website with extra functionality through modules like: social media
 
 == Description ==
 
-Extend your theme functionality with <a href="https://themeisle.com/plugins/orbit-fox-companion/" rel="nofollow">Orbit Fox Companion</a> with various modules like Social Media Share Buttons & Icons, reporting, analytics(upcoming), security(upcoming) and caching(upcoming).
+Extend your theme functionality with <a href="https://themeisle.com/plugins/orbit-fox-companion/" rel="nofollow">Orbit Fox Companion</a> with various modules like Social Media Share Buttons & Icons, reporting, custom menu-icons and free stock featured images.
 
 Orbit Fox is a user-centred plugin with an easy-to-use admin panel. One of the most important features is that modules will only be loaded if they meet two conditions. If they are needed and if they are compatible with your existing themes and plugins. This will cut down on the unnecessary bloating of your website. 
 
 **Why should I use this with Zerif/Hestia themes:** 
 
  - By using it along with our themes you gain access to a lot of useful widgets like **Testimonials**, **Our Focus**, **About Us** and more other.
+
+
+**Why use our custom icons module:**
+
+- Choose from a large variety of custom icons.
+
+- No coding needed, you can leverage the power of our dropdown icons selector and choose the right icon for your menu.
 
 
 **Why use our sharing module:**
@@ -28,6 +35,35 @@ Orbit Fox is a user-centred plugin with an easy-to-use admin panel. One of the m
 - Enable sharing networks right from your admin dashboard and choose on what kind of devices you would like to show them.
 
 - It’s fully customizable: You can easily optimise button location for according to the device your visitors will use. 
+
+
+**Why use our custom Elementor addons module:**
+
+- We offer new widgets to add more value to the content you can create within Elementor page builder.
+
+- Pricing Table Widget to easily create pricing layouts.
+
+- Services Widget to easily create pricing layouts.
+
+- Post Grid Widget to easily list your Posts / Products / any other post types in a grid.
+
+
+**Why use our custom Beaver Builder addons module:**
+
+- We offer new widgets to add more value to the content you can create within the Beaver Builder page builder.
+
+- Pricing Table Widget to easily create pricing layouts.
+
+- Services Widget to easily create pricing layouts.
+
+- Post Grid Widget to easily list your Posts / Products / any other post types in a grid.
+
+
+**Why use our Template Directory:**
+
+- One-click import for awesome page templates.
+
+- Elementor templates will be added frequently for you to use creatively.
 
 Choose from more than 20+ social networks to share with full control for every device that your visitors use.
 
@@ -39,8 +75,12 @@ We've also built some fantastic <a href="http://themeisle.com/wordpress-themes/f
 
 **Features:**
 
+- Template Directory
+- Elementor Addons and Widgets
+- Beaver Builder Widgets
 - Sharing module
-- Reporting module
+- Menu icons module
+- Free stock photos module
 - More widgets and sections for Hestia Theme
 - More widgets and sections for Zerif Theme
 
@@ -74,9 +114,83 @@ Activating the Orbit Fox Companion plugin is just like any other plugin. If you'
 
 1. Screenshot 1. How you can enable/disable modules
 2. Screenshot 2. How the sharing module is looking
-3. Screenshot 3. How reports module is looking
+3. Screenshot 3. Template directory page preview
+4. Screenshot 4. Template preview interface
+5. Screenshot 5. Menu icons module interface preview
+6. Screenshot 6. Menu icons module front end preview
+7. Screenshot 7. Services and post grid Page builder modules
+8. Screenshot 8. Pricing plan Page builder module
+9. Screenshot 9. CC0 MyStock.photos featured image import module.
+
 
 == Changelog ==
+= 2.2.7 - 2017-12-21  = 
+
+* Fix for Hestia clients section default content
+* Beaver Builder Widgets show only if you have beaver builder installed
+* Added Screenshots desciptions
+
+
+= 2.2.6 - 2017-12-19  = 
+
+* Added new Beaver Builder Widgets Module - Pricing table widget, Services widget, Posts Grid widget.
+* Better user experience for the template directory.
+* More native design for the template directory.
+* Added three free new templates to the template directory - Path, Mocha and Ascend.
+* Fixed bug with the Elementor Pricing Table widget button link.
+* Fixed php notice given by the Elementor Posts Grid widget.
+* Removed the useless Stats module.
+
+
+= 2.2.5 - 2017-12-11  = 
+
+* Better UX for CC0 images import module.
+* Improved Elementor Services Widget.
+* Added new templates to the template directory.
+
+
+= 2.2.4 - 2017-12-04  = 
+
+* Fixed issue with menu icons module loading.
+
+
+= 2.2.3 - 2017-11-27  = 
+
+* [Hestia] Fixed issue with Team member section not opening external links in a new tab
+* [Hestia] Fixed alignment issues with the front page sections
+
+
+= 2.2.2 - 2017-11-24  = 
+
+* Renamed flickr api util file.
+* Fixed issue with template directory preview plugin install modal.
+
+
+= 2.2.1 - 2017-11-24  = 
+
+* Fixed module loading for Elementor widgets module.
+
+
+= 2.2.0 - 2017-11-23  = 
+
+* - Added new Elementor Widgets module;
+* - Added new Template Directory module;
+* - Bug fixes for the Photos Import Module;
+* - Bug fixes for the Social Sharing module backend interface;
+* - Moved Orbit Fox Companion out of Tools Menu;
+
+
+= 2.1.1 - 2017-11-16  = 
+
+* Adds compatibility with WordPress 4.9.
+
+
+= 2.1.0 - 2017-11-08  = 
+
+* Adds custom icons menu module.
+* Adds free stock images integration with mystock.photos .
+
+
 = 2.0.11 - 2017-10-19  = 
 
 * Fixed alignment issue for titles in Hestia

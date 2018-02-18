@@ -1,4 +1,61 @@
 
+ ### v2.2.7 - 2017-12-21 
+ **Changes:** 
+ * Fix for Hestia clients section default content
+* Beaver Builder Widgets show only if you have beaver builder installed
+* Added Screenshots desciptions
+ 
+ ### v2.2.6 - 2017-12-19 
+ **Changes:** 
+ * Added new Beaver Builder Widgets Module - Pricing table widget, Services widget, Posts Grid widget.
+* Better user experience for the template directory.
+* More native design for the template directory.
+* Added three free new templates to the template directory - Path, Mocha and Ascend.
+* Fixed bug with the Elementor Pricing Table widget button link.
+* Fixed php notice given by the Elementor Posts Grid widget.
+* Removed the useless Stats module.
+ 
+ ### v2.2.5 - 2017-12-11 
+ **Changes:** 
+ * Better UX for CC0 images import module.
+* Improved Elementor Services Widget.
+* Added new templates to the template directory.
+ 
+ ### v2.2.4 - 2017-12-04 
+ **Changes:** 
+ * Fixed issue with menu icons module loading.
+ 
+ ### v2.2.3 - 2017-11-27 
+ **Changes:** 
+ * [Hestia] Fixed issue with Team member section not opening external links in a new tab
+* [Hestia] Fixed alignment issues with the front page sections
+ 
+ ### v2.2.2 - 2017-11-24 
+ **Changes:** 
+ * Renamed flickr api util file.
+* Fixed issue with template directory preview plugin install modal.
+ 
+ ### v2.2.1 - 2017-11-24 
+ **Changes:** 
+ * Fixed module loading for Elementor widgets module.
+ 
+ ### v2.2.0 - 2017-11-23 
+ **Changes:** 
+ * - Added new Elementor Widgets module;
+* - Added new Template Directory module;
+* - Bug fixes for the Photos Import Module;
+* - Bug fixes for the Social Sharing module backend interface;
+* - Moved Orbit Fox Companion out of Tools Menu;
+ 
+ ### v2.1.1 - 2017-11-16 
+ **Changes:** 
+ * Adds compatibility with WordPress 4.9.
+ 
+ ### v2.1.0 - 2017-11-08 
+ **Changes:** 
+ * Adds custom icons menu module.
+* Adds free stock images integration with mystock.photos .
+ 
  ### v2.0.11 - 2017-10-19 
  **Changes:** 
  * Fixed alignment issue for titles in Hestia

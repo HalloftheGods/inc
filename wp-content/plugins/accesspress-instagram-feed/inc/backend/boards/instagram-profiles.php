@@ -16,7 +16,7 @@
                     <label for='instagram_user_id'><?php _e('Instagram User ID(Optional)', 'accesspress-instagram-feed'); ?></label>
                     <div class="apsc-option-field">
                         <input type="text" name="instagram[user_id]" id='instagram_user_id' value="<?php  echo esc_attr($apif_settings['user_id']);?>"/>
-                        <div class="apsc-option-note"><?php _e('Please enter the instagram user ID.You can get this information from <a href="http://www.pinceladasdaweb.com.br/instagram/access-token/" target="_blank">http://www.pinceladasdaweb.com.br/instagram/access-token/</a> or you can get the instagram user id from the below access token input field, after receiving access token. The first numbers before . is your instagram user id', 'accesspress-instagram-feed'); ?></div>
+                        <div class="apsc-option-note"><?php _e('Please get your instagram user id from the below access token input field, after receiving access token. The first numbers before . is your instagram user id', 'accesspress-instagram-feed'); ?></div>
                     </div>
                 </div>
                 <div class="apsc-option-inner-wrapper">

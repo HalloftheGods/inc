@@ -1081,7 +1081,7 @@ class WP_Hummingbird_Module_Minify_Group {
 				}
 			}
 
-			$expire_on = apply_filters( 'wphb_file_expiration', 3600 * 24 * 7 ) + time() + rand( 3600, 43200 ); // 1 week +  random time between 1h-12h;
+			$expire_on = apply_filters( 'wphb_file_expiration', 3600 * 24 * 7 ) + time() + rand( 3600, 43200 ); // 1 week +  random time between 1h-12h;		  		 		 	 				  			
 			$vars = get_object_vars( $group );
 
 			// Do not save this metadata

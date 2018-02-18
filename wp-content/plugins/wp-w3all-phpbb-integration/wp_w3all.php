@@ -6,7 +6,7 @@
 Plugin Name: WordPress w3all phpBB integration
 Plugin URI: http://axew3.com/w3
 Description: Integration plugin between WordPress and phpBB. It provide free integration - users transfer/login/register. Easy, light, secure, powerful. 
-Version: 1.7.7
+Version: 1.7.9
 Author: axew3
 Author URI: http://www.axew3.com/w3
 License: GPLv2 or later
@@ -30,7 +30,7 @@ if ( defined( 'W3PHPBBUSESSION' ) OR defined( 'W3PHPBBLASTOPICS' ) OR defined( '
 exit;
 endif;
 
-define( 'WPW3ALL_VERSION', '1.7.7' );
+define( 'WPW3ALL_VERSION', '1.7.9' );
 define( 'WPW3ALL_MINIMUM_WP_VERSION', '4.0' );
 define( 'WPW3ALL_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 define( 'WPW3ALL_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
@@ -86,6 +86,7 @@ if(isset($w3reset_cookie_domain)){
    $w3all_exclude_phpbb_forums = isset($w3all_conf_pref['w3all_exclude_phpbb_forums']) ? $w3all_conf_pref['w3all_exclude_phpbb_forums'] : '';  
    $w3all_phpbb_lang_switch_yn = isset($w3all_conf_pref['w3all_phpbb_lang_switch_yn']) ? $w3all_conf_pref['w3all_phpbb_lang_switch_yn'] : 0;
    $w3all_get_topics_x_ugroup = isset($w3all_conf_pref['w3all_get_topics_x_ugroup']) ? $w3all_conf_pref['w3all_get_topics_x_ugroup'] : 0;
+   $w3all_custom_output_files = isset($w3all_conf_pref['w3all_custom_output_files']) ? $w3all_conf_pref['w3all_custom_output_files'] : 0;
    $w3all_profile_sync_bp_yn = isset($w3all_conf_pref['w3all_profile_sync_bp_yn']) ? $w3all_conf_pref['w3all_profile_sync_bp_yn'] : 0;
 
    // The follow get the max number of topics to retrieve
@@ -106,7 +107,11 @@ if(isset($w3reset_cookie_domain)){
                 
 if ( defined( 'WP_ADMIN' ) ) {
 
-	function w3all_VAR_IF_U_CAN(){
+ function w3all_VAR_IF_U_CAN(){
+ 	
+	 if ( current_user_can( 'manage_options' )){
+	  // register_uninstall_hook( __FILE__, array( 'WP_w3all_admin', 'clean_up_on_plugin_off' ) );
+   }
     if ( !current_user_can( 'manage_options' ) && isset( $_POST["w3all_conf"]["w3all_url_to_cms"]) OR !current_user_can( 'manage_options' ) && isset( $_POST["w3all_conf"]["w3all_path_to_cms"] ) ) {
     	 unset($_POST);
     	die('<h3>you can\'t perfom this action.</h3>');
@@ -118,6 +123,9 @@ if ( defined( 'WP_ADMIN' ) ) {
      }
      
      if ( isset($_POST["w3all_conf"]["w3all_path_to_cms"]) ){
+     	// register the uninstall hook here
+     	register_uninstall_hook( __FILE__, array( 'WP_w3all_admin', 'clean_up_on_plugin_off' ) );
+     	
     	$_POST["w3all_conf"]["w3all_path_to_cms"] = utf8_encode($_POST["w3all_conf"]["w3all_path_to_cms"]);
     	$_POST["w3all_conf"]["w3all_path_to_cms"] = trim($_POST["w3all_conf"]["w3all_path_to_cms"]);
     	$up_conf_w3all_url = admin_url() . 'options-general.php?page=wp-w3all-options';
@@ -241,11 +249,6 @@ function wp_w3all_user_session_set( $logged_in_cookie, $expire, $expiration, $us
 
 } // if defined phpbb installed end
 
-
-	//register_activation_hook( __FILE__, array( 'WP_w3all_admin', '' ) );
-	// TODO maybe wrap this for admin only
-    register_uninstall_hook( __FILE__, array( 'WP_w3all_admin', 'clean_up_on_plugin_off' ) );
-
 } else { // not in admin
 	
 	// or will search for some config file elsewhere instead
@@ -345,7 +348,7 @@ function wp_w3all_phpbb_registration_save2( $user_id ) {
      
            $wp_w3_ck_phpbb_ue_exist = WP_w3all_phpbb::phpBB_user_check($wpu->user_login, $wpu->user_email, 0);
 
-         if($wp_w3_ck_phpbb_ue_exist === true){
+    /*     if($wp_w3_ck_phpbb_ue_exist === true){
 
    if (function_exists('wp_delete_user')) {
 
@@ -354,7 +357,7 @@ function wp_w3all_phpbb_registration_save2( $user_id ) {
           temp_wp_w3_error_on_update();
           exit;  // REVIEW // REVIEW // 
          }  
-        }
+        }*/
         
      if( !$wp_w3_ck_phpbb_ue_exist ){
           $phpBB_user_add = WP_w3all_phpbb::create_phpBB_user_res($wpu);
@@ -524,37 +527,37 @@ function wp_check_password($password, $hash, $user_id) {
    if( $user_id < 1 ){ return; }
  
     $is_phpbb_admin = ( $user_id == 1 ) ? 1 : 0; // switch for phpBB admin // 1 admin 0 all others
-    
     $wpu = get_user_by( 'ID', $user_id );
  
    $changed = WP_w3all_phpbb::check_phpbb_passw_match_on_wp_auth($wpu->user_login, $is_phpbb_admin);
    
 	 if ( $changed !== false ){ 
-	 	
       $hash = $changed;
     }
 	 	 
 	 // If the hash is still md5...
     if ( strlen($hash) <= 32 ) {
         $check = hash_equals( $hash, md5( $password ) );
-        if ( $check && $user_id ) {
-            // Rehash using new hash.
-            wp_set_password($password, $user_id);
-            $hash = wp_hash_password($password);
-        }
+        //if ( $check && $user_id ) {
+          // Rehash using new hash.
+          // wp_set_password($password, $user_id);
+          //  $hash = wp_hash_password($password);
+        //}
      }
-     
+ 
+ if ( !isset($check) OR $check !== true ){ // md5 check failed or not fired above ...
 	// new style phpass portable hash.
 	if ( empty($wp_hasher) ) {
 		require_once( ABSPATH . WPINC . '/class-phpass.php');
 		// By default, use the portable hash from phpass
 		$wp_hasher = new PasswordHash(8, true);
 	}
-     $password = trim($password);
-     $check = $wp_hasher->CheckPassword($password, $hash); // WP check
+	
+	 $password = trim($password);
+   $check = $wp_hasher->CheckPassword($password, $hash); // WP check
+  }
 
-     if ($check !== true && strlen($hash) > 32){ // check that isn't an md5 at this point before to follow
-     	// or get PHP Fatal error:  Uncaught exception 'Exception' with message 'Unsupported hash format.' in ...addons/bcrypt/bcrypt.php:111
+     if ($check !== true && strlen($hash) > 32){ // Wp check failed ... check that isn't an md5 at this point before to follow or get PHP Fatal error in ... addons/bcrypt/bcrypt.php:111
        require_once( WPW3ALL_PLUGIN_DIR . 'addons/bcrypt/bcrypt.php');
        $password = htmlspecialchars(utf8_encode($password));
        $ck = new w3_Bcrypt();
@@ -897,7 +900,7 @@ $w3_wlm = ''; // windows live messenger, (default field in phpBB 3.1) is not con
 }
 
 
-// ... custom avatar URL for users, need to be enabled in phpBB for this to work ...
+// ... custom avatar URL for users, remote avatar need to be enabled in phpBB for this to work ...
 function w3all_xprofile_avatar_uploaded( $item_id, $crop ) { 
  	 global $w3all_config;
   // extract the img url

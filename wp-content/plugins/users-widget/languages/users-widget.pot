@@ -1,0 +1,92 @@
+# Copyright (C) 2013 
+# This file is distributed under the same license as the  package.
+msgid ""
+msgstr ""
+"Project-Id-Version:  \n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tag/users-widget\n"
+"POT-Creation-Date: 2013-10-15 08:20:00+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2013-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+
+#: widget-users.php:77
+msgid "Title"
+msgstr ""
+
+#: widget-users.php:80
+msgid "Display"
+msgstr ""
+
+#: widget-users.php:82
+msgid "Avatar + Display Name"
+msgstr ""
+
+#: widget-users.php:83
+msgid "Avatar Only"
+msgstr ""
+
+#: widget-users.php:84
+msgid "Display Name Only"
+msgstr ""
+
+#: widget-users.php:87
+msgid "Display Name Characters"
+msgstr ""
+
+#: widget-users.php:102
+msgid "Order"
+msgstr ""
+
+#: widget-users.php:104
+msgid "Most Recent"
+msgstr ""
+
+#: widget-users.php:105
+msgid "Random"
+msgstr ""
+
+#: widget-users.php:108
+msgid "Number"
+msgstr ""
+
+#: widget-users.php:123
+msgid "Avatar Size"
+msgstr ""
+
+#: widget-users.php:125
+msgid "16px"
+msgstr ""
+
+#: widget-users.php:126
+msgid "32px"
+msgstr ""
+
+#: widget-users.php:127
+msgid "48px"
+msgstr ""
+
+#: widget-users.php:128
+msgid "96px"
+msgstr ""
+
+#: widget-users.php:129
+msgid "128px"
+msgstr ""
+
+#: widget-users.php:196 widget-users.php:197 widget-users.php:200
+#: widget-users.php:201
+msgid "Users"
+msgstr ""
+
+#: widget-users.php:213
+msgid ""
+"Please install the latest version of <a href=\"http://premium.wpmudev.org/"
+"project/update-notifications/\" title=\"Download Now &raquo;\">our free "
+"Update Notifications plugin</a> which helps you stay up-to-date with the "
+"most stable, secure versions of WPMU DEV themes and plugins. <a href="
+"\"http://premium.wpmudev.org/wpmu-dev/update-notifications-plugin-"
+"information/\">More information &raquo;</a>"
+msgstr ""
